@@ -126,6 +126,17 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 .txs{font-size:12px}.txm{font-size:14px}
 .cg3{color:#d1d5db}.cg4{color:#9ca3af}.cg5{color:#6b7280}.cw{color:#fff}
 .mla{margin-left:auto}.ml9{margin-left:36px}
+
+/* ===== 底部导航（来自 zhuye.xyz） ===== */
+.site-footer{margin-top:40px;width:100%;padding:12px 20px 16px;text-align:center;font-size:11px;line-height:1.8;color:var(--t2);border-top:1px solid rgba(16,185,129,.12)}
+.site-footer a{color:var(--t2);text-decoration:none;transition:color .2s}
+.site-footer a:hover{color:var(--a)}
+.site-footer .footer-sep{margin:0 4px;opacity:.4}
+.site-footer .footer-links{margin-bottom:4px}
+.site-footer .footer-links a{font-size:11px}
+.site-footer .footer-copy{margin:2px 0;font-size:10px;opacity:.7}
+.site-footer .footer-design-link{background:linear-gradient(135deg,#ff6b6b,#ffd93d,#6bcb77,#4d96ff,#c77dff,#ff6b6b) 0 0/300% 100% text;-webkit-text-fill-color:transparent;font-weight:600;animation:designFlow 3s linear infinite}
+@keyframes designFlow{0%{background-position:0 0}100%{background-position:300% 0}}
 </style>
 </head>
 <body>
@@ -1296,7 +1307,38 @@ function stitchDownload(fmt){
   };
   srcImg.src = img.src;
 }
+
+// ===== 禁止右键 & 屏蔽 F12 =====
+(function(){
+  document.addEventListener('contextmenu',function(e){e.preventDefault()});
+  var devMsg = 'Hi，欢迎访问"简主页"，请牢记域名 ZHUYE.XYZ。';
+  document.addEventListener('keydown',function(e){
+    if(e.key==='F12'||e.keyCode===123){
+      e.preventDefault();
+      setTimeout(function(){alert(devMsg)},10);
+    }
+    if(e.ctrlKey&&e.shiftKey&&(e.key==='I'||e.key==='J'||e.key==='C'||e.keyCode===73||e.keyCode===74||e.keyCode===67)){
+      e.preventDefault();
+      setTimeout(function(){alert(devMsg)},10);
+    }
+  });
+})();
 </script>
+
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="https://design.zhuye.xyz/" target="_blank" rel="noopener" class="footer-design-link" title="Design Editing CG Software Download">Design</a><span class="footer-sep">-</span>
+    <a href="https://photo.zhuye.xyz/" target="_blank" rel="noopener" title="二次元美图壁纸">Photo</a><span class="footer-sep">-</span>
+    <a href="https://yun.zhuye.xyz/" target="_blank" rel="noopener" title="曾经的GhostXP系统和现在的win11">System</a><span class="footer-sep">-</span>
+    <a href="https://music.zhuye.xyz/" target="_blank" rel="noopener" title="简洁好看的网易云在线音乐">Music</a><span class="footer-sep">-</span>
+    <a href="https://tici.zhuye.xyz/" target="_blank" rel="noopener" title="直播录像用的免费web提词软件">Tici</a><span class="footer-sep">-</span>
+    <a href="https://game.zhuye.xyz/" target="_blank" rel="noopener" title="简单的H5小游戏">Game</a><span class="footer-sep">-</span>
+    <a href="/chrome/" target="_blank" rel="noopener" title="获取最新 Google Chrome 离线安装版本">Chrome</a><span class="footer-sep">-</span>
+    <a href="core.html" target="_blank" rel="noopener" class="footer-design-link" title="浏览器内核检测">Core</a><span class="footer-sep">-</span>
+    <a href="/mess/" target="_blank" rel="noopener" title="更多更多更多......(*￣▽￣)">Mess</a>
+  </div>
+  <div class="footer-copy">Copyright &copy; 2019-2026 <a href="https://www.zhuye.xyz/" target="_blank" rel="noopener" title="简主页 - ZHUYE.XYZ">ZHUYE.XYZ</a> All Rights Reserved.</div>
+</footer>
 
 </body>
 </html>
