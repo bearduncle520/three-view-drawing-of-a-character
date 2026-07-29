@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href="https://www.zhuye.xyz/favicon3.png" type="image/x-icon">
 <title>角色形象一致性三视图提示词</title>
-<link rel="icon" href="https://www.zhuye.xyz/favicon3.ico" type="image/x-icon">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%238b5cf6'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='sans-serif'>C</text></svg>">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#000;color:#fff;-webkit-font-smoothing:antialiased;min-height:100vh}
@@ -118,9 +119,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 .f-p{margin-top:24px}
 .f-c{margin-top:8px;padding:16px;background:#16162a;border:1px solid #2d2d4a;border-radius:8px;font-size:12px;color:#9ca3af;line-height:1.6;display:none}
 .f-c ul{margin-top:4px;padding-left:16px;list-style:disc}
-/* 拼接区域上传区覆盖全局 flex 样式 */
-.f-c .upload,.f-c .upload.ok{flex:0 1 auto;height:auto;min-height:120px}
-.f-c .upload .u-prev{flex:0 1 auto;justify-content:flex-start}
 .f-c ul li{margin-top:4px}
 
 .mb3{margin-bottom:12px}.mb4{margin-bottom:16px}.mt2{margin-top:8px}.mt3{margin-top:12px}
@@ -184,9 +182,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
           <option value="腾讯混元">腾讯混元</option>
           <option value="豆包">豆包（火山引擎）</option>
           <option value="智谱">智谱 AI</option>
-          <option value="DeepSeek">DeepSeek（深度求索）</option>
-          <option value="硅基流动">硅基流动（SiliconFlow）</option>
-          <option value="讯飞星辰">讯飞星辰（MaaS平台）</option>
           <option value="自定义">自定义</option>
         </select>
       </div>
@@ -455,57 +450,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
         </div>
       </div>
 
-      <!-- DeepSeek -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#93c5fd;font-weight:600;font-size:14px">DeepSeek（深度求索）</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://platform.deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek 平台</a> → 注册/登录后进入 API Keys 页面</div>
-          <div>② 点击「创建 API Key」，复制并保存密钥</div>
-          <div>③ 将 API Key 填入上方密钥框，选择模型后即可使用</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://api.deepseek.com/v1</span><br>
-            <span class="sub">支持模型：DeepSeek Chat（V4 多模态，支持图片输入）</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 硅基流动 -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#86efac;font-weight:600;font-size:14px">硅基流动（SiliconFlow）</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://cloud.siliconflow.com/" target="_blank" rel="noopener noreferrer">SiliconCloud 平台</a> → 注册/登录</div>
-          <div>② 进入「API 密钥」页面创建密钥，新用户赠 14 元余额</div>
-          <div>③ 将 API Key 填入上方密钥框，选择模型后即可使用</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://api.siliconflow.cn/v1</span><br>
-            <span class="sub">支持模型：DeepSeek-VL2（多模态视觉理解）/ Qwen2-VL-72B-Instruct（旗舰视觉）/ Qwen2-VL-7B-Instruct（轻量视觉）</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 讯飞星辰 -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#fde68a;font-weight:600;font-size:14px">讯飞星辰（MaaS平台）</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://maas.xfyun.cn/" target="_blank" rel="noopener noreferrer">讯飞星辰MaaS平台</a> → 注册/登录</div>
-          <div>② 进入「计费管理」→「API Key管理」创建密钥</div>
-          <div>③ 将 API Key 填入上方密钥框，选择模型后即可使用</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://maas-api.xfyun.cn/v1</span><br>
-            <span class="sub">支持模型：Spark X2（星火旗舰，多模态理解）/ Spark X2 Flash（轻量快速，多模态）</span>
-          </div>
-        </div>
-      </div>
-
       <!-- Kimi -->
       <div class="api-acc">
         <div class="api-acc-h" onclick="toggleApiAcc(this)">
@@ -569,7 +513,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
           <div>③ 复制生成的 API Key 并妥善保存（格式：xxxx.xxxx）</div>
           <div class="ep-box">
             <span class="lbl">API 端点</span>：<span class="val">https://open.bigmodel.cn/api/paas/v4</span><br>
-            <span class="sub">支持模型：GLM-4V-Flash（免费）/ GLM-4V-Plus（2025.07）/ GLM-4V-Plus-0111（2025.01）/ GLM-4.6V（2025.12）/ GLM-4.1V-Thinking（视觉推理增强）/ GLM-5V-Turbo（多模态 Agent，2026.04）</span>
+            <span class="sub">支持模型：GLM-4V-Flash（免费）/ GLM-4V-Plus（2025.07）/ GLM-4V-Plus-0111（2025.01）/ GLM-4.6V（2025.12）/ GLM-4.1V-Thinking / GLM-5V-Turbo（2026.04）/ GLM-5.2（旗舰，1M上下文）</span>
           </div>
         </div>
       </div>
@@ -651,7 +595,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
     </div>
 
     <!-- 方向选择 + 操作按钮 -->
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;margin-top:20px">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
       <div style="display:flex;gap:6px;flex:1">
         <button class="b-tab on" id="stitch-dir-h" onclick="stitchSetDir('h')" style="flex:1;text-align:center">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="3" y1="12" x2="21" y2="12"/><polyline points="18 15 21 12 18 9"/></svg>
@@ -731,28 +675,8 @@ var PLATFORMS = {
       {id:'glm-4v-plus-0111', name:'glm-4v-plus-0111', label:'GLM-4V-Plus-0111（视觉增强版，2025.01）', free:'新用户赠 500 万 tokens', price:'输入 0.008 元/千tokens，输出 0.02 元/千tokens'},
       {id:'glm-4.6v', name:'glm-4.6v', label:'GLM-4.6V（多模态基座，2025.12）', free:'新用户赠 500 万 tokens', price:'输入 1 元/百万tokens，输出 4 元/百万tokens'},
       {id:'glm-4.1v-thinking', name:'glm-4.1v-thinking', label:'GLM-4.1V-Thinking（视觉推理增强）', free:'新用户赠 500 万 tokens', price:'输入 0.002 元/千tokens，输出 0.008 元/千tokens'},
-      {id:'glm-5v-turbo', name:'glm-5v-turbo', label:'GLM-5V-Turbo（多模态 Agent，2026.04）', free:'新用户赠 500 万 tokens', price:'输入 5 元/百万tokens，输出 22 元/百万tokens'}
-    ]
-  },
-  'DeepSeek': {
-    endpoint: 'https://api.deepseek.com/v1',
-    models: [
-      {id:'deepseek-chat', name:'deepseek-chat', label:'DeepSeek Chat（V4 多模态，支持图片）', free:'新用户赠 500 万 tokens', price:'输入 0.5 元/百万tokens，输出 2 元/百万tokens'}
-    ]
-  },
-  '硅基流动': {
-    endpoint: 'https://api.siliconflow.cn/v1',
-    models: [
-      {id:'deepseek-ai/deepseek-vl2', name:'deepseek-ai/deepseek-vl2', label:'DeepSeek-VL2（多模态视觉理解）', free:'新用户赠 14 元余额', price:'输入 $0.13/M tokens，输出 $0.42/M tokens'},
-      {id:'Qwen/Qwen2-VL-72B-Instruct', name:'Qwen/Qwen2-VL-72B-Instruct', label:'Qwen2-VL-72B-Instruct（旗舰视觉）', free:'新用户赠 14 元余额', price:'输入 $0.35/M tokens，输出 $0.35/M tokens'},
-      {id:'Qwen/Qwen2-VL-7B-Instruct', name:'Qwen/Qwen2-VL-7B-Instruct', label:'Qwen2-VL-7B-Instruct（轻量视觉）', free:'新用户赠 14 元余额', price:'输入 $0.08/M tokens，输出 $0.08/M tokens'}
-    ]
-  },
-  '讯飞星辰': {
-    endpoint: 'https://maas-api.xfyun.cn/v1',
-    models: [
-      {id:'spark-x2', name:'spark-x2', label:'Spark X2（星火旗舰，多模态理解）', free:'新用户赠 100 万 tokens', price:'输入 3 元/百万tokens，输出 3 元/百万tokens'},
-      {id:'spark-x2-flash', name:'spark-x2-flash', label:'Spark X2 Flash（轻量快速，多模态）', free:'新用户赠 100 万 tokens', price:'输入 1 元/百万tokens，输出 2 元/百万tokens'}
+      {id:'glm-5v-turbo', name:'glm-5v-turbo', label:'GLM-5V-Turbo（多模态 Agent，2026.04）', free:'新用户赠 500 万 tokens', price:'输入 5 元/百万tokens，输出 22 元/百万tokens'},
+      {id:'glm-5.2', name:'glm-5.2', label:'GLM-5.2（旗舰多模态，1M上下文）', free:'新用户赠 500 万 tokens', price:'输入 8 元/百万tokens，输出 28 元/百万tokens'}
     ]
   }
 };
@@ -768,8 +692,6 @@ function saveApiConfig(){
       platform: document.getElementById('pselect').value,
       model: document.getElementById('modelselect').value
     };
-    // 同时保存各平台 API Key 映射
-    if(window._apiKeys) data.apiKeys = window._apiKeys;
     var str = JSON.stringify(data);
     localStorage.setItem('lx_api_config', str);
     // window.name 作为硬刷新回退（强制刷新不清除）
@@ -788,8 +710,6 @@ function restoreApiConfig(){
     }
     if(!raw) return;
     var data = JSON.parse(raw);
-    // 恢复各平台 API Key 映射
-    if(data.apiKeys) window._apiKeys = data.apiKeys;
     if(data.platform){
       document.getElementById('pselect').value = data.platform;
       onPlatformChange();
@@ -811,25 +731,6 @@ function restoreApiConfig(){
 
 function onPlatformChange(){
   var plat = document.getElementById('pselect').value;
-  var prevPlat = document.getElementById('pselect').getAttribute('data-prev') || '';
-  // 保存当前 API Key 到旧平台
-  if(prevPlat && prevPlat !== plat){
-    var oldKey = document.getElementById('apikey').value;
-    if(oldKey) window._apiKeys = window._apiKeys || {};
-    if(window._apiKeys) window._apiKeys[prevPlat] = oldKey;
-  }
-  // 清空 API Key 输入
-  document.getElementById('apikey').value = '';
-  document.getElementById('apikey').type = 'password';
-  document.getElementById('keyeye').innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
-  // 如果新平台有保存的 Key，自动恢复
-  if(window._apiKeys && window._apiKeys[plat]){
-    document.getElementById('apikey').value = window._apiKeys[plat];
-    onKeyChange();
-  } else {
-    setConnState('wait');
-  }
-  document.getElementById('pselect').setAttribute('data-prev', plat);
   var modelSel = document.getElementById('modelselect');
   var modelGroup = document.getElementById('model-select-group');
   var modelInfo = document.getElementById('modelinfo');
@@ -961,7 +862,6 @@ function clearApiConfig(){
   document.getElementById('model-select-group').style.display='none';
   document.getElementById('modelinfo').style.display='none';
   setConnState('wait');
-  window._apiKeys = {};
   try{localStorage.removeItem('lx_api_config');window.name='';}catch(e){}
 }
 
@@ -1036,7 +936,7 @@ function callApiAnalyze(dataUrl, file){
         ]
       }
     ],
-    max_tokens: 500
+    max_tokens: 200
   });
 
   fetch(ep+'/chat/completions', {
