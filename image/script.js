@@ -1,1 +1,903 @@
-var _0xc6a41d=_0x451f;(function(_0x13335a,_0x29ac9c){var _0x535e4b=_0x451f,_0x5d2c6e=_0x13335a();while(!![]){try{var _0x3e60f6=parseInt(_0x535e4b(0x2bf))/0x1*(-parseInt(_0x535e4b(0x2a5))/0x2)+-parseInt(_0x535e4b(0x290))/0x3+-parseInt(_0x535e4b(0x221))/0x4+-parseInt(_0x535e4b(0x198))/0x5*(-parseInt(_0x535e4b(0x1d2))/0x6)+parseInt(_0x535e4b(0x1a4))/0x7*(parseInt(_0x535e4b(0x29d))/0x8)+parseInt(_0x535e4b(0x1a2))/0x9*(-parseInt(_0x535e4b(0x194))/0xa)+parseInt(_0x535e4b(0x270))/0xb;if(_0x3e60f6===_0x29ac9c)break;else _0x5d2c6e['push'](_0x5d2c6e['shift']());}catch(_0x7433de){_0x5d2c6e['push'](_0x5d2c6e['shift']());}}}(_0x270b,0xc8fd5));var PLATFORMS={'阿里百炼':{'name':'阿里百炼（通义万相）','endpoint':_0xc6a41d(0x1bc),'imgGen':!![],'desc':_0xc6a41d(0x277),'models':[{'id':_0xc6a41d(0x2a8),'label':_0xc6a41d(0x26c),'rating':'⭐⭐','free':_0xc6a41d(0x199),'price':_0xc6a41d(0x2d3),'note':_0xc6a41d(0x2c2)},{'id':_0xc6a41d(0x28b),'label':'通义万相-增强版（高清图像生成）','rating':'⭐⭐','free':_0xc6a41d(0x199),'price':_0xc6a41d(0x287),'note':'高清画质，适合多视图输出'}]},'豆包':{'name':_0xc6a41d(0x2e8),'endpoint':_0xc6a41d(0x2b7),'imgGen':!![],'desc':_0xc6a41d(0x1c3),'models':[{'id':_0xc6a41d(0x214),'label':_0xc6a41d(0x206),'rating':'⭐⭐','free':'新用户赠\x2050\x20万\x20tokens','price':_0xc6a41d(0x2d3),'note':'豆包旗舰图像生成模型，综合能力强'},{'id':_0xc6a41d(0x29f),'label':'Doubao\x20Seed\x202.1\x20Turbo（快速图像生成）','rating':'⭐','free':'新用户赠\x2050\x20万\x20tokens','price':_0xc6a41d(0x1d3),'note':_0xc6a41d(0x263)}]},'硅基流动':{'name':_0xc6a41d(0x261),'endpoint':_0xc6a41d(0x1d5),'imgGen':!![],'desc':_0xc6a41d(0x283),'models':[{'id':_0xc6a41d(0x1d8),'label':_0xc6a41d(0x27c),'rating':_0xc6a41d(0x1cd),'free':_0xc6a41d(0x2be),'price':'0.15\x20元/张','note':_0xc6a41d(0x1c7)},{'id':_0xc6a41d(0x26f),'label':_0xc6a41d(0x2e1),'rating':_0xc6a41d(0x1cd),'free':'新用户赠\x2014\x20元余额','price':_0xc6a41d(0x2db),'note':_0xc6a41d(0x2cd)},{'id':_0xc6a41d(0x205),'label':_0xc6a41d(0x1b1),'rating':'⭐⭐','free':_0xc6a41d(0x2be),'price':_0xc6a41d(0x2d3),'note':'生成速度快，适合快速测试'},{'id':'black-forest-labs/FLUX.1-pro-ultra','label':_0xc6a41d(0x25e),'rating':'⭐⭐⭐','free':'新用户赠\x2014\x20元余额','price':_0xc6a41d(0x218),'note':_0xc6a41d(0x2a2)},{'id':_0xc6a41d(0x2ab),'label':_0xc6a41d(0x19b),'rating':'⭐⭐','free':_0xc6a41d(0x2be),'price':_0xc6a41d(0x254),'note':_0xc6a41d(0x1b3)},{'id':_0xc6a41d(0x2ba),'label':'SD\x203.5\x20Medium（轻量版）','rating':'⭐','free':_0xc6a41d(0x2be),'price':_0xc6a41d(0x2d3),'note':_0xc6a41d(0x2e4)},{'id':_0xc6a41d(0x2a7),'label':_0xc6a41d(0x2e7),'rating':'⭐⭐','free':_0xc6a41d(0x2be),'price':_0xc6a41d(0x192),'note':_0xc6a41d(0x250)},{'id':_0xc6a41d(0x20a),'label':_0xc6a41d(0x2e0),'rating':'⭐⭐','free':_0xc6a41d(0x2be),'price':'0.02\x20元/张','note':'经典SDXL模型，生态成熟'},{'id':'stabilityai/sdxl-turbo','label':_0xc6a41d(0x1e4),'rating':'⭐','free':'新用户赠\x2014\x20元余额','price':_0xc6a41d(0x227),'note':_0xc6a41d(0x2b0)}]},'腾讯混元':{'name':_0xc6a41d(0x23a),'endpoint':_0xc6a41d(0x2af),'imgGen':!![],'desc':'腾讯混元图像生成模型，中文理解好','models':[{'id':_0xc6a41d(0x289),'label':_0xc6a41d(0x1bb),'rating':'⭐⭐','free':_0xc6a41d(0x226),'price':_0xc6a41d(0x192),'note':_0xc6a41d(0x208)},{'id':_0xc6a41d(0x1df),'label':_0xc6a41d(0x2e6),'rating':'⭐⭐','free':_0xc6a41d(0x226),'price':_0xc6a41d(0x2db),'note':_0xc6a41d(0x265)}]},'智谱':{'name':'智谱\x20AI','endpoint':'https://open.bigmodel.cn/api/paas/v4','imgGen':!![],'desc':_0xc6a41d(0x1ee),'models':[{'id':_0xc6a41d(0x2e9),'label':_0xc6a41d(0x252),'rating':_0xc6a41d(0x1cd),'free':_0xc6a41d(0x224),'price':_0xc6a41d(0x2db),'note':_0xc6a41d(0x20b)},{'id':_0xc6a41d(0x21c),'label':_0xc6a41d(0x1ef),'rating':'⭐⭐','free':_0xc6a41d(0x224),'price':_0xc6a41d(0x2c7),'note':_0xc6a41d(0x275)}]},'自定义':{'name':_0xc6a41d(0x244),'endpoint':'','imgGen':!![],'desc':_0xc6a41d(0x236),'models':[]}},currentImageData=null,generatedImageUrl='',_stitchDir='h',_stitchImages={};function saveApiConfig(){var _0x56b31c=_0xc6a41d;try{var _0x439612={'key':document[_0x56b31c(0x1fe)](_0x56b31c(0x25c))['value'],'ep':document['getElementById'](_0x56b31c(0x1b7))[_0x56b31c(0x2a4)],'platform':document[_0x56b31c(0x1fe)](_0x56b31c(0x2d4))['value'],'model':document[_0x56b31c(0x1fe)](_0x56b31c(0x258))[_0x56b31c(0x2a4)]};localStorage['setItem'](_0x56b31c(0x1cf),JSON[_0x56b31c(0x1f7)](_0x439612));}catch(_0x2b29bb){}}function restoreApiConfig(){var _0x2294f2=_0xc6a41d;try{var _0x39089f=localStorage['getItem'](_0x2294f2(0x1cf));if(!_0x39089f)return;var _0x15a17c=JSON[_0x2294f2(0x1a3)](_0x39089f);_0x15a17c['platform']&&(document[_0x2294f2(0x1fe)](_0x2294f2(0x2d4))[_0x2294f2(0x2a4)]=_0x15a17c[_0x2294f2(0x276)],onPlatformChange(),_0x15a17c['model']&&(document['getElementById'](_0x2294f2(0x258))[_0x2294f2(0x2a4)]=_0x15a17c[_0x2294f2(0x1f6)],onModelChange())),_0x15a17c['ep']&&(document[_0x2294f2(0x1fe)](_0x2294f2(0x1b7))[_0x2294f2(0x2a4)]=_0x15a17c['ep'],document[_0x2294f2(0x1fe)](_0x2294f2(0x1b7))[_0x2294f2(0x1da)]=![]),_0x15a17c[_0x2294f2(0x1c0)]&&(document[_0x2294f2(0x1fe)](_0x2294f2(0x25c))[_0x2294f2(0x2a4)]=_0x15a17c['key'],onKeyChange());}catch(_0x928124){}}function onPlatformChange(){var _0x531996=_0xc6a41d,_0x1b9066=document[_0x531996(0x1fe)](_0x531996(0x2d4)),_0x2897d9=_0x1b9066[_0x531996(0x2a4)],_0x95a54f=document[_0x531996(0x1fe)](_0x531996(0x273)),_0xe686b4=document[_0x531996(0x1fe)](_0x531996(0x258)),_0x43d918=document[_0x531996(0x1fe)](_0x531996(0x1b7)),_0x40fe75=document[_0x531996(0x1fe)](_0x531996(0x2e2));if(!_0x2897d9){_0xe686b4[_0x531996(0x239)]=!![],_0x43d918[_0x531996(0x2a4)]='',_0x43d918[_0x531996(0x1da)]=!![],setConnBtn(_0x531996(0x2ca),'等待配置'),updateModeTip(null);return;}if(_0x2897d9===_0x531996(0x244)){_0xe686b4[_0x531996(0x239)]=!![],_0x43d918[_0x531996(0x2a4)]='',_0x43d918[_0x531996(0x1da)]=![],_0x43d918[_0x531996(0x285)]=_0x531996(0x222),_0x40fe75['textContent']='',checkReady(),saveApiConfig(),updateModeTip(_0x531996(0x244));return;}var _0x104cfa=PLATFORMS[_0x2897d9];if(!_0x104cfa)return;_0xe686b4[_0x531996(0x239)]=![],_0x43d918['value']=_0x104cfa['endpoint'],_0x43d918[_0x531996(0x1da)]=!![];_0x104cfa[_0x531996(0x2b1)]?(_0x40fe75[_0x531996(0x291)]=_0x531996(0x219),_0x40fe75[_0x531996(0x1b8)][_0x531996(0x190)]=_0x531996(0x216)):(_0x40fe75[_0x531996(0x291)]='⚠️\x20仅文本/视觉理解',_0x40fe75[_0x531996(0x1b8)]['color']='#f87171');var _0x3d0a4b='<option\x20value=\x22\x22\x20disabled\x20selected>请选择模型</option>';_0x104cfa[_0x531996(0x1c2)][_0x531996(0x1c8)](function(_0x2528a9){var _0x4809d4=_0x531996,_0x3d2801=_0x2528a9[_0x4809d4(0x18f)];if(_0x2528a9[_0x4809d4(0x1e3)]&&_0x2528a9[_0x4809d4(0x1e3)]!=='—')_0x3d2801='['+_0x2528a9['rating']+']\x20'+_0x3d2801;_0x3d0a4b+=_0x4809d4(0x279)+_0x2528a9['id']+'\x22\x20data-note=\x22'+(_0x2528a9['note']||'')+'\x22>'+_0x3d2801+_0x4809d4(0x2cc);}),_0xe686b4[_0x531996(0x2b5)]=_0x3d0a4b,document[_0x531996(0x1fe)](_0x531996(0x2ac))['style'][_0x531996(0x269)]=_0x531996(0x1cc),_0x104cfa[_0x531996(0x2b1)]?setConnBtn(_0x531996(0x2ca),'请选择模型'):(setConnBtn('fail',_0x531996(0x1f8)),showError('⚠️\x20'+_0x104cfa['name']+_0x531996(0x22a))),updateModeTip(_0x2897d9),saveApiConfig();}function onModelChange(){var _0x3e9a36=_0xc6a41d,_0x3fcb83=document[_0x3e9a36(0x1fe)](_0x3e9a36(0x2d4))[_0x3e9a36(0x2a4)],_0x402cbd=document['getElementById'](_0x3e9a36(0x258))[_0x3e9a36(0x2a4)],_0xbd345f=PLATFORMS[_0x3fcb83];if(!_0xbd345f||!_0x402cbd)return;var _0x2d27ef=_0xbd345f[_0x3e9a36(0x1c2)][_0x3e9a36(0x2d5)](function(_0x6aaf06){return _0x6aaf06['id']===_0x402cbd;});_0x2d27ef&&(document[_0x3e9a36(0x1fe)](_0x3e9a36(0x1e8))['textContent']=_0x2d27ef[_0x3e9a36(0x1f2)],document[_0x3e9a36(0x1fe)](_0x3e9a36(0x20f))['textContent']=_0x2d27ef[_0x3e9a36(0x191)],document[_0x3e9a36(0x1fe)](_0x3e9a36(0x2ac))[_0x3e9a36(0x1b8)][_0x3e9a36(0x269)]=_0x3e9a36(0x2c9)),checkReady(),saveApiConfig();}function updateModeTip(_0x55db5c){var _0xbbba37=_0xc6a41d,_0x342e5a=document[_0xbbba37(0x1fe)](_0xbbba37(0x1b6)),_0x506388=document[_0xbbba37(0x1fe)](_0xbbba37(0x1c5));if(!_0x342e5a||!_0x506388)return;var _0x182526=document['getElementById']('modelinfo');if(!_0x55db5c){_0x342e5a[_0xbbba37(0x1b8)]['display']='none';return;}_0x342e5a[_0xbbba37(0x1b8)][_0xbbba37(0x269)]=_0xbbba37(0x2c9);var _0x289950={'阿里百炼':{'text':_0xbbba37(0x2a0),'border':'rgba(52,211,153,.25)','bg':_0xbbba37(0x26d),'color':_0xbbba37(0x1e5)},'豆包':{'text':_0xbbba37(0x234),'border':_0xbbba37(0x271),'bg':_0xbbba37(0x26d),'color':_0xbbba37(0x1e5)},'硅基流动':{'text':_0xbbba37(0x259),'border':'rgba(52,211,153,.25)','bg':'rgba(16,185,129,.06)','color':_0xbbba37(0x1e5)},'腾讯混元':{'text':_0xbbba37(0x1e7),'border':_0xbbba37(0x271),'bg':'rgba(16,185,129,.06)','color':'#a7f3d0'},'智谱':{'text':'CogView-4\x20布局理解能力最强，多视图效果最佳，推荐\x20<strong>CogView-4</strong>（最新图像生成模型）','border':_0xbbba37(0x271),'bg':_0xbbba37(0x26d),'color':_0xbbba37(0x1e5)},'自定义':{'text':_0xbbba37(0x1f0),'border':'rgba(251,191,36,.25)','bg':'rgba(251,191,36,.06)','color':'#fde68a'}},_0xf40b93=_0x289950[_0x55db5c];_0xf40b93&&(_0x506388[_0xbbba37(0x2b5)]=_0xf40b93[_0xbbba37(0x2c3)],_0x342e5a[_0xbbba37(0x1b8)][_0xbbba37(0x282)]=_0xf40b93['border'],_0x342e5a[_0xbbba37(0x1b8)]['background']=_0xf40b93['bg'],_0x342e5a[_0xbbba37(0x1b8)][_0xbbba37(0x190)]=_0xf40b93[_0xbbba37(0x190)]);}function toggleKey(){var _0x3ecd56=_0xc6a41d,_0x1785bf=document[_0x3ecd56(0x1fe)]('apikey'),_0x3c075b=document[_0x3ecd56(0x1fe)](_0x3ecd56(0x2aa));_0x1785bf['type']===_0x3ecd56(0x21f)?(_0x1785bf[_0x3ecd56(0x2d0)]=_0x3ecd56(0x2c3),_0x3c075b[_0x3ecd56(0x2b5)]=_0x3ecd56(0x256)):(_0x1785bf[_0x3ecd56(0x2d0)]='password',_0x3c075b['innerHTML']=_0x3ecd56(0x28e));}function onKeyChange(){checkReady(),saveApiConfig();}function setConnBtn(_0x2a13b5,_0xa39481){var _0x15d648=_0xc6a41d,_0x80e945=document[_0x15d648(0x1fe)]('connbtn');_0x80e945[_0x15d648(0x2bb)]=_0x15d648(0x215)+_0x2a13b5,_0x80e945[_0x15d648(0x2b5)]=_0x15d648(0x296)+_0xa39481;}function checkReady(){var _0xd18901=_0xc6a41d,_0x155a81=document[_0xd18901(0x1fe)](_0xd18901(0x25c))['value']['trim'](),_0x35fb46=document['getElementById'](_0xd18901(0x1b7))[_0xd18901(0x2a4)][_0xd18901(0x20d)](),_0x394504=document[_0xd18901(0x1fe)](_0xd18901(0x2d4))[_0xd18901(0x2a4)],_0x5eb8c8=_0x394504?PLATFORMS[_0x394504]:null;if(_0x5eb8c8&&!_0x5eb8c8['imgGen'])return setConnBtn(_0xd18901(0x1ca),'不支持图像生成'),![];if(_0x155a81&&_0x35fb46)return setConnBtn('ready',_0xd18901(0x233)),!![];return setConnBtn(_0xd18901(0x2ca),_0xd18901(0x268)),![];}function onConnBtnClick(){var _0x241bbe=_0xc6a41d,_0x4f3d58=document[_0x241bbe(0x1fe)](_0x241bbe(0x1e0));(_0x4f3d58[_0x241bbe(0x203)][_0x241bbe(0x23d)](_0x241bbe(0x200))||_0x4f3d58[_0x241bbe(0x203)][_0x241bbe(0x23d)](_0x241bbe(0x1ca)))&&testConnection();}async function testConnection(){var _0x217ba5=_0xc6a41d,_0x790e29=document[_0x217ba5(0x1fe)](_0x217ba5(0x25c))['value'][_0x217ba5(0x20d)](),_0xe89a9d=document[_0x217ba5(0x1fe)](_0x217ba5(0x1b7))[_0x217ba5(0x2a4)]['trim'](),_0x3c06d1=document[_0x217ba5(0x1fe)](_0x217ba5(0x2d4))[_0x217ba5(0x2a4)],_0x56b85f=_0x3c06d1?PLATFORMS[_0x3c06d1]:null;if(!_0x790e29||!_0xe89a9d)return;if(_0x56b85f&&!_0x56b85f[_0x217ba5(0x2b1)]){setConnBtn(_0x217ba5(0x1ca),_0x217ba5(0x1f8));return;}setConnBtn(_0x217ba5(0x26b),_0x217ba5(0x28a));try{var _0x436df4=_0xe89a9d[_0x217ba5(0x2d7)](/\/+$/,'')+_0x217ba5(0x21d),_0x39770b=document[_0x217ba5(0x1fe)]('modelselect'),_0x3e04f3=_0x39770b[_0x217ba5(0x2a4)]||_0x217ba5(0x243),_0x244d15=await fetch(_0x436df4,{'method':_0x217ba5(0x272),'headers':{'Content-Type':_0x217ba5(0x27a),'Authorization':'Bearer\x20'+_0x790e29},'body':JSON['stringify']({'model':_0x3e04f3,'messages':[{'role':'user','content':'hi'}],'max_tokens':0x1})});if(_0x244d15['ok'])setConnBtn('ok',_0x217ba5(0x23f));else{var _0x2b0cdc=await _0x244d15[_0x217ba5(0x2c3)]()[_0x217ba5(0x22c)](function(){return'';});setConnBtn('fail',_0x217ba5(0x1a0)+_0x244d15[_0x217ba5(0x2b2)]+'\x20'+(_0x2b0cdc['substring'](0x0,0x28)||''));}}catch(_0x2d7834){setConnBtn(_0x217ba5(0x1ca),'连接失败:\x20'+_0x2d7834[_0x217ba5(0x2c0)][_0x217ba5(0x1c6)](0x0,0x1e));}}function clearApiConfig(){var _0x5a0609=_0xc6a41d;document[_0x5a0609(0x1fe)]('apikey')[_0x5a0609(0x2a4)]='',document[_0x5a0609(0x1fe)](_0x5a0609(0x1b7))[_0x5a0609(0x2a4)]='',document[_0x5a0609(0x1fe)]('apiendpoint')[_0x5a0609(0x1da)]=!![],document['getElementById'](_0x5a0609(0x2d4))[_0x5a0609(0x2a4)]='',document[_0x5a0609(0x1fe)](_0x5a0609(0x258))['disabled']=!![],document[_0x5a0609(0x1fe)]('modelinfo')[_0x5a0609(0x1b8)][_0x5a0609(0x269)]=_0x5a0609(0x1cc),setConnBtn(_0x5a0609(0x2ca),_0x5a0609(0x268)),updateModeTip(null),localStorage[_0x5a0609(0x196)]('img_api_config_v2'),hideError();}(function initUpload(){var _0x20bb7f=_0xc6a41d,_0x21db35=document[_0x20bb7f(0x1fe)]('upload'),_0x4f8222=document[_0x20bb7f(0x1fe)](_0x20bb7f(0x1ec));_0x21db35['addEventListener'](_0x20bb7f(0x212),function(){var _0x2e0a49=_0x20bb7f;_0x4f8222[_0x2e0a49(0x212)]();}),_0x21db35['addEventListener']('dragover',function(_0x12edca){var _0xdad236=_0x20bb7f;_0x12edca[_0xdad236(0x2d6)](),_0x21db35[_0xdad236(0x203)][_0xdad236(0x1b5)](_0xdad236(0x245));}),_0x21db35[_0x20bb7f(0x262)]('dragleave',function(){var _0x2a6feb=_0x20bb7f;_0x21db35[_0x2a6feb(0x203)][_0x2a6feb(0x2d8)](_0x2a6feb(0x245));}),_0x21db35['addEventListener'](_0x20bb7f(0x237),function(_0x1bbb89){var _0x29677e=_0x20bb7f;_0x1bbb89['preventDefault'](),_0x21db35[_0x29677e(0x203)][_0x29677e(0x2d8)](_0x29677e(0x245));if(_0x1bbb89[_0x29677e(0x22b)][_0x29677e(0x2b9)][_0x29677e(0x2ad)]>0x0)handleFile(_0x1bbb89[_0x29677e(0x22b)][_0x29677e(0x2b9)][0x0]);}),_0x4f8222[_0x20bb7f(0x262)](_0x20bb7f(0x281),function(){var _0x15b940=_0x20bb7f;if(_0x4f8222[_0x15b940(0x2b9)][_0x15b940(0x2ad)]>0x0)handleFile(_0x4f8222['files'][0x0]);});}());function _0x270b(){var _0x1564cd=['height','<option\x20value=\x22','application/json','<span\x20style=\x22color:#6b7280\x22>—</span>\x20','FLUX.1-pro（专业版）','toDataURL','.sz-btn','previmg','data-k','change','borderColor','开源图像生成模型平台，FLUX系列画质极高，模型丰富','<div\x20style=\x22padding-left:22px\x22>5.\x20点击页面上方「清空配置」按钮即可手动清除。</div>','placeholder','max','0.08\x20元/张','name','hunyuan-image','<svg\x20class=\x22spin\x22\x20width=\x2214\x22\x20height=\x2214\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22><line\x20x1=\x2212\x22\x20y1=\x222\x22\x20x2=\x2212\x22\x20y2=\x226\x22></line><line\x20x1=\x2212\x22\x20y1=\x2218\x22\x20x2=\x2212\x22\x20y2=\x2222\x22></line><line\x20x1=\x224.93\x22\x20y1=\x224.93\x22\x20x2=\x227.76\x22\x20y2=\x227.76\x22></line><line\x20x1=\x2216.24\x22\x20y1=\x2216.24\x22\x20x2=\x2219.07\x22\x20y2=\x2219.07\x22></line><line\x20x1=\x222\x22\x20y1=\x2212\x22\x20x2=\x226\x22\x20y2=\x2212\x22></line><line\x20x1=\x2218\x22\x20y1=\x2212\x22\x20x2=\x2222\x22\x20y2=\x2212\x22></line><line\x20x1=\x224.93\x22\x20y1=\x2219.07\x22\x20x2=\x227.76\x22\x20y2=\x2216.24\x22></line><line\x20x1=\x2216.24\x22\x20y1=\x227.76\x22\x20x2=\x2219.07\x22\x20y2=\x224.93\x22></line></svg>\x20测试中...','wanx2.1-t2i-plus','<div\x20style=\x22margin-bottom:10px;padding-bottom:10px;border-bottom:1px\x20solid\x20rgba(251,191,36,.15)\x22>','data','<path\x20d=\x22M1\x2012s4-8\x2011-8\x2011\x208\x2011\x208-4\x208-11\x208-11-8-11-8z\x22/><circle\x20cx=\x2212\x22\x20cy=\x2212\x22\x20r=\x223\x22/>','onload','1316121Cudfyl','textContent','stitch-upload','stitch_result.','②\x20进入「API\x20密钥」页面\x20→\x20点击「新建\x20API\x20密钥」→\x20复制密钥','<span\x20style=\x22color:#fbbf24;font-weight:600\x22>⭐⭐⭐</span>\x20','<svg\x20width=\x2214\x22\x20height=\x2214\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22><circle\x20cx=\x2212\x22\x20cy=\x2212\x22\x20r=\x2210\x22></circle><line\x20x1=\x2212\x22\x20y1=\x2216\x22\x20x2=\x2212\x22\x20y2=\x2212\x22></line><line\x20x1=\x2212\x22\x20y1=\x228\x22\x20x2=\x2212.01\x22\x20y2=\x228\x22></line></svg>\x20','src','jpg','.api-acc-h','n-custom','stitch-empty','16:9','4402488XIGRej','<div\x20style=\x22margin-top:6px;font-size:11px;color:#fbbf24\x22>','doubao-seed-2.1-turbo','通义万相系列角色一致性表现优秀，推荐\x20<strong>通义万相-增强版</strong>（高清画质，适合多视图输出）','<div\x20style=\x22color:#fbbf24;font-weight:600;margin-bottom:4px\x22>支持模型</div>','超高清画质，细节最丰富，角色表现力最强','</div></div>','value','86LmexPn','④\x20通义万相是阿里云图像生成模型，支持文生图','Kwai-Kolors/Kolors-diffusers','wanx2.1-t2i-turbo','stitch-btn','keyeye','stabilityai/stable-diffusion-3-5-large','modelinfo','length','支持\x20OpenAI\x20兼容的图像生成\x20API，即开即用','https://api.hunyuan.cloud.tencent.com/v1','1-2步生成，适合快速迭代','imgGen','status','K\x20=\x20','readAsDataURL','innerHTML','Bearer\x20','https://ark.cn-beijing.volces.com/api/v3','②\x20点击「创建\x20API\x20Key」→\x20复制并妥善保存密钥','files','stabilityai/stable-diffusion-3-5-medium','className','fsize','<div\x20style=\x22margin-top:16px;padding:14px;background:rgba(251,191,36,.08);border:1px\x20solid\x20rgba(251,191,36,.25);border-radius:8px;font-size:12px;line-height:1.8;color:#d1d5db\x22>','新用户赠\x2014\x20元余额','19963FeUCjU','message','阿里百炼','快速生成，角色一致性佳','text','</span></div>','智谱\x20AI','removeChild','0.04\x20元/张','#c4b5fd','block','wait','③\x20模型名称需与平台支持的模型\x20ID\x20一致','</option>','高质量开源模型，多视图表现好','href','appendChild','type','ar-w','n-display','0.02\x20元/张','pselect','find','preventDefault','replace','remove','<span>价格与模型说明</span></div>','①\x20打开\x20<a\x20href=\x22https://bailian.console.aliyun.com/\x22\x20target=\x22_blank\x22\x20rel=\x22noopener\x22>阿里云百炼控制台</a>\x20→\x20右上角选择「华北2（北京）」地域','0.06\x20元/张','①\x20打开\x20<a\x20href=\x22https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey\x22\x20target=\x22_blank\x22\x20rel=\x22noopener\x22>火山引擎方舟平台\x20→\x20API\x20Key\x20管理</a>','<div\x20style=\x22padding-left:22px\x22>1.\x20免费额度为各平台新用户活动，具体额度和有效期以平台官网为准；</div>','<span\x20style=\x22color:#fbbf24;font-size:10px\x22>','uprev','SDXL\x201.0（经典大模型）','FLUX.1-dev（开发版）','model-cap','\x20KB','轻量版，速度较快','api-help-overlay','Hunyuan-Image-Plus（增强图像生成）','Kolors\x20可图（快手开源）','豆包（火山引擎）','cogview-4','#fde68a','②\x20端点需支持\x20OpenAI\x20兼容的\x20/v1/images/generations\x20接口','图2\x20加载失败','k-custom','indexOf','fillStyle','label','color','price','0.03\x20元/张','genbtn','7361590ulBqXD','f-arr','removeItem','result-img','468730VncoUl','新用户赠百元免费额度','/images/generations','SD\x203.5\x20Large（SD最新大模型）','<div\x20class=\x22api-acc\x22>','#6b7280','uempty','图1\x20加载失败','HTTP\x20','</span>','9fRgPMW','parse','7bfnxxi','<div\x20style=\x22color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px\x22>','image/jpeg','https://open.bigmodel.cn/api/paas/v4','b64_json','image/png','<div\x20style=\x22color:#9ca3af;font-size:10px;margin-top:2px\x22>','需确保端点兼容\x20OpenAI\x20图像生成\x20API\x20格式','body','sponsor-overlay','<div\x20style=\x22padding-left:22px\x22>2.\x20配置信息仅发送至你指定的\x20API\x20端点用于身份验证，不会上传至任何第三方服务器；</div>','CogView-4\x20使用标准\x20images/generations\x20接口','<div\x20style=\x22color:#d1d5db;font-weight:500\x22>','FLUX.1-schnell（快速版）','getAttribute','构图能力强，细节丰富','flex','add','platform-tip','apiendpoint','style','<div\x20style=\x22padding-left:22px\x22>2.\x20价格信息仅供参考，各平台可能随时调整，请以平台官网实时价格为准；</div>','生成失败：','Hunyuan-Image（标准图像生成）','https://dashscope.aliyuncs.com/compatible-mode/v1','<div>','match','③\x20进入「模型广场」找到图像生成模型并开通','key','③\x20复制\x20SecretId\x20并作为\x20API\x20Key\x20填入（混元\x20API\x20使用\x20SecretId\x20认证）','models','火山引擎豆包模型，Doubao\x20Seed\x20系列支持图像生成','</div>','tip-text','substring','画质顶级，细节丰富，推荐','forEach','target','fail','character_closeup_threeview.','none','⭐⭐⭐','<span>API\x20Key\x20安全说明</span></div>','img_api_config_v2','ar-h','<svg\x20class=\x22arr\x22\x20width=\x2214\x22\x20height=\x2214\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22><polyline\x20points=\x226\x209\x2012\x2015\x2018\x209\x22></polyline></svg>','18FZuiFI','0.008\x20元/张','json','https://api.siliconflow.cn/v1','api-help-content','⑤\x20非常适合多视图布局生成，推荐尝试','black-forest-labs/FLUX.1-pro','inline','readOnly','stitch-dir-h','gen-time','result','COMPOSITE\x20IMAGE\x20with\x20two\x20sections\x20side\x20by\x20side\x20on\x20a\x20single\x20canvas.\x20LEFT\x20SECTION:\x20A\x20close-up\x20portrait\x20of\x20the\x20character\x20from\x20shoulders\x20and\x20above,\x20showing\x20detailed\x20facial\x20features,\x20hair\x20texture,\x20and\x20skin\x20details.\x20RIGHT\x20SECTION:\x20Three\x20full-body\x20views\x20of\x20the\x20SAME\x20character\x20in\x20A-pose\x20standing\x20position,\x20arranged\x20vertically\x20or\x20side\x20by\x20side:\x20(1)\x20front\x20view\x20facing\x20camera,\x20(2)\x2045-degree\x20side\x20view,\x20(3)\x20back\x20view.\x20All\x20figures\x20must\x20have\x20identical\x20face,\x20hairstyle,\x20body\x20proportions,\x20and\x20clothing.\x20Clean\x20white\x20background,\x20no\x20shadows.','hunyuan-image-plus','connbtn','getContext','now','rating','SDXL\x20Turbo（极速版）','#a7f3d0','download','混元图像生成中文场景表现好，推荐\x20<strong>Hunyuan-Image-Plus</strong>（增强版画质更优）','mfree','results','#fff','onerror','finp','④\x20支持自定义端点的平台：兼容\x20OpenAI\x20图像生成\x20API\x20格式的任意服务','CogView系列图像生成模型，布局理解强','CogView-3（稳定图像生成）','自行配置兼容\x20OpenAI\x20格式的图像生成\x20API，需确保端点支持\x20/v1/images/generations\x20接口','<div><div\x20style=\x22color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px\x22>','free','.api-acc-bd','stitch-err','配置好模型并点击\x22生成图片\x22后，结果将显示在这里','model','stringify','不支持图像生成','steps','errormsg','data:','stitch-dir-v','querySelector','getElementById','<svg\x20width=\x2216\x22\x20height=\x2216\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22#fbbf24\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22><circle\x20cx=\x2212\x22\x20cy=\x2212\x22\x20r=\x2210\x22></circle><line\x20x1=\x2212\x22\x20y1=\x2216\x22\x20x2=\x2212\x22\x20y2=\x2212\x22></line><line\x20x1=\x2212\x22\x20y1=\x228\x22\x20x2=\x2212.01\x22\x20y2=\x228\x22></line></svg>','ready','sz-display','④\x20CogView-4\x20为最新图像生成模型，布局理解能力突出','classList','result-empty','black-forest-labs/FLUX.1-schnell','Doubao\x20Seed\x202.1\x20Pro（旗舰图像生成）','②\x20登录后点击「添加\x20API\x20Key」→\x20复制密钥','混元图像生成，中文场景表现好','fname','stabilityai/stable-diffusion-xl-base-1.0','布局理解最强，多视图效果最佳，推荐','该平台不支持图像生成，请选择其他平台','trim','note','mprice','自行填写','toFixed','click',';font-weight:600;font-size:14px\x22>','doubao-seed-2.1-pro','s-btn\x20','#34d399','naturalWidth','0.25\x20元/张','✅\x20支持图像生成','<div\x20style=\x22margin-top:8px;font-size:11px;line-height:1.8\x22>','toggle','cogview-3','/chat/completions','result-loading','password','querySelectorAll','1376736KljVwO','请手动输入\x20API\x20端点（需支持\x20/v1/images/generations）','#86efac','新用户赠\x20500\x20万\x20tokens','nextElementSibling','每月赠\x20100\x20张','0.01\x20元/张','drawImage','collapsed','\x20当前不支持图像生成，请选择支持图像生成的平台（如硅基流动、智谱、阿里百炼等）','dataTransfer','catch','naturalHeight','upload','硅基流动','ar-custom','<div\x20style=\x22padding-left:22px\x22>3.\x20效果标注\x20⭐⭐⭐\x20为顶级推荐，⭐⭐\x20为优秀，⭐\x20为良好，—\x20为不支持图像生成；</div>','8K\x20ultra\x20HD,\x20professional\x20character\x20sheet,\x20uniform\x20soft\x20studio\x20lighting,\x20pure\x20white\x20background,\x20no\x20shadows,\x20no\x20text,\x20no\x20watermark,\x20no\x20logo','测试连接','Doubao\x20Seed\x20系列图像生成综合能力强，推荐\x20<strong>Doubao\x20Seed\x202.1\x20Pro</strong>（旗舰图像生成）','data:image/png;base64,','自行配置兼容\x20OpenAI\x20格式的图像生成\x20API','drop','<span\x20style=\x22color:#a7f3d0;font-weight:500\x22>⭐⭐</span>\x20','disabled','腾讯混元','①\x20打开\x20<a\x20href=\x22https://open.bigmodel.cn/usercenter/apikeys\x22\x20target=\x22_blank\x22\x20rel=\x22noopener\x22>智谱\x20AI\x20开放平台\x20→\x20API\x20Keys</a>','<span\x20style=\x22color:#34d399;font-size:10px\x22>','contains','output','连接成功','custom','fillRect','stitch-output','gpt-3.5-turbo','自定义','drag','通义万相图像生成走独立API端点，本工具已自动适配','<div\x20style=\x22padding:5px\x208px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px\x20solid\x20rgba(139,92,246,.12)\x22>','url','size','\x20+\x20','stitch-img','.k-btn','<span\x20style=\x22color:#9ca3af\x22>⭐</span>\x20','⑤\x20推荐模型：Doubao\x20Seed\x202.1\x20Pro（旗舰图像生成）','promptInput','快手开源，中文理解强','①\x20自行配置\x20API\x20Key\x20和\x20API\x20端点地址','CogView-4（最新图像生成）','<div\x20style=\x22padding-left:22px\x22>4.\x20关闭标签页后重新打开，配置依然保留，无需重复填写；</div>','0.05\x20元/张','④\x20新用户赠\x2050\x20万\x20tokens\x20体验额度','<path\x20d=\x22M17.94\x2017.94A10.07\x2010.07\x200\x200\x201\x2012\x2020c-7\x200-11-8-11-8a18.45\x2018.45\x200\x200\x201\x205.06-5.94\x22/><path\x20d=\x22M9.9\x204.24A9.12\x209.12\x200\x200\x201\x2012\x204c7\x200\x2011\x208\x2011\x208a18.5\x2018.5\x200\x200\x201-2.16\x203.19\x22/><line\x20x1=\x221\x22\x20y1=\x221\x22\x20x2=\x2223\x22\x20y2=\x2223\x22/>','canvas','modelselect','FLUX\x20系列画质顶级，多视图效果优秀，推荐\x20<strong>FLUX.1-pro</strong>（专业级画质）或\x20<strong>FLUX.1-dev</strong>（性价比高）','⑤\x20推荐模型：FLUX.1-pro（画质顶级）、FLUX.1-dev（性价比高）','fcont','apikey','<div\x20class=\x22api-acc-h\x22\x20onclick=\x22toggleApiAcc(this)\x22>','FLUX.1-pro-ultra（超高清版）','③\x20新用户注册即赠\x2014\x20元余额，可用于所有模型','currentTarget','硅基流动（SiliconFlow）','addEventListener','轻量版，生成速度快','loading-text','增强版，画质更优，推荐','createElement','<div\x20class=\x22ep-box\x22><span\x20class=\x22lbl\x22>API\x20端点</span>：<span\x20class=\x22val\x22>','等待配置','display','.n-btn','testing','通义万相-快照（快速图像生成）','rgba(16,185,129,.06)','DOMContentLoaded','black-forest-labs/FLUX.1-dev','26060793QuLZZb','rgba(52,211,153,.25)','POST','model-select-group','width','稳定可靠，适合日常使用','platform','通义万相图像生成模型，角色一致性表现优秀'];_0x270b=function(){return _0x1564cd;};return _0x270b();}function handleFile(_0x3448d7){var _0x4b1cb7=_0xc6a41d;if(!_0x3448d7['type'][_0x4b1cb7(0x1be)](/image\/(jpg|jpeg|png|webp)/)){showError('仅支持\x20JPG\x20/\x20PNG\x20/\x20WebP\x20格式');return;}var _0x343c35=new FileReader();_0x343c35[_0x4b1cb7(0x28f)]=function(_0x525378){var _0x5d2496=_0x4b1cb7;currentImageData=_0x525378[_0x5d2496(0x1c9)][_0x5d2496(0x1dd)],showPreview(_0x3448d7,_0x525378['target']['result']);},_0x343c35[_0x4b1cb7(0x2b4)](_0x3448d7);}function showPreview(_0x3d4278,_0x521116){var _0x11ec10=_0xc6a41d;document[_0x11ec10(0x1fe)](_0x11ec10(0x19e))[_0x11ec10(0x1b8)]['display']=_0x11ec10(0x1cc),document['getElementById'](_0x11ec10(0x2df))[_0x11ec10(0x1b8)][_0x11ec10(0x269)]=_0x11ec10(0x1b4),document[_0x11ec10(0x1fe)](_0x11ec10(0x27f))[_0x11ec10(0x297)]=_0x521116,document[_0x11ec10(0x1fe)](_0x11ec10(0x209))['textContent']=_0x3d4278[_0x11ec10(0x288)],document[_0x11ec10(0x1fe)](_0x11ec10(0x2bc))['textContent']=(_0x3d4278[_0x11ec10(0x249)]/0x400)[_0x11ec10(0x211)](0x1)+_0x11ec10(0x2e3),document[_0x11ec10(0x1fe)](_0x11ec10(0x22e))['classList'][_0x11ec10(0x1b5)]('ok'),hideError();}function reUpload(){var _0x2267a3=_0xc6a41d;document[_0x2267a3(0x1fe)](_0x2267a3(0x1ec))[_0x2267a3(0x212)]();}function showError(_0x330241){var _0x702f45=_0xc6a41d;document[_0x702f45(0x1fe)](_0x702f45(0x1fa))[_0x702f45(0x291)]=_0x330241,document['getElementById']('errormsg')['style'][_0x702f45(0x269)]=_0x702f45(0x2c9);}function hideError(){var _0x2f345f=_0xc6a41d;document[_0x2f345f(0x1fe)](_0x2f345f(0x1fa))['style'][_0x2f345f(0x269)]=_0x2f345f(0x1cc);}var SIZE_BASES={'1:1':{'w':0x400,'h':0x400},'4:3':{'w':0x400,'h':0x300},'3:4':{'w':0x300,'h':0x400},'16:9':{'w':0x400,'h':0x240},'9:16':{'w':0x240,'h':0x400}},CURRENT_AR=_0xc6a41d(0x29c),CURRENT_K=0x1,CURRENT_SIZE='1024x576';function selAspect(_0x27d6cf){var _0x105a8b=_0xc6a41d;document[_0x105a8b(0x220)](_0x105a8b(0x27e))['forEach'](function(_0x24d2c5){var _0x4c4723=_0x105a8b;_0x24d2c5[_0x4c4723(0x203)][_0x4c4723(0x2d8)]('on');}),_0x27d6cf[_0x105a8b(0x203)]['add']('on'),CURRENT_AR=_0x27d6cf[_0x105a8b(0x1b2)]('data-ar');var _0x336793=CURRENT_AR===_0x105a8b(0x240);document[_0x105a8b(0x1fe)](_0x105a8b(0x230))['style'][_0x105a8b(0x269)]=_0x336793?_0x105a8b(0x1d9):_0x105a8b(0x1cc),_0x336793?onCustomAr():updateSize();}function onCustomAr(){var _0x177341=_0xc6a41d;if(CURRENT_AR!=='custom')return;var _0x3c9c49=parseInt(document[_0x177341(0x1fe)](_0x177341(0x2d1))[_0x177341(0x2a4)]),_0x51d399=parseInt(document['getElementById'](_0x177341(0x1d0))[_0x177341(0x2a4)]);_0x3c9c49&&_0x51d399&&_0x3c9c49>=0x100&&_0x51d399>=0x100&&_0x3c9c49<=0x2000&&_0x51d399<=0x2000&&(SIZE_BASES[_0x177341(0x240)]={'w':_0x3c9c49,'h':_0x51d399},updateSize());}function selK(_0x5f38a6){var _0x156c38=_0xc6a41d;document[_0x156c38(0x220)](_0x156c38(0x24c))[_0x156c38(0x1c8)](function(_0x1c7416){var _0x58f9c3=_0x156c38;_0x1c7416['classList'][_0x58f9c3(0x2d8)]('on');}),_0x5f38a6[_0x156c38(0x203)][_0x156c38(0x1b5)]('on');var _0x37eefa=_0x5f38a6[_0x156c38(0x1b2)](_0x156c38(0x280));_0x37eefa===_0x156c38(0x240)?(document[_0x156c38(0x1fe)](_0x156c38(0x18c))[_0x156c38(0x1b8)][_0x156c38(0x269)]=_0x156c38(0x1d9),onCustomK()):(document['getElementById'](_0x156c38(0x18c))[_0x156c38(0x1b8)][_0x156c38(0x269)]=_0x156c38(0x1cc),CURRENT_K=parseInt(_0x37eefa),CURRENT_AR!==_0x156c38(0x240)&&updateSize());}function _0x451f(_0x135f11,_0x572062){var _0x270b14=_0x270b();return _0x451f=function(_0x451f52,_0x23af87){_0x451f52=_0x451f52-0x18c;var _0x58576a=_0x270b14[_0x451f52];return _0x58576a;},_0x451f(_0x135f11,_0x572062);}function onCustomK(){var _0x19a705=_0xc6a41d,_0x39d9a0=parseInt(document['getElementById']('k-input')['value']);_0x39d9a0&&_0x39d9a0>=0x1&&_0x39d9a0<=0x10&&(CURRENT_K=_0x39d9a0,CURRENT_AR!==_0x19a705(0x240)&&updateSize());}function updateSize(){var _0x574967=_0xc6a41d,_0x346fe7=SIZE_BASES[CURRENT_AR];if(!_0x346fe7)return;var _0x4d94ab=_0x346fe7['w']*CURRENT_K,_0x208e43=_0x346fe7['h']*CURRENT_K;CURRENT_SIZE=_0x4d94ab+'x'+_0x208e43,document[_0x574967(0x1fe)](_0x574967(0x201))[_0x574967(0x291)]=CURRENT_AR+_0x574967(0x24a)+CURRENT_K+_0x574967(0x2b3)+CURRENT_SIZE;}var CURRENT_N=0x1;function selN(_0x4642e6){var _0x268d7e=_0xc6a41d;document[_0x268d7e(0x220)](_0x268d7e(0x26a))[_0x268d7e(0x1c8)](function(_0x482278){var _0x144377=_0x268d7e;_0x482278[_0x144377(0x203)][_0x144377(0x2d8)]('on');}),_0x4642e6[_0x268d7e(0x203)][_0x268d7e(0x1b5)]('on');var _0x29a384=_0x4642e6[_0x268d7e(0x1b2)]('data-n');_0x29a384===_0x268d7e(0x240)?document['getElementById'](_0x268d7e(0x29a))[_0x268d7e(0x1b8)][_0x268d7e(0x269)]=_0x268d7e(0x1d9):(document[_0x268d7e(0x1fe)](_0x268d7e(0x29a))[_0x268d7e(0x1b8)][_0x268d7e(0x269)]='none',CURRENT_N=parseInt(_0x29a384),document[_0x268d7e(0x1fe)](_0x268d7e(0x2d2))[_0x268d7e(0x291)]=CURRENT_N);}function onCustomN(){var _0x43a79d=_0xc6a41d,_0x3975d8=parseInt(document[_0x43a79d(0x1fe)]('n-input')[_0x43a79d(0x2a4)]);_0x3975d8&&_0x3975d8>=0x1&&_0x3975d8<=0xa&&(CURRENT_N=_0x3975d8,document[_0x43a79d(0x1fe)]('n-display')[_0x43a79d(0x291)]=_0x3975d8);}function buildPrompt(_0x500f05){var _0xa22f92=_0xc6a41d,_0x2b83de=_0xa22f92(0x232),_0x110196=_0xa22f92(0x1de),_0x3bbc1b=currentImageData?',\x20using\x20the\x20uploaded\x20character\x20image\x20as\x20reference\x20for\x20consistent\x20style,\x20face,\x20and\x20clothing\x20design':'';return _0x500f05+_0x3bbc1b+'.\x20'+_0x110196+'\x20'+_0x2b83de;}function checkGenReady(){var _0x3724cb=_0xc6a41d,_0x37d115=document[_0x3724cb(0x1fe)](_0x3724cb(0x24f))[_0x3724cb(0x2a4)][_0x3724cb(0x20d)](),_0x155207=document['getElementById']('apikey')['value']['trim'](),_0x12d449=document[_0x3724cb(0x1fe)](_0x3724cb(0x1b7))[_0x3724cb(0x2a4)][_0x3724cb(0x20d)](),_0x31037c=document[_0x3724cb(0x1fe)](_0x3724cb(0x258))[_0x3724cb(0x2a4)],_0x255dc4=document[_0x3724cb(0x1fe)](_0x3724cb(0x2d4))[_0x3724cb(0x2a4)],_0x29f479=_0x255dc4?PLATFORMS[_0x255dc4]:null,_0x1a57a6=_0x37d115&&_0x155207&&_0x12d449&&_0x31037c;if(_0x29f479&&!_0x29f479['imgGen'])_0x1a57a6=![];document[_0x3724cb(0x1fe)](_0x3724cb(0x193))['disabled']=!_0x1a57a6;}async function genImage(){var _0x11a7c4=_0xc6a41d,_0x46398f=document['getElementById'](_0x11a7c4(0x25c))[_0x11a7c4(0x2a4)]['trim'](),_0x5ee3aa=document['getElementById'](_0x11a7c4(0x1b7))[_0x11a7c4(0x2a4)]['trim'](),_0x21befc=document[_0x11a7c4(0x1fe)]('modelselect')[_0x11a7c4(0x2a4)],_0x4b51cd=document[_0x11a7c4(0x1fe)](_0x11a7c4(0x24f))[_0x11a7c4(0x2a4)]['trim'](),_0x34e807=document[_0x11a7c4(0x1fe)](_0x11a7c4(0x2d4))[_0x11a7c4(0x2a4)],_0x5e52e6=_0x34e807?PLATFORMS[_0x34e807]:null;if(!_0x46398f||!_0x5ee3aa||!_0x21befc||!_0x4b51cd){showError('请完善\x20API\x20配置和提示词');return;}if(_0x5e52e6&&!_0x5e52e6[_0x11a7c4(0x2b1)]){showError(_0x11a7c4(0x20c));return;}showLoading(!![]),hideError(),document[_0x11a7c4(0x1fe)](_0x11a7c4(0x204))[_0x11a7c4(0x1b8)][_0x11a7c4(0x269)]='none',document[_0x11a7c4(0x1fe)]('result-content')[_0x11a7c4(0x1b8)][_0x11a7c4(0x269)]=_0x11a7c4(0x1cc);var _0x3e25e8=Date[_0x11a7c4(0x1e2)](),_0x18a313=buildPrompt(_0x4b51cd);try{var _0x9c35db='';if(_0x34e807===_0x11a7c4(0x2c1)){var _0x37584a='https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis',_0x43c4d2={'model':_0x21befc,'input':{'prompt':_0x18a313},'parameters':{'size':CURRENT_SIZE[_0x11a7c4(0x2d7)]('x','*'),'n':CURRENT_N}},_0x29f72f=await fetch(_0x37584a,{'method':_0x11a7c4(0x272),'headers':{'Content-Type':_0x11a7c4(0x27a),'Authorization':_0x11a7c4(0x2b6)+_0x46398f},'body':JSON[_0x11a7c4(0x1f7)](_0x43c4d2)});if(!_0x29f72f['ok']){var _0x46570d=await _0x29f72f[_0x11a7c4(0x2c3)]()[_0x11a7c4(0x22c)](function(){return'';});throw new Error('HTTP\x20'+_0x29f72f[_0x11a7c4(0x2b2)]+':\x20'+_0x46570d[_0x11a7c4(0x1c6)](0x0,0x64));}var _0x219d30=await _0x29f72f['json']();_0x219d30['output']&&_0x219d30[_0x11a7c4(0x23e)][_0x11a7c4(0x1e9)]&&_0x219d30['output'][_0x11a7c4(0x1e9)][0x0]&&(_0x9c35db=_0x219d30[_0x11a7c4(0x23e)][_0x11a7c4(0x1e9)][0x0]['url']);}else{if(_0x34e807==='腾讯混元'){var _0x365353=_0x5ee3aa['replace'](/\/+$/,'')+_0x11a7c4(0x19a),_0x59d50c={'model':_0x21befc,'prompt':_0x18a313,'n':CURRENT_N,'size':CURRENT_SIZE,'response_format':_0x11a7c4(0x1a8)},_0x29f72f=await fetch(_0x365353,{'method':_0x11a7c4(0x272),'headers':{'Content-Type':_0x11a7c4(0x27a),'Authorization':_0x11a7c4(0x2b6)+_0x46398f},'body':JSON[_0x11a7c4(0x1f7)](_0x59d50c)});if(!_0x29f72f['ok']){var _0x46570d=await _0x29f72f[_0x11a7c4(0x2c3)]()[_0x11a7c4(0x22c)](function(){return'';});throw new Error('HTTP\x20'+_0x29f72f[_0x11a7c4(0x2b2)]+':\x20'+_0x46570d[_0x11a7c4(0x1c6)](0x0,0x64));}var _0x219d30=await _0x29f72f[_0x11a7c4(0x1d4)]();if(_0x219d30['data']&&_0x219d30[_0x11a7c4(0x28d)][0x0]){if(_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x1a8)])_0x9c35db=_0x11a7c4(0x235)+_0x219d30['data'][0x0][_0x11a7c4(0x1a8)];else{if(_0x219d30[_0x11a7c4(0x28d)][0x0]['url'])_0x9c35db=_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x248)];}}}else{if(_0x34e807==='智谱'){var _0x4700f1=_0x5ee3aa[_0x11a7c4(0x2d7)](/\/+$/,'')+_0x11a7c4(0x19a),_0x31e985={'model':_0x21befc,'prompt':_0x18a313,'n':CURRENT_N,'size':CURRENT_SIZE,'response_format':_0x11a7c4(0x1a8)},_0x29f72f=await fetch(_0x4700f1,{'method':'POST','headers':{'Content-Type':_0x11a7c4(0x27a),'Authorization':'Bearer\x20'+_0x46398f},'body':JSON[_0x11a7c4(0x1f7)](_0x31e985)});if(!_0x29f72f['ok']){var _0x46570d=await _0x29f72f[_0x11a7c4(0x2c3)]()['catch'](function(){return'';});throw new Error(_0x11a7c4(0x1a0)+_0x29f72f[_0x11a7c4(0x2b2)]+':\x20'+_0x46570d[_0x11a7c4(0x1c6)](0x0,0x64));}var _0x219d30=await _0x29f72f['json']();if(_0x219d30[_0x11a7c4(0x28d)]&&_0x219d30[_0x11a7c4(0x28d)][0x0]){if(_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x1a8)])_0x9c35db=_0x11a7c4(0x235)+_0x219d30['data'][0x0][_0x11a7c4(0x1a8)];else{if(_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x248)])_0x9c35db=_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x248)];}}}else{if(_0x34e807==='豆包'){var _0x1ec65d=_0x5ee3aa[_0x11a7c4(0x2d7)](/\/+$/,'')+_0x11a7c4(0x19a),_0xc511a={'model':_0x21befc,'prompt':_0x18a313,'n':CURRENT_N,'size':CURRENT_SIZE,'response_format':_0x11a7c4(0x1a8)},_0x29f72f=await fetch(_0x1ec65d,{'method':'POST','headers':{'Content-Type':_0x11a7c4(0x27a),'Authorization':'Bearer\x20'+_0x46398f},'body':JSON[_0x11a7c4(0x1f7)](_0xc511a)});if(!_0x29f72f['ok']){var _0x46570d=await _0x29f72f[_0x11a7c4(0x2c3)]()[_0x11a7c4(0x22c)](function(){return'';});throw new Error(_0x11a7c4(0x1a0)+_0x29f72f[_0x11a7c4(0x2b2)]+':\x20'+_0x46570d[_0x11a7c4(0x1c6)](0x0,0x64));}var _0x219d30=await _0x29f72f[_0x11a7c4(0x1d4)]();if(_0x219d30['data']&&_0x219d30[_0x11a7c4(0x28d)][0x0]){if(_0x219d30['data'][0x0][_0x11a7c4(0x1a8)])_0x9c35db='data:image/png;base64,'+_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x1a8)];else{if(_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x248)])_0x9c35db=_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x248)];}}}else{var _0x4220f1=_0x5ee3aa[_0x11a7c4(0x2d7)](/\/+$/,'')+'/images/generations',_0x3455c1={'model':_0x21befc,'prompt':_0x18a313,'n':CURRENT_N,'size':CURRENT_SIZE,'response_format':_0x11a7c4(0x1a8)};_0x34e807===_0x11a7c4(0x22f)&&(_0x3455c1[_0x11a7c4(0x249)]=CURRENT_SIZE);var _0x29f72f=await fetch(_0x4220f1,{'method':_0x11a7c4(0x272),'headers':{'Content-Type':_0x11a7c4(0x27a),'Authorization':_0x11a7c4(0x2b6)+_0x46398f},'body':JSON[_0x11a7c4(0x1f7)](_0x3455c1)});if(!_0x29f72f['ok']){var _0x46570d=await _0x29f72f[_0x11a7c4(0x2c3)]()[_0x11a7c4(0x22c)](function(){return'';});throw new Error(_0x11a7c4(0x1a0)+_0x29f72f['status']+':\x20'+_0x46570d[_0x11a7c4(0x1c6)](0x0,0x64));}var _0x219d30=await _0x29f72f[_0x11a7c4(0x1d4)]();if(_0x219d30[_0x11a7c4(0x28d)]&&_0x219d30['data'][0x0]){if(_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x1a8)])_0x9c35db='data:image/png;base64,'+_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x1a8)];else{if(_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x248)])_0x9c35db=_0x219d30[_0x11a7c4(0x28d)][0x0][_0x11a7c4(0x248)];}}}}}}if(!_0x9c35db)throw new Error('API\x20返回格式异常，未能获取图片');var _0x2db93a=((Date['now']()-_0x3e25e8)/0x3e8)[_0x11a7c4(0x211)](0x1);showLoading(![]),document[_0x11a7c4(0x1fe)]('result-content')['style'][_0x11a7c4(0x269)]=_0x11a7c4(0x2c9),document[_0x11a7c4(0x1fe)](_0x11a7c4(0x197))[_0x11a7c4(0x297)]=_0x9c35db,document[_0x11a7c4(0x1fe)](_0x11a7c4(0x1dc))[_0x11a7c4(0x291)]=_0x2db93a+'\x20秒',generatedImageUrl=_0x9c35db;}catch(_0x3ca8d0){showLoading(![]),document[_0x11a7c4(0x1fe)]('result-empty')['style'][_0x11a7c4(0x269)]=_0x11a7c4(0x2c9),document[_0x11a7c4(0x1fe)](_0x11a7c4(0x204))['querySelector']('p')[_0x11a7c4(0x291)]=_0x11a7c4(0x1ba)+_0x3ca8d0[_0x11a7c4(0x2c0)],showError(_0x11a7c4(0x1ba)+_0x3ca8d0[_0x11a7c4(0x2c0)]);}}function showLoading(_0x365db5){var _0x389b13=_0xc6a41d;document[_0x389b13(0x1fe)](_0x389b13(0x21e))['style'][_0x389b13(0x269)]=_0x365db5?_0x389b13(0x2c9):_0x389b13(0x1cc),document[_0x389b13(0x1fe)](_0x389b13(0x264))[_0x389b13(0x291)]=_0x365db5?'AI\x20正在生成图片，请稍候（通常\x2010-30\x20秒）...':'';}function downloadResult(_0x138c07){var _0x1ecf37=_0xc6a41d,_0x46e651=document[_0x1ecf37(0x1fe)](_0x1ecf37(0x197));if(!_0x46e651||!_0x46e651[_0x1ecf37(0x297)])return;var _0xca755c=document[_0x1ecf37(0x266)]('a');_0xca755c[_0x1ecf37(0x1e6)]=_0x1ecf37(0x1cb)+_0x138c07;if(_0x46e651[_0x1ecf37(0x297)][_0x1ecf37(0x18d)](_0x1ecf37(0x1fb))===0x0)_0xca755c[_0x1ecf37(0x2ce)]=_0x46e651[_0x1ecf37(0x297)];else{var _0x337c3e=document[_0x1ecf37(0x266)](_0x1ecf37(0x257));_0x337c3e[_0x1ecf37(0x274)]=_0x46e651[_0x1ecf37(0x217)],_0x337c3e[_0x1ecf37(0x278)]=_0x46e651[_0x1ecf37(0x22d)],_0x337c3e[_0x1ecf37(0x1e1)]('2d')[_0x1ecf37(0x228)](_0x46e651,0x0,0x0),_0xca755c['href']=_0x138c07===_0x1ecf37(0x298)?_0x337c3e[_0x1ecf37(0x27d)]('image/jpeg',0.92):_0x337c3e[_0x1ecf37(0x27d)]('image/png');}document['body'][_0x1ecf37(0x2cf)](_0xca755c),_0xca755c['click'](),document['body'][_0x1ecf37(0x2c6)](_0xca755c);}function resetResult(){var _0x2d380d=_0xc6a41d;generatedImageUrl='',document[_0x2d380d(0x1fe)]('result-content')[_0x2d380d(0x1b8)][_0x2d380d(0x269)]=_0x2d380d(0x1cc),document[_0x2d380d(0x1fe)](_0x2d380d(0x204))[_0x2d380d(0x1b8)][_0x2d380d(0x269)]='block',document[_0x2d380d(0x1fe)](_0x2d380d(0x204))[_0x2d380d(0x1fd)]('p')[_0x2d380d(0x291)]=_0x2d380d(0x1f5),document['getElementById'](_0x2d380d(0x1dc))['textContent']='-',document[_0x2d380d(0x1fe)](_0x2d380d(0x193))['disabled']=![];}var API_HELP_HTML='';(function buildApiHelp(){var _0x4d0290=_0xc6a41d,_0x1014eb=[{'name':'阿里百炼（通义万相）','color':_0x4d0290(0x2c8),'steps':[_0x4d0290(0x2da),'②\x20左侧导航「API\x20Key\x20管理」→\x20点击「创建\x20API\x20Key」→\x20设置权限后确认','③\x20弹窗中复制\x20API\x20Key\x20并妥善保存（关闭后无法再次查看）',_0x4d0290(0x2a6),'⑤\x20推荐模型：通义万相-增强版（高清画质，适合多视图输出）'],'ep':_0x4d0290(0x1bc),'note':_0x4d0290(0x246),'models':PLATFORMS[_0x4d0290(0x2c1)]['models']},{'name':'硅基流动（SiliconFlow）','color':_0x4d0290(0x223),'steps':['①\x20打开\x20<a\x20href=\x22https://cloud.siliconflow.com/\x22\x20target=\x22_blank\x22\x20rel=\x22noopener\x22>SiliconCloud\x20平台</a>\x20→\x20注册/登录',_0x4d0290(0x294),_0x4d0290(0x25f),'④\x20本工具自动使用\x20OpenAI\x20兼容的\x20/v1/images/generations\x20接口',_0x4d0290(0x25a)],'ep':_0x4d0290(0x1d5),'note':_0x4d0290(0x2ae),'models':PLATFORMS['硅基流动'][_0x4d0290(0x1c2)]},{'name':_0x4d0290(0x2e8),'color':_0x4d0290(0x2ea),'steps':[_0x4d0290(0x2dc),_0x4d0290(0x2b8),_0x4d0290(0x1bf),_0x4d0290(0x255),_0x4d0290(0x24e)],'ep':'https://ark.cn-beijing.volces.com/api/v3','note':'需先开通对应模型服务才可使用','models':PLATFORMS['豆包']['models']},{'name':'腾讯混元','color':'#c4b5fd','steps':['①\x20打开\x20<a\x20href=\x22https://console.cloud.tencent.com/cam/capi\x22\x20target=\x22_blank\x22\x20rel=\x22noopener\x22>腾讯云控制台\x20→\x20访问管理\x20→\x20API\x20密钥管理</a>','②\x20登录后点击「新建密钥」→\x20生成\x20SecretId\x20和\x20SecretKey',_0x4d0290(0x1c1),'④\x20混元图像生成模型每月赠\x20100\x20张免费额度','⑤\x20推荐模型：Hunyuan-Image-Plus（增强版画质更优）'],'ep':_0x4d0290(0x2af),'note':'使用\x20SecretId\x20作为\x20API\x20Key，SecretKey\x20暂不需要','models':PLATFORMS[_0x4d0290(0x23a)]['models']},{'name':_0x4d0290(0x2c5),'color':'#93c5fd','steps':[_0x4d0290(0x23b),_0x4d0290(0x207),'③\x20新用户赠\x20500\x20万\x20tokens\x20体验额度',_0x4d0290(0x202),_0x4d0290(0x1d7)],'ep':_0x4d0290(0x1a7),'note':_0x4d0290(0x1af),'models':PLATFORMS['智谱'][_0x4d0290(0x1c2)]},{'name':_0x4d0290(0x244),'color':_0x4d0290(0x19d),'steps':[_0x4d0290(0x251),_0x4d0290(0x2eb),_0x4d0290(0x2cb),_0x4d0290(0x1ed)],'ep':_0x4d0290(0x210),'note':_0x4d0290(0x1ab),'models':[]}],_0x310184='';_0x1014eb['forEach'](function(_0x4d7743){var _0x465b9c=_0x4d0290;_0x310184+=_0x465b9c(0x19c),_0x310184+=_0x465b9c(0x25d),_0x310184+='<span\x20style=\x22color:'+_0x4d7743[_0x465b9c(0x190)]+_0x465b9c(0x213)+_0x4d7743[_0x465b9c(0x288)]+'</span>',_0x310184+=_0x465b9c(0x1d1),_0x310184+='</div><div\x20class=\x22api-acc-bd\x22>',_0x4d7743[_0x465b9c(0x1f9)][_0x465b9c(0x1c8)](function(_0x1e057a){var _0x3642f9=_0x465b9c;_0x310184+=_0x3642f9(0x1bd)+_0x1e057a+_0x3642f9(0x1c4);}),_0x310184+=_0x465b9c(0x267)+_0x4d7743['ep']+_0x465b9c(0x2c4);if(_0x4d7743[_0x465b9c(0x20e)])_0x310184+=_0x465b9c(0x29e)+_0x4d7743[_0x465b9c(0x20e)]+_0x465b9c(0x1c4);_0x4d7743[_0x465b9c(0x1c2)]['length']>0x0&&(_0x310184+=_0x465b9c(0x21a),_0x310184+=_0x465b9c(0x2a1),_0x4d7743[_0x465b9c(0x1c2)]['forEach'](function(_0x9ecd1a){var _0xd1759b=_0x465b9c,_0x508e19='';if(_0x9ecd1a['rating']===_0xd1759b(0x1cd))_0x508e19=_0xd1759b(0x295);else{if(_0x9ecd1a[_0xd1759b(0x1e3)]==='⭐⭐')_0x508e19=_0xd1759b(0x238);else{if(_0x9ecd1a[_0xd1759b(0x1e3)]==='⭐')_0x508e19=_0xd1759b(0x24d);else _0x508e19=_0xd1759b(0x27b);}}_0x310184+=_0xd1759b(0x247),_0x310184+=_0xd1759b(0x1b0)+_0x508e19+_0x9ecd1a[_0xd1759b(0x18f)]+_0xd1759b(0x1c4),_0x310184+='<div\x20style=\x22display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap\x22>',_0x310184+=_0xd1759b(0x23c)+_0x9ecd1a[_0xd1759b(0x1f2)]+_0xd1759b(0x1a1),_0x310184+=_0xd1759b(0x2de)+_0x9ecd1a[_0xd1759b(0x191)]+_0xd1759b(0x1a1),_0x310184+=_0xd1759b(0x1c4);if(_0x9ecd1a[_0xd1759b(0x20e)])_0x310184+=_0xd1759b(0x1aa)+_0x9ecd1a[_0xd1759b(0x20e)]+_0xd1759b(0x1c4);_0x310184+=_0xd1759b(0x1c4);}),_0x310184+='</div>'),_0x310184+=_0x465b9c(0x2a3);}),_0x310184+=_0x4d0290(0x2bd),_0x310184+=_0x4d0290(0x28c),_0x310184+=_0x4d0290(0x1a5),_0x310184+='<svg\x20width=\x2216\x22\x20height=\x2216\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22#fbbf24\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22><path\x20d=\x22M10.29\x203.86L1.82\x2018a2\x202\x200\x200\x200\x201.71\x203h16.94a2\x202\x200\x200\x200\x201.71-3L13.71\x203.86a2\x202\x200\x200\x200-3.42\x200z\x22></path><line\x20x1=\x2212\x22\x20y1=\x229\x22\x20x2=\x2212\x22\x20y2=\x2213\x22></line><line\x20x1=\x2212\x22\x20y1=\x2217\x22\x20x2=\x2212.01\x22\x20y2=\x2217\x22></line></svg>',_0x310184+=_0x4d0290(0x1ce),_0x310184+='<div\x20style=\x22padding-left:22px\x22>1.\x20你填入的\x20API\x20Key\x20和端点仅保存在浏览器\x20localStorage\x20中，不会写入硬盘或\x20Cookie；</div>',_0x310184+=_0x4d0290(0x1ae),_0x310184+='<div\x20style=\x22padding-left:22px\x22>3.\x20普通刷新（F5\x20/\x20Ctrl+R）不会清空配置，可继续使用；</div>',_0x310184+=_0x4d0290(0x253),_0x310184+=_0x4d0290(0x284),_0x310184+='</div>',_0x310184+=_0x4d0290(0x1f1),_0x310184+=_0x4d0290(0x1ff),_0x310184+=_0x4d0290(0x2d9),_0x310184+=_0x4d0290(0x2dd),_0x310184+=_0x4d0290(0x1b9),_0x310184+=_0x4d0290(0x231),_0x310184+='<div\x20style=\x22padding-left:22px\x22>4.\x20多视图布局生成对模型要求较高，推荐优先使用\x20CogView-4、FLUX.1-pro、通义万相-增强版。</div>',_0x310184+=_0x4d0290(0x2a3),API_HELP_HTML=_0x310184;}());function showApiHelp(){var _0x52b188=_0xc6a41d;document[_0x52b188(0x1fe)](_0x52b188(0x2e5))[_0x52b188(0x1b8)][_0x52b188(0x269)]=_0x52b188(0x1b4),document[_0x52b188(0x1fe)](_0x52b188(0x1d6))[_0x52b188(0x2b5)]=API_HELP_HTML;}function closeApiHelp(_0x2ff149){var _0x5578dc=_0xc6a41d;if(_0x2ff149&&_0x2ff149['target']!==_0x2ff149[_0x5578dc(0x260)])return;document[_0x5578dc(0x1fe)]('api-help-overlay')['style'][_0x5578dc(0x269)]=_0x5578dc(0x1cc);}function showSponsor(){var _0x320780=_0xc6a41d;document[_0x320780(0x1fe)](_0x320780(0x1ad))[_0x320780(0x1b8)][_0x320780(0x269)]=_0x320780(0x1b4);}function closeSponsor(_0x3f304c){var _0x43a6b3=_0xc6a41d;if(_0x3f304c&&_0x3f304c[_0x43a6b3(0x1c9)]!==_0x3f304c[_0x43a6b3(0x260)])return;document['getElementById']('sponsor-overlay')[_0x43a6b3(0x1b8)][_0x43a6b3(0x269)]=_0x43a6b3(0x1cc);}function toggleApiAcc(_0x2c21eb){var _0x1b9e85=_0xc6a41d,_0x1fe093=document[_0x1b9e85(0x220)](_0x1b9e85(0x299)),_0x5c0939=document[_0x1b9e85(0x220)](_0x1b9e85(0x1f3)),_0x32a2eb=_0x2c21eb[_0x1b9e85(0x203)][_0x1b9e85(0x23d)]('on');_0x1fe093[_0x1b9e85(0x1c8)](function(_0xc5c5d1){var _0x34ae7e=_0x1b9e85;_0xc5c5d1['classList'][_0x34ae7e(0x2d8)]('on');}),_0x5c0939[_0x1b9e85(0x1c8)](function(_0x2e8d67){_0x2e8d67['classList']['remove']('on');}),!_0x32a2eb&&(_0x2c21eb[_0x1b9e85(0x203)][_0x1b9e85(0x1b5)]('on'),_0x2c21eb[_0x1b9e85(0x225)][_0x1b9e85(0x203)][_0x1b9e85(0x1b5)]('on'));}function toggleFoot(){var _0x377b16=_0xc6a41d,_0x3423eb=document['getElementById'](_0x377b16(0x25b)),_0x35e557=document[_0x377b16(0x1fe)](_0x377b16(0x195)),_0x383228=document['querySelector']('.d4');_0x3423eb[_0x377b16(0x1b8)]['display']===_0x377b16(0x1cc)||_0x3423eb[_0x377b16(0x1b8)]['display']===''?(_0x3423eb[_0x377b16(0x1b8)][_0x377b16(0x269)]=_0x377b16(0x2c9),_0x35e557[_0x377b16(0x203)][_0x377b16(0x1b5)]('on'),_0x383228[_0x377b16(0x203)]['remove'](_0x377b16(0x229))):(_0x3423eb[_0x377b16(0x1b8)]['display']=_0x377b16(0x1cc),_0x35e557[_0x377b16(0x203)][_0x377b16(0x2d8)]('on'),_0x383228[_0x377b16(0x203)][_0x377b16(0x1b5)](_0x377b16(0x229)));}function stitchLoadImg(_0x13e026,_0x4921b2){var _0x41d68a=_0xc6a41d,_0x3aa049=_0x4921b2[_0x41d68a(0x2b9)][0x0];if(!_0x3aa049)return;var _0x5c9b6=new FileReader();_0x5c9b6[_0x41d68a(0x28f)]=function(_0x44f11f){var _0x1972da=_0x41d68a;_stitchImages[_0x13e026]=_0x44f11f[_0x1972da(0x1c9)][_0x1972da(0x1dd)],document[_0x1972da(0x1fe)](_0x1972da(0x29b)+_0x13e026)[_0x1972da(0x1b8)]['display']=_0x1972da(0x1cc),document[_0x1972da(0x1fe)]('stitch-prev'+_0x13e026)[_0x1972da(0x1b8)]['display']='flex',document[_0x1972da(0x1fe)](_0x1972da(0x24b)+_0x13e026)[_0x1972da(0x297)]=_0x44f11f['target']['result'],document['getElementById'](_0x1972da(0x292)+_0x13e026)[_0x1972da(0x203)][_0x1972da(0x1b5)]('ok'),checkStitchReady();},_0x5c9b6[_0x41d68a(0x2b4)](_0x3aa049);}function checkStitchReady(){var _0x5602a4=_0xc6a41d;document['getElementById']('stitch-btn')[_0x5602a4(0x239)]=!(_stitchImages[0x1]&&_stitchImages[0x2]);}function stitchSetDir(_0x37546c){var _0x52b418=_0xc6a41d;_stitchDir=_0x37546c,document['getElementById'](_0x52b418(0x1db))[_0x52b418(0x203)]['toggle']('on',_0x37546c==='h'),document['getElementById'](_0x52b418(0x1fc))['classList'][_0x52b418(0x21b)]('on',_0x37546c==='v');}function doStitch(){var _0x9fdb4e=_0xc6a41d;if(!_stitchImages[0x1]||!_stitchImages[0x2])return;var _0x214653=document['createElement'](_0x9fdb4e(0x257)),_0x285b9e=_0x214653['getContext']('2d'),_0x5734d8=new Image(),_0x101bf7=new Image(),_0x23356d=0x0;_0x5734d8[_0x9fdb4e(0x28f)]=function(){_0x23356d++;if(_0x23356d===0x2)_0x13711f();},_0x101bf7[_0x9fdb4e(0x28f)]=function(){_0x23356d++;if(_0x23356d===0x2)_0x13711f();},_0x5734d8[_0x9fdb4e(0x1eb)]=function(){var _0xc924bb=_0x9fdb4e;showStitchErr(_0xc924bb(0x19f));},_0x101bf7['onerror']=function(){var _0x357308=_0x9fdb4e;showStitchErr(_0x357308(0x2ec));},_0x5734d8[_0x9fdb4e(0x297)]=_stitchImages[0x1],_0x101bf7['src']=_stitchImages[0x2];function _0x13711f(){var _0x47e22b=_0x9fdb4e;if(_stitchDir==='h'){var _0x497976=Math['max'](_0x5734d8['height'],_0x101bf7[_0x47e22b(0x278)]),_0x251d3d=_0x5734d8[_0x47e22b(0x274)]*(_0x497976/_0x5734d8[_0x47e22b(0x278)]),_0x365c00=_0x101bf7['width']*(_0x497976/_0x101bf7['height']);_0x214653['width']=_0x251d3d+_0x365c00,_0x214653[_0x47e22b(0x278)]=_0x497976,_0x285b9e[_0x47e22b(0x18e)]=_0x47e22b(0x1ea),_0x285b9e[_0x47e22b(0x241)](0x0,0x0,_0x214653[_0x47e22b(0x274)],_0x214653[_0x47e22b(0x278)]),_0x285b9e[_0x47e22b(0x228)](_0x5734d8,0x0,0x0,_0x251d3d,_0x497976),_0x285b9e['drawImage'](_0x101bf7,_0x251d3d,0x0,_0x365c00,_0x497976);}else{var _0x283f00=Math[_0x47e22b(0x286)](_0x5734d8[_0x47e22b(0x274)],_0x101bf7[_0x47e22b(0x274)]),_0x33e091=_0x5734d8[_0x47e22b(0x278)]*(_0x283f00/_0x5734d8[_0x47e22b(0x274)]),_0x3ceeeb=_0x101bf7[_0x47e22b(0x278)]*(_0x283f00/_0x101bf7[_0x47e22b(0x274)]);_0x214653[_0x47e22b(0x274)]=_0x283f00,_0x214653[_0x47e22b(0x278)]=_0x33e091+_0x3ceeeb,_0x285b9e[_0x47e22b(0x18e)]='#fff',_0x285b9e[_0x47e22b(0x241)](0x0,0x0,_0x214653[_0x47e22b(0x274)],_0x214653['height']),_0x285b9e[_0x47e22b(0x228)](_0x5734d8,0x0,0x0,_0x283f00,_0x33e091),_0x285b9e['drawImage'](_0x101bf7,0x0,_0x33e091,_0x283f00,_0x3ceeeb);}document[_0x47e22b(0x1fe)](_0x47e22b(0x242))[_0x47e22b(0x297)]=_0x214653[_0x47e22b(0x27d)](_0x47e22b(0x1a9)),document[_0x47e22b(0x1fe)]('stitch-result')[_0x47e22b(0x1b8)][_0x47e22b(0x269)]=_0x47e22b(0x2c9),document[_0x47e22b(0x1fe)]('stitch-err')[_0x47e22b(0x1b8)][_0x47e22b(0x269)]=_0x47e22b(0x1cc),document[_0x47e22b(0x1fe)](_0x47e22b(0x2a9))[_0x47e22b(0x2b5)]='<svg\x20width=\x2216\x22\x20height=\x2216\x22\x20viewBox=\x220\x200\x2024\x2024\x22\x20fill=\x22none\x22\x20stroke=\x22currentColor\x22\x20stroke-width=\x222\x22\x20stroke-linecap=\x22round\x22\x20stroke-linejoin=\x22round\x22><polygon\x20points=\x2213\x202\x203\x2014\x2012\x2014\x2011\x2022\x2021\x2010\x2012\x2010\x2013\x202\x22/></svg>\x20重新拼接';}}function showStitchErr(_0xa3a3a9){var _0x599a0e=_0xc6a41d;document['getElementById'](_0x599a0e(0x1f4))[_0x599a0e(0x291)]=_0xa3a3a9,document['getElementById'](_0x599a0e(0x1f4))[_0x599a0e(0x1b8)][_0x599a0e(0x269)]='block';}function stitchDownload(_0x300d54){var _0x46f84c=_0xc6a41d,_0xdb63bc=document[_0x46f84c(0x1fe)](_0x46f84c(0x242));if(!_0xdb63bc['src'])return;var _0x3c1611=document[_0x46f84c(0x266)]('a');_0x3c1611[_0x46f84c(0x1e6)]=_0x46f84c(0x293)+_0x300d54;if(_0x300d54===_0x46f84c(0x298)){var _0x51cbb9=document[_0x46f84c(0x266)]('canvas');_0x51cbb9[_0x46f84c(0x274)]=_0xdb63bc[_0x46f84c(0x217)],_0x51cbb9['height']=_0xdb63bc['naturalHeight'],_0x51cbb9['getContext']('2d')['drawImage'](_0xdb63bc,0x0,0x0),_0x3c1611[_0x46f84c(0x2ce)]=_0x51cbb9[_0x46f84c(0x27d)](_0x46f84c(0x1a6),0.92);}else _0x3c1611[_0x46f84c(0x2ce)]=_0xdb63bc['src'];document['body'][_0x46f84c(0x2cf)](_0x3c1611),_0x3c1611['click'](),document[_0x46f84c(0x1ac)][_0x46f84c(0x2c6)](_0x3c1611);}document[_0xc6a41d(0x262)](_0xc6a41d(0x26e),function(){restoreApiConfig();}),document[_0xc6a41d(0x262)]('contextmenu',function(_0x21ad32){var _0x1cbdd7=_0xc6a41d;_0x21ad32[_0x1cbdd7(0x2d6)]();});
+/* ============================================================
+   角色形象多视图图片生成器 - script.js
+   功能：基于参考图+提示词，通过AI图像生成模型生成多视图图片
+   ============================================================ */
+
+// ---- 平台与模型配置 ----
+// 效果标注: ⭐⭐⭐ 顶级 / ⭐⭐ 优秀 / ⭐ 良好 / — 不支持
+var PLATFORMS = {
+  '阿里百炼': {
+    name: '阿里百炼（通义万相）',
+    endpoint: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+    imgGen: true,
+    desc: '通义万相图像生成模型，角色一致性表现优秀',
+    models: [
+      { id: 'wanx2.1-t2i-turbo', label: '通义万相-快照（快速图像生成）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.02 元/张', note: '快速生成，角色一致性佳' },
+      { id: 'wanx2.1-t2i-plus', label: '通义万相-增强版（高清图像生成）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.08 元/张', note: '高清画质，适合多视图输出' },
+    ]
+  },
+  '豆包': {
+    name: '豆包（火山引擎）',
+    endpoint: 'https://ark.cn-beijing.volces.com/api/v3',
+    imgGen: true,
+    desc: '火山引擎豆包模型，Doubao Seed 系列支持图像生成',
+    models: [
+      { id: 'doubao-seed-2.1-pro', label: 'Doubao Seed 2.1 Pro（旗舰图像生成）', rating: '⭐⭐', free: '新用户赠 50 万 tokens', price: '0.02 元/张', note: '豆包旗舰图像生成模型，综合能力强' },
+      { id: 'doubao-seed-2.1-turbo', label: 'Doubao Seed 2.1 Turbo（快速图像生成）', rating: '⭐', free: '新用户赠 50 万 tokens', price: '0.008 元/张', note: '轻量版，生成速度快' },
+    ]
+  },
+  '硅基流动': {
+    name: '硅基流动（SiliconFlow）',
+    endpoint: 'https://api.siliconflow.cn/v1',
+    imgGen: true,
+    desc: '开源图像生成模型平台，FLUX系列画质极高，模型丰富',
+    models: [
+      { id: 'black-forest-labs/FLUX.1-pro', label: 'FLUX.1-pro（专业版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.15 元/张', note: '画质顶级，细节丰富，推荐' },
+      { id: 'black-forest-labs/FLUX.1-dev', label: 'FLUX.1-dev（开发版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.06 元/张', note: '高质量开源模型，多视图表现好' },
+      { id: 'black-forest-labs/FLUX.1-schnell', label: 'FLUX.1-schnell（快速版）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '生成速度快，适合快速测试' },
+      { id: 'black-forest-labs/FLUX.1-pro-ultra', label: 'FLUX.1-pro-ultra（超高清版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.25 元/张', note: '超高清画质，细节最丰富，角色表现力最强' },
+      { id: 'stabilityai/stable-diffusion-3-5-large', label: 'SD 3.5 Large（SD最新大模型）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.05 元/张', note: '构图能力强，细节丰富' },
+      { id: 'stabilityai/stable-diffusion-3-5-medium', label: 'SD 3.5 Medium（轻量版）', rating: '⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '轻量版，速度较快' },
+      { id: 'Kwai-Kolors/Kolors-diffusers', label: 'Kolors 可图（快手开源）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.03 元/张', note: '快手开源，中文理解强' },
+      { id: 'stabilityai/stable-diffusion-xl-base-1.0', label: 'SDXL 1.0（经典大模型）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '经典SDXL模型，生态成熟' },
+      { id: 'stabilityai/sdxl-turbo', label: 'SDXL Turbo（极速版）', rating: '⭐', free: '新用户赠 14 元余额', price: '0.01 元/张', note: '1-2步生成，适合快速迭代' },
+    ]
+  },
+  '腾讯混元': {
+    name: '腾讯混元',
+    endpoint: 'https://api.hunyuan.cloud.tencent.com/v1',
+    imgGen: true,
+    desc: '腾讯混元图像生成模型，中文理解好',
+    models: [
+      { id: 'hunyuan-image', label: 'Hunyuan-Image（标准图像生成）', rating: '⭐⭐', free: '每月赠 100 张', price: '0.03 元/张', note: '混元图像生成，中文场景表现好' },
+      { id: 'hunyuan-image-plus', label: 'Hunyuan-Image-Plus（增强图像生成）', rating: '⭐⭐', free: '每月赠 100 张', price: '0.06 元/张', note: '增强版，画质更优，推荐' },
+    ]
+  },
+  '智谱': {
+    name: '智谱 AI',
+    endpoint: 'https://open.bigmodel.cn/api/paas/v4',
+    imgGen: true,
+    desc: 'CogView系列图像生成模型，布局理解强',
+    models: [
+      { id: 'cogview-4', label: 'CogView-4（最新图像生成）', rating: '⭐⭐⭐', free: '新用户赠 500 万 tokens', price: '0.06 元/张', note: '布局理解最强，多视图效果最佳，推荐' },
+      { id: 'cogview-3', label: 'CogView-3（稳定图像生成）', rating: '⭐⭐', free: '新用户赠 500 万 tokens', price: '0.04 元/张', note: '稳定可靠，适合日常使用' },
+    ]
+  },
+  '自定义': {
+    name: '自定义',
+    endpoint: '',
+    imgGen: true,
+    desc: '自行配置兼容 OpenAI 格式的图像生成 API',
+    models: []
+  }
+};
+
+// ---- Global State ----
+var currentImageData = null;
+var generatedImageUrl = '';
+var _stitchDir = 'h';
+var _stitchImages = {};
+var _stitchState = 'idle'; // idle | ready | done
+
+// ---- API Config Persistence ----
+function saveApiConfig() {
+  try {
+    var cfg = {
+      key: document.getElementById('apikey').value,
+      ep: document.getElementById('apiendpoint').value,
+      platform: document.getElementById('pselect').value,
+      model: document.getElementById('modelselect').value
+    };
+    localStorage.setItem('img_api_config_v2', JSON.stringify(cfg));
+  } catch(e) {}
+}
+
+function restoreApiConfig() {
+  try {
+    var raw = localStorage.getItem('img_api_config_v2');
+    if (!raw) return;
+    var cfg = JSON.parse(raw);
+    if (cfg.platform) {
+      document.getElementById('pselect').value = cfg.platform;
+      onPlatformChange();
+      if (cfg.model) {
+        document.getElementById('modelselect').value = cfg.model;
+        onModelChange();
+      }
+    }
+    if (cfg.ep) {
+      document.getElementById('apiendpoint').value = cfg.ep;
+      document.getElementById('apiendpoint').readOnly = false;
+    }
+    if (cfg.key) {
+      document.getElementById('apikey').value = cfg.key;
+      onKeyChange();
+    }
+  } catch(e) {}
+}
+
+// ---- Platform & Model Selection ----
+function onPlatformChange() {
+  var sel = document.getElementById('pselect');
+  var platform = sel.value;
+  var modelGroup = document.getElementById('model-select-group');
+  var modelSel = document.getElementById('modelselect');
+  var ep = document.getElementById('apiendpoint');
+  var cap = document.getElementById('model-cap');
+
+  if (!platform) {
+    modelSel.disabled = true;
+    ep.value = '';
+    ep.readOnly = true;
+    setConnBtn('wait', '等待配置');
+    updateModeTip(null);
+    return;
+  }
+
+  if (platform === '自定义') {
+    modelSel.disabled = true;
+    ep.value = '';
+    ep.readOnly = false;
+    ep.placeholder = '请手动输入 API 端点（需支持 /v1/images/generations）';
+    cap.textContent = '';
+    checkReady();
+    saveApiConfig();
+    updateModeTip('自定义');
+    return;
+  }
+
+  var pf = PLATFORMS[platform];
+  if (!pf) return;
+
+  modelSel.disabled = false;
+  ep.value = pf.endpoint;
+  ep.readOnly = true;
+
+  if (pf.imgGen) {
+    cap.textContent = '✅ 支持图像生成';
+    cap.style.color = '#34d399';
+  } else {
+    cap.textContent = '⚠️ 仅文本/视觉理解';
+    cap.style.color = '#f87171';
+  }
+
+  var opts = '<option value="" disabled selected>请选择模型</option>';
+  pf.models.forEach(function(m) {
+    var label = m.label;
+    if (m.rating && m.rating !== '—') label = '[' + m.rating + '] ' + label;
+    opts += '<option value="' + m.id + '" data-note="' + (m.note || '') + '">' + label + '</option>';
+  });
+  modelSel.innerHTML = opts;
+  document.getElementById('modelinfo').style.display = 'none';
+
+  if (pf.imgGen) {
+    setConnBtn('wait', '请选择模型');
+  } else {
+    setConnBtn('fail', '不支持图像生成');
+    showError('⚠️ ' + pf.name + ' 当前不支持图像生成，请选择支持图像生成的平台（如硅基流动、智谱、阿里百炼等）');
+  }
+
+  updateModeTip(platform);
+  saveApiConfig();
+}
+
+function onModelChange() {
+  var platform = document.getElementById('pselect').value;
+  var modelId = document.getElementById('modelselect').value;
+  var pf = PLATFORMS[platform];
+  if (!pf || !modelId) return;
+
+  var model = pf.models.find(function(m) { return m.id === modelId; });
+  if (model) {
+    document.getElementById('mfree').textContent = model.free;
+    document.getElementById('mprice').textContent = model.price;
+    document.getElementById('modelinfo').style.display = 'block';
+  }
+
+  checkReady();
+  saveApiConfig();
+}
+
+function updateModeTip(platform) {
+  var ptip = document.getElementById('platform-tip');
+  var ttext = document.getElementById('tip-text');
+  if (!ptip || !ttext) return;
+  var modelinfo = document.getElementById('modelinfo');
+  if (!platform) {
+    ptip.style.display = 'none';
+    return;
+  }
+  ptip.style.display = 'block';
+  var TIPS = {
+    '阿里百炼': { text: '通义万相系列角色一致性表现优秀，推荐 <strong>通义万相-增强版</strong>（高清画质，适合多视图输出）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '豆包': { text: 'Doubao Seed 系列图像生成综合能力强，推荐 <strong>Doubao Seed 2.1 Pro</strong>（旗舰图像生成）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '硅基流动': { text: 'FLUX 系列画质顶级，多视图效果优秀，推荐 <strong>FLUX.1-pro</strong>（专业级画质）或 <strong>FLUX.1-dev</strong>（性价比高）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '腾讯混元': { text: '混元图像生成中文场景表现好，推荐 <strong>Hunyuan-Image-Plus</strong>（增强版画质更优）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '智谱': { text: 'CogView-4 布局理解能力最强，多视图效果最佳，推荐 <strong>CogView-4</strong>（最新图像生成模型）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '自定义': { text: '自行配置兼容 OpenAI 格式的图像生成 API，需确保端点支持 /v1/images/generations 接口', border: 'rgba(251,191,36,.25)', bg: 'rgba(251,191,36,.06)', color: '#fde68a' }
+  };
+  var tip = TIPS[platform];
+  if (tip) {
+    ttext.innerHTML = tip.text;
+    ptip.style.borderColor = tip.border;
+    ptip.style.background = tip.bg;
+    ptip.style.color = tip.color;
+  }
+}
+
+function toggleKey() {
+  var inp = document.getElementById('apikey');
+  var eye = document.getElementById('keyeye');
+  if (inp.type === 'password') {
+    inp.type = 'text';
+    eye.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>';
+  } else {
+    inp.type = 'password';
+    eye.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+  }
+}
+
+function onKeyChange() { checkReady(); saveApiConfig(); }
+
+function setConnBtn(state, text) {
+  var btn = document.getElementById('connbtn');
+  btn.className = 's-btn ' + state;
+  btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> ' + text;
+}
+
+function checkReady() {
+  var key = document.getElementById('apikey').value.trim();
+  var ep = document.getElementById('apiendpoint').value.trim();
+  var platform = document.getElementById('pselect').value;
+  var pf = platform ? PLATFORMS[platform] : null;
+  if (pf && !pf.imgGen) { setConnBtn('fail', '不支持图像生成'); return false; }
+  if (key && ep) { setConnBtn('ready', '测试连接'); return true; }
+  setConnBtn('wait', '等待配置');
+  return false;
+}
+
+function onConnBtnClick() {
+  var btn = document.getElementById('connbtn');
+  if (btn.classList.contains('ready') || btn.classList.contains('fail')) {
+    testConnection();
+  }
+}
+
+async function testConnection() {
+  var key = document.getElementById('apikey').value.trim();
+  var ep = document.getElementById('apiendpoint').value.trim();
+  var platform = document.getElementById('pselect').value;
+  var pf = platform ? PLATFORMS[platform] : null;
+  if (!key || !ep) return;
+  if (pf && !pf.imgGen) { setConnBtn('fail', '不支持图像生成'); return; }
+
+  setConnBtn('testing', '<svg class="spin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line></svg> 测试中...');
+
+  try {
+    var url = ep.replace(/\/+$/, '') + '/chat/completions';
+    var modelSel = document.getElementById('modelselect');
+    var modelName = modelSel.value || 'gpt-3.5-turbo';
+    var resp = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+      body: JSON.stringify({ model: modelName, messages: [{ role: 'user', content: 'hi' }], max_tokens: 1 })
+    });
+    if (resp.ok) { setConnBtn('ok', '连接成功'); }
+    else { var errText = await resp.text().catch(function() { return ''; }); setConnBtn('fail', 'HTTP ' + resp.status + ' ' + (errText.substring(0, 40) || '')); }
+  } catch(e) { setConnBtn('fail', '连接失败: ' + e.message.substring(0, 30)); }
+}
+
+function clearApiConfig() {
+  document.getElementById('apikey').value = '';
+  document.getElementById('apiendpoint').value = '';
+  document.getElementById('apiendpoint').readOnly = true;
+  document.getElementById('pselect').value = '';
+  document.getElementById('modelselect').disabled = true;
+  document.getElementById('modelinfo').style.display = 'none';
+  setConnBtn('wait', '等待配置');
+  updateModeTip(null);
+  localStorage.removeItem('img_api_config_v2');
+  hideError();
+}
+
+// ---- Image Upload ----
+(function initUpload() {
+  var upload = document.getElementById('upload');
+  var finp = document.getElementById('finp');
+  upload.addEventListener('click', function() { finp.click(); });
+  upload.addEventListener('dragover', function(e) { e.preventDefault(); upload.classList.add('drag'); });
+  upload.addEventListener('dragleave', function() { upload.classList.remove('drag'); });
+  upload.addEventListener('drop', function(e) {
+    e.preventDefault(); upload.classList.remove('drag');
+    if (e.dataTransfer.files.length > 0) handleFile(e.dataTransfer.files[0]);
+  });
+  finp.addEventListener('change', function() { if (finp.files.length > 0) handleFile(finp.files[0]); });
+})();
+
+function handleFile(file) {
+  if (!file.type.match(/image\/(jpg|jpeg|png|webp)/)) { showError('仅支持 JPG / PNG / WebP 格式'); return; }
+  var reader = new FileReader();
+  reader.onload = function(e) { currentImageData = e.target.result; showPreview(file, e.target.result); };
+  reader.readAsDataURL(file);
+}
+
+function showPreview(file, dataUrl) {
+  document.getElementById('uempty').style.display = 'none';
+  document.getElementById('uprev').style.display = 'flex';
+  document.getElementById('previmg').src = dataUrl;
+  document.getElementById('fname').textContent = file.name;
+  document.getElementById('fsize').textContent = (file.size / 1024).toFixed(1) + ' KB';
+  document.getElementById('upload').classList.add('ok');
+  hideError();
+}
+
+function reUpload() { document.getElementById('finp').click(); }
+
+function showError(msg) { document.getElementById('errormsg').textContent = msg; document.getElementById('errormsg').style.display = 'block'; }
+function hideError() { document.getElementById('errormsg').style.display = 'none'; }
+
+// ---- Image Size Selection (Aspect Ratio + K Resolution) ----
+var SIZE_BASES = {
+  '1:1':  { w: 1024, h: 1024 },
+  '4:3':  { w: 1024, h: 768 },
+  '3:4':  { w: 768, h: 1024 },
+  '16:9': { w: 1024, h: 576 },
+  '9:16': { w: 576, h: 1024 }
+};
+var CURRENT_AR = '16:9';
+var CURRENT_K = 1;
+var CURRENT_SIZE = '1024x576';
+
+function selAspect(el) {
+  document.querySelectorAll('.sz-btn').forEach(function(b) { b.classList.remove('on'); });
+  el.classList.add('on');
+  CURRENT_AR = el.getAttribute('data-ar');
+  var isCustom = CURRENT_AR === 'custom';
+  document.getElementById('ar-custom').style.display = isCustom ? 'inline' : 'none';
+  if (isCustom) {
+    onCustomAr();
+  } else {
+    updateSize();
+  }
+}
+
+function onCustomAr() {
+  if (CURRENT_AR !== 'custom') return;
+  var w = parseInt(document.getElementById('ar-w').value);
+  var h = parseInt(document.getElementById('ar-h').value);
+  if (w && h && w >= 256 && h >= 256 && w <= 8192 && h <= 8192) {
+    SIZE_BASES['custom'] = { w: w, h: h };
+    updateSize();
+  }
+}
+
+function selK(el) {
+  document.querySelectorAll('.k-btn').forEach(function(b) { b.classList.remove('on'); });
+  el.classList.add('on');
+  var val = el.getAttribute('data-k');
+  if (val === 'custom') {
+    document.getElementById('k-custom').style.display = 'inline';
+    onCustomK();
+  } else {
+    document.getElementById('k-custom').style.display = 'none';
+    CURRENT_K = parseInt(val);
+    if (CURRENT_AR !== 'custom') {
+      updateSize();
+    }
+  }
+}
+
+function onCustomK() {
+  var v = parseInt(document.getElementById('k-input').value);
+  if (v && v >= 1 && v <= 16) {
+    CURRENT_K = v;
+    if (CURRENT_AR !== 'custom') {
+      updateSize();
+    }
+  }
+}
+
+function updateSize() {
+  var base = SIZE_BASES[CURRENT_AR];
+  if (!base) return;
+  var w = base.w * CURRENT_K;
+  var h = base.h * CURRENT_K;
+  CURRENT_SIZE = w + 'x' + h;
+  document.getElementById('sz-display').textContent = CURRENT_AR + ' + ' + CURRENT_K + 'K = ' + CURRENT_SIZE;
+}
+
+// ---- Image Count Selection ----
+var CURRENT_N = 1;
+
+function selN(el) {
+  document.querySelectorAll('.n-btn').forEach(function(b) { b.classList.remove('on'); });
+  el.classList.add('on');
+  var val = el.getAttribute('data-n');
+  if (val === 'custom') {
+    document.getElementById('n-custom').style.display = 'inline';
+  } else {
+    document.getElementById('n-custom').style.display = 'none';
+    CURRENT_N = parseInt(val);
+    document.getElementById('n-display').textContent = CURRENT_N;
+  }
+}
+
+function onCustomN() {
+  var v = parseInt(document.getElementById('n-input').value);
+  if (v && v >= 1 && v <= 10) {
+    CURRENT_N = v;
+    document.getElementById('n-display').textContent = v;
+  }
+}
+
+
+function buildPrompt(userPrompt) {
+  var qualityTags = '8K ultra HD, professional character sheet, uniform soft studio lighting, pure white background, no shadows, no text, no watermark, no logo';
+  var layoutDesc = 'COMPOSITE IMAGE with two sections side by side on a single canvas. LEFT SECTION: A close-up portrait of the character from shoulders and above, showing detailed facial features, hair texture, and skin details. RIGHT SECTION: Three full-body views of the SAME character in A-pose standing position, arranged vertically or side by side: (1) front view facing camera, (2) 45-degree side view, (3) back view. All figures must have identical face, hairstyle, body proportions, and clothing. Clean white background, no shadows.';
+  var refNote = currentImageData ? ', using the uploaded character image as reference for consistent style, face, and clothing design' : '';
+  return userPrompt + refNote + '. ' + layoutDesc + ' ' + qualityTags;
+}
+
+// ---- Check Generate Ready ----
+function checkGenReady() {
+  var prompt = document.getElementById('promptInput').value.trim();
+  var key = document.getElementById('apikey').value.trim();
+  var ep = document.getElementById('apiendpoint').value.trim();
+  var model = document.getElementById('modelselect').value;
+  var platform = document.getElementById('pselect').value;
+  var pf = platform ? PLATFORMS[platform] : null;
+  var canGen = prompt && key && ep && model;
+  if (pf && !pf.imgGen) canGen = false;
+  document.getElementById('genbtn').disabled = !canGen;
+}
+
+// ---- Image Generation ----
+async function genImage() {
+  var key = document.getElementById('apikey').value.trim();
+  var ep = document.getElementById('apiendpoint').value.trim();
+  var model = document.getElementById('modelselect').value;
+  var userPrompt = document.getElementById('promptInput').value.trim();
+  var platform = document.getElementById('pselect').value;
+  var pf = platform ? PLATFORMS[platform] : null;
+
+  if (!key || !ep || !model || !userPrompt) { showError('请完善 API 配置和提示词'); return; }
+  if (pf && !pf.imgGen) { showError('该平台不支持图像生成，请选择其他平台'); return; }
+
+  showLoading(true);
+  hideError();
+  document.getElementById('result-empty').style.display = 'none';
+  document.getElementById('result-content').style.display = 'none';
+
+  var startTime = Date.now();
+  var genPrompt = buildPrompt(userPrompt);
+
+  try {
+    var imageUrl = '';
+
+    // 阿里百炼 - 通义万相专用API
+    if (platform === '阿里百炼') {
+      var wanxUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis';
+      var wanxBody = {
+        model: model,
+        input: { prompt: genPrompt },
+        parameters: { size: CURRENT_SIZE.replace('x', '*'), n: CURRENT_N }
+      };
+      var resp = await fetch(wanxUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+        body: JSON.stringify(wanxBody)
+      });
+      if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+      var result = await resp.json();
+      if (result.output && result.output.results && result.output.results[0]) {
+        imageUrl = result.output.results[0].url;
+      }
+    }
+    // 腾讯混元
+    else if (platform === '腾讯混元') {
+      var hyUrl = ep.replace(/\/+$/, '') + '/images/generations';
+      var hyBody = { model: model, prompt: genPrompt, n: CURRENT_N, size: CURRENT_SIZE, response_format: 'b64_json' };
+      var resp = await fetch(hyUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+        body: JSON.stringify(hyBody)
+      });
+      if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+      var result = await resp.json();
+      if (result.data && result.data[0]) {
+        if (result.data[0].b64_json) imageUrl = 'data:image/png;base64,' + result.data[0].b64_json;
+        else if (result.data[0].url) imageUrl = result.data[0].url;
+      }
+    }
+
+    // 智谱 AI - CogView API
+    else if (platform === '智谱') {
+      var zgUrl = ep.replace(/\/+$/, '') + '/images/generations';
+      var zgBody = { model: model, prompt: genPrompt, n: CURRENT_N, size: CURRENT_SIZE, response_format: 'b64_json' };
+      var resp = await fetch(zgUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+        body: JSON.stringify(zgBody)
+      });
+      if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+      var result = await resp.json();
+      if (result.data && result.data[0]) {
+        if (result.data[0].b64_json) imageUrl = 'data:image/png;base64,' + result.data[0].b64_json;
+        else if (result.data[0].url) imageUrl = result.data[0].url;
+      }
+    }
+    // 豆包
+    else if (platform === '豆包') {
+      var dbUrl = ep.replace(/\/+$/, '') + '/images/generations';
+      var dbBody = { model: model, prompt: genPrompt, n: CURRENT_N, size: CURRENT_SIZE, response_format: 'b64_json' };
+      var resp = await fetch(dbUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+        body: JSON.stringify(dbBody)
+      });
+      if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+      var result = await resp.json();
+      if (result.data && result.data[0]) {
+        if (result.data[0].b64_json) imageUrl = 'data:image/png;base64,' + result.data[0].b64_json;
+        else if (result.data[0].url) imageUrl = result.data[0].url;
+      }
+    }
+    // OpenAI / 硅基流动 / 自定义 - 标准OpenAI兼容
+    else {
+      var url = ep.replace(/\/+$/, '') + '/images/generations';
+      var body = { model: model, prompt: genPrompt, n: CURRENT_N, size: CURRENT_SIZE, response_format: 'b64_json' };
+
+      // 硅基流动 FLUX 系列推荐使用当前选择尺寸
+      if (platform === '硅基流动') {
+        body.size = CURRENT_SIZE;
+      }
+
+      var resp = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+        body: JSON.stringify(body)
+      });
+      if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+      var result = await resp.json();
+      if (result.data && result.data[0]) {
+        if (result.data[0].b64_json) imageUrl = 'data:image/png;base64,' + result.data[0].b64_json;
+        else if (result.data[0].url) imageUrl = result.data[0].url;
+      }
+    }
+
+    if (!imageUrl) throw new Error('API 返回格式异常，未能获取图片');
+
+    var elapsed = ((Date.now() - startTime) / 1000).toFixed(1);
+    showLoading(false);
+    document.getElementById('result-content').style.display = 'block';
+    document.getElementById('result-img').src = imageUrl;
+    document.getElementById('gen-time').textContent = elapsed + ' 秒';
+    generatedImageUrl = imageUrl;
+
+  } catch(e) {
+    showLoading(false);
+    document.getElementById('result-empty').style.display = 'block';
+    document.getElementById('result-empty').querySelector('p').textContent = '生成失败：' + e.message;
+    showError('生成失败：' + e.message);
+  }
+}
+
+function showLoading(show) {
+  document.getElementById('result-loading').style.display = show ? 'block' : 'none';
+  document.getElementById('loading-text').textContent = show ? 'AI 正在生成图片，请稍候（通常 10-30 秒）...' : '';
+}
+
+// ---- Download & Reset ----
+function downloadResult(fmt) {
+  var img = document.getElementById('result-img');
+  if (!img || !img.src) return;
+  var link = document.createElement('a');
+  link.download = 'character_closeup_threeview.' + fmt;
+  if (img.src.indexOf('data:') === 0) { link.href = img.src; }
+  else {
+    var c = document.createElement('canvas');
+    c.width = img.naturalWidth; c.height = img.naturalHeight;
+    c.getContext('2d').drawImage(img, 0, 0);
+    link.href = fmt === 'jpg' ? c.toDataURL('image/jpeg', 0.92) : c.toDataURL('image/png');
+  }
+  document.body.appendChild(link); link.click(); document.body.removeChild(link);
+}
+
+function resetResult() {
+  generatedImageUrl = '';
+  document.getElementById('result-content').style.display = 'none';
+  document.getElementById('result-empty').style.display = 'block';
+  document.getElementById('result-empty').querySelector('p').textContent = '配置好模型并点击"生成图片"后，结果将显示在这里';
+  document.getElementById('gen-time').textContent = '-';
+  document.getElementById('genbtn').disabled = false;
+}
+
+// ---- API Help Modal ----
+var API_HELP_HTML = '';
+(function buildApiHelp() {
+  var helpData = [
+    {
+      name: '阿里百炼（通义万相）',
+      color: '#c4b5fd',
+      steps: [
+        '① 打开 <a href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener">阿里云百炼控制台</a> → 右上角选择「华北2（北京）」地域',
+        '② 左侧导航「API Key 管理」→ 点击「创建 API Key」→ 设置权限后确认',
+        '③ 弹窗中复制 API Key 并妥善保存（关闭后无法再次查看）',
+        '④ 通义万相是阿里云图像生成模型，支持文生图',
+        '⑤ 推荐模型：通义万相-增强版（高清画质，适合多视图输出）',
+      ],
+      ep: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+      note: '通义万相图像生成走独立API端点，本工具已自动适配',
+      models: PLATFORMS['阿里百炼'].models
+    },
+    {
+      name: '硅基流动（SiliconFlow）',
+      color: '#86efac',
+      steps: [
+        '① 打开 <a href="https://cloud.siliconflow.com/" target="_blank" rel="noopener">SiliconCloud 平台</a> → 注册/登录',
+        '② 进入「API 密钥」页面 → 点击「新建 API 密钥」→ 复制密钥',
+        '③ 新用户注册即赠 14 元余额，可用于所有模型',
+        '④ 本工具自动使用 OpenAI 兼容的 /v1/images/generations 接口',
+        '⑤ 推荐模型：FLUX.1-pro（画质顶级）、FLUX.1-dev（性价比高）',
+      ],
+      ep: 'https://api.siliconflow.cn/v1',
+      note: '支持 OpenAI 兼容的图像生成 API，即开即用',
+      models: PLATFORMS['硅基流动'].models
+    },
+    {
+      name: '豆包（火山引擎）',
+      color: '#fde68a',
+      steps: [
+        '① 打开 <a href="https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey" target="_blank" rel="noopener">火山引擎方舟平台 → API Key 管理</a>',
+        '② 点击「创建 API Key」→ 复制并妥善保存密钥',
+        '③ 进入「模型广场」找到图像生成模型并开通',
+        '④ 新用户赠 50 万 tokens 体验额度',
+        '⑤ 推荐模型：Doubao Seed 2.1 Pro（旗舰图像生成）',
+      ],
+      ep: 'https://ark.cn-beijing.volces.com/api/v3',
+      note: '需先开通对应模型服务才可使用',
+      models: PLATFORMS['豆包'].models
+    },
+    {
+      name: '腾讯混元',
+      color: '#c4b5fd',
+      steps: [
+        '① 打开 <a href="https://console.cloud.tencent.com/cam/capi" target="_blank" rel="noopener">腾讯云控制台 → 访问管理 → API 密钥管理</a>',
+        '② 登录后点击「新建密钥」→ 生成 SecretId 和 SecretKey',
+        '③ 复制 SecretId 并作为 API Key 填入（混元 API 使用 SecretId 认证）',
+        '④ 混元图像生成模型每月赠 100 张免费额度',
+        '⑤ 推荐模型：Hunyuan-Image-Plus（增强版画质更优）',
+      ],
+      ep: 'https://api.hunyuan.cloud.tencent.com/v1',
+      note: '使用 SecretId 作为 API Key，SecretKey 暂不需要',
+      models: PLATFORMS['腾讯混元'].models
+    },
+    {
+      name: '智谱 AI',
+      color: '#93c5fd',
+      steps: [
+        '① 打开 <a href="https://open.bigmodel.cn/usercenter/apikeys" target="_blank" rel="noopener">智谱 AI 开放平台 → API Keys</a>',
+        '② 登录后点击「添加 API Key」→ 复制密钥',
+        '③ 新用户赠 500 万 tokens 体验额度',
+        '④ CogView-4 为最新图像生成模型，布局理解能力突出',
+        '⑤ 非常适合多视图布局生成，推荐尝试',
+      ],
+      ep: 'https://open.bigmodel.cn/api/paas/v4',
+      note: 'CogView-4 使用标准 images/generations 接口',
+      models: PLATFORMS['智谱'].models
+    },
+
+
+
+
+
+
+    {
+      name: '自定义',
+      color: '#6b7280',
+      steps: [
+        '① 自行配置 API Key 和 API 端点地址',
+        '② 端点需支持 OpenAI 兼容的 /v1/images/generations 接口',
+        '③ 模型名称需与平台支持的模型 ID 一致',
+        '④ 支持自定义端点的平台：兼容 OpenAI 图像生成 API 格式的任意服务',
+      ],
+      ep: '自行填写',
+      note: '需确保端点兼容 OpenAI 图像生成 API 格式',
+      models: []
+    }
+  ];
+
+  var html = '';
+  helpData.forEach(function(pf) {
+    html += '<div class="api-acc">';
+    html += '<div class="api-acc-h" onclick="toggleApiAcc(this)">';
+    html += '<span style="color:' + pf.color + ';font-weight:600;font-size:14px">' + pf.name + '</span>';
+    html += '<svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+    html += '</div><div class="api-acc-bd">';
+    pf.steps.forEach(function(s) { html += '<div>' + s + '</div>'; });
+    html += '<div class="ep-box"><span class="lbl">API 端点</span>：<span class="val">' + pf.ep + '</span></div>';
+    if (pf.note) html += '<div style="margin-top:6px;font-size:11px;color:#fbbf24">' + pf.note + '</div>';
+    if (pf.models.length > 0) {
+      html += '<div style="margin-top:8px;font-size:11px;line-height:1.8">';
+      html += '<div style="color:#fbbf24;font-weight:600;margin-bottom:4px">支持模型</div>';
+      pf.models.forEach(function(m) {
+        var ratingBadge = '';
+        if (m.rating === '⭐⭐⭐') ratingBadge = '<span style="color:#fbbf24;font-weight:600">⭐⭐⭐</span> ';
+        else if (m.rating === '⭐⭐') ratingBadge = '<span style="color:#a7f3d0;font-weight:500">⭐⭐</span> ';
+        else if (m.rating === '⭐') ratingBadge = '<span style="color:#9ca3af">⭐</span> ';
+        else ratingBadge = '<span style="color:#6b7280">—</span> ';
+        html += '<div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">';
+        html += '<div style="color:#d1d5db;font-weight:500">' + ratingBadge + m.label + '</div>';
+        html += '<div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">';
+        html += '<span style="color:#34d399;font-size:10px">' + m.free + '</span>';
+        html += '<span style="color:#fbbf24;font-size:10px">' + m.price + '</span>';
+        html += '</div>';
+        if (m.note) html += '<div style="color:#9ca3af;font-size:10px;margin-top:2px">' + m.note + '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+    }
+    html += '</div></div>';
+  });
+
+  // 安全说明
+  html += '<div style="margin-top:16px;padding:14px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);border-radius:8px;font-size:12px;line-height:1.8;color:#d1d5db">';
+  html += '<div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(251,191,36,.15)">';
+  html += '<div style="color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px">';
+  html += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>';
+  html += '<span>API Key 安全说明</span></div>';
+  html += '<div style="padding-left:22px">1. 你填入的 API Key 和端点仅保存在浏览器 localStorage 中，不会写入硬盘或 Cookie；</div>';
+  html += '<div style="padding-left:22px">2. 配置信息仅发送至你指定的 API 端点用于身份验证，不会上传至任何第三方服务器；</div>';
+  html += '<div style="padding-left:22px">3. 普通刷新（F5 / Ctrl+R）不会清空配置，可继续使用；</div>';
+  html += '<div style="padding-left:22px">4. 关闭标签页后重新打开，配置依然保留，无需重复填写；</div>';
+  html += '<div style="padding-left:22px">5. 点击页面上方「清空配置」按钮即可手动清除。</div>';
+  html += '</div>';
+  html += '<div><div style="color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px">';
+  html += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
+  html += '<span>价格与模型说明</span></div>';
+  html += '<div style="padding-left:22px">1. 免费额度为各平台新用户活动，具体额度和有效期以平台官网为准；</div>';
+  html += '<div style="padding-left:22px">2. 价格信息仅供参考，各平台可能随时调整，请以平台官网实时价格为准；</div>';
+  html += '<div style="padding-left:22px">3. 效果标注 ⭐⭐⭐ 为顶级推荐，⭐⭐ 为优秀，⭐ 为良好，— 为不支持图像生成；</div>';
+  html += '<div style="padding-left:22px">4. 多视图布局生成对模型要求较高，推荐优先使用 CogView-4、FLUX.1-pro、通义万相-增强版。</div>';
+  html += '</div></div>';
+
+  API_HELP_HTML = html;
+})();
+
+function showApiHelp() {
+  document.getElementById('api-help-overlay').style.display = 'flex';
+  document.getElementById('api-help-content').innerHTML = API_HELP_HTML;
+}
+
+function closeApiHelp(e) {
+  if (e && e.target !== e.currentTarget) return;
+  document.getElementById('api-help-overlay').style.display = 'none';
+}
+
+function showSponsor() { document.getElementById('sponsor-overlay').style.display = 'flex'; }
+function closeSponsor(e) { if (e && e.target !== e.currentTarget) return; document.getElementById('sponsor-overlay').style.display = 'none'; }
+
+function toggleApiAcc(el) {
+  var allHdrs = document.querySelectorAll('.api-acc-h');
+  var allBds = document.querySelectorAll('.api-acc-bd');
+  var isOpen = el.classList.contains('on');
+  allHdrs.forEach(function(h) { h.classList.remove('on'); });
+  allBds.forEach(function(b) { b.classList.remove('on'); });
+  if (!isOpen) {
+    el.classList.add('on');
+    el.nextElementSibling.classList.add('on');
+  }
+}
+
+// ---- Footer Toggle ----
+function toggleFoot() {
+  var cont = document.getElementById('fcont');
+  var arr = document.getElementById('f-arr');
+  var card = document.querySelector('.d4');
+  if (cont.style.display === 'none' || cont.style.display === '') { cont.style.display = 'block'; arr.classList.add('on'); card.classList.remove('collapsed'); }
+  else { cont.style.display = 'none'; arr.classList.remove('on'); card.classList.add('collapsed'); }
+}
+
+// ---- Image Stitching ----
+function stitchLoadImg(idx, input) {
+  var file = input.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    _stitchImages[idx] = e.target.result;
+    document.getElementById('stitch-empty' + idx).style.display = 'none';
+    document.getElementById('stitch-prev' + idx).style.display = 'flex';
+    document.getElementById('stitch-img' + idx).src = e.target.result;
+    document.getElementById('stitch-upload' + idx).classList.add('ok');
+    checkStitchReady();
+  };
+  reader.readAsDataURL(file);
+}
+
+function checkStitchReady() {
+  if (_stitchState === 'done') return;
+  document.getElementById('stitch-btn').disabled = !(_stitchImages[1] && _stitchImages[2]);
+}
+
+function stitchSetDir(dir) {
+  _stitchDir = dir;
+  document.getElementById('stitch-dir-h').classList.toggle('on', dir === 'h');
+  document.getElementById('stitch-dir-v').classList.toggle('on', dir === 'v');
+  if (_stitchState === 'done') {
+    _stitchState = 'ready';
+    document.getElementById('stitch-btn').innerHTML = '重新拼接';
+    document.getElementById('stitch-btn').disabled = false;
+  }
+}
+
+function doStitch() {
+  if (_stitchState === 'done') {
+    _stitchImages = {}; _stitchState = 'idle';
+    document.getElementById('stitch-upload1').classList.remove('ok');
+    document.getElementById('stitch-upload2').classList.remove('ok');
+    document.getElementById('stitch-prev1').style.display = 'none';
+    document.getElementById('stitch-prev2').style.display = 'none';
+    document.getElementById('stitch-empty1').style.display = 'flex';
+    document.getElementById('stitch-empty2').style.display = 'flex';
+    document.getElementById('stitch-img1').src = '';
+    document.getElementById('stitch-img2').src = '';
+    document.getElementById('stitch-result').style.display = 'none';
+    document.getElementById('stitch-err').style.display = 'none';
+    document.getElementById('stitch-btn').innerHTML = '开始拼接';
+    document.getElementById('stitch-btn').disabled = true;
+    return;
+  }
+  if (!_stitchImages[1] || !_stitchImages[2]) return;
+  var canvas = document.createElement('canvas');
+  var ctx = canvas.getContext('2d');
+  var img1 = new Image(); var img2 = new Image(); var loaded = 0;
+  img1.onload = function() { loaded++; if (loaded === 2) renderStitch(); };
+  img2.onload = function() { loaded++; if (loaded === 2) renderStitch(); };
+  img1.onerror = function() { showStitchErr('图1 加载失败'); };
+  img2.onerror = function() { showStitchErr('图2 加载失败'); };
+  img1.src = _stitchImages[1]; img2.src = _stitchImages[2];
+  function renderStitch() {
+    if (_stitchDir === 'h') {
+      var maxH = Math.max(img1.height, img2.height);
+      var w1 = img1.width * (maxH / img1.height);
+      var w2 = img2.width * (maxH / img2.height);
+      canvas.width = w1 + w2; canvas.height = maxH;
+      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img1, 0, 0, w1, maxH);
+      ctx.drawImage(img2, w1, 0, w2, maxH);
+    } else {
+      var maxW = Math.max(img1.width, img2.width);
+      var h1 = img1.height * (maxW / img1.width);
+      var h2 = img2.height * (maxW / img2.width);
+      canvas.width = maxW; canvas.height = h1 + h2;
+      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(img1, 0, 0, maxW, h1);
+      ctx.drawImage(img2, 0, h1, maxW, h2);
+    }
+    _stitchState = 'done';
+    document.getElementById('stitch-output').src = canvas.toDataURL('image/png');
+    document.getElementById('stitch-result').style.display = 'block';
+    document.getElementById('stitch-err').style.display = 'none';
+    document.getElementById('stitch-btn').innerHTML = '清除图片';
+  }
+}
+
+function showStitchErr(msg) { document.getElementById('stitch-err').textContent = msg; document.getElementById('stitch-err').style.display = 'block'; }
+
+function stitchDownload(fmt) {
+  var img = document.getElementById('stitch-output');
+  if (!img.src) return;
+  var link = document.createElement('a');
+  link.download = 'stitch_result.' + fmt;
+  if (fmt === 'jpg') { var c = document.createElement('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight; c.getContext('2d').drawImage(img, 0, 0); link.href = c.toDataURL('image/jpeg', 0.92); }
+  else { link.href = img.src; }
+  document.body.appendChild(link); link.click(); document.body.removeChild(link);
+}
+
+// ---- Init ----
+document.addEventListener('DOMContentLoaded', function() {
+  restoreApiConfig();
+  // checkGenReady 由 HTML oninput/onchange 触发，无需重复绑定
+});
+
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
