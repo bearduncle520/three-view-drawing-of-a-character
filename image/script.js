@@ -722,10 +722,10 @@ var API_HELP_HTML = '';
       html += '<div style="color:#fbbf24;font-weight:600;margin-bottom:4px">支持模型</div>';
       pf.models.forEach(function(m) {
         var ratingBadge = '';
-        if (m.rating === '⭐⭐⭐') ratingBadge = '<span style="color:#fbbf24;font-weight:600">⭐⭐⭐</span> ';
-        else if (m.rating === '⭐⭐') ratingBadge = '<span style="color:#a7f3d0;font-weight:500">⭐⭐</span> ';
-        else if (m.rating === '⭐') ratingBadge = '<span style="color:#9ca3af">⭐</span> ';
-        else ratingBadge = '<span style="color:#6b7280">—</span> ';
+        if (m.rating === '⭐⭐⭐') ratingBadge = '<span style="color:#fbbf24;font-weight:600">⭐⭐⭐</span>';
+        else if (m.rating === '⭐⭐') ratingBadge = '<span style="color:#a7f3d0;font-weight:500">⭐⭐</span>';
+        else if (m.rating === '⭐') ratingBadge = '<span style="color:#9ca3af">⭐</span>';
+        else ratingBadge = '<span style="color:#6b7280">—</span>';
         html += '<div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">';
         html += '<div style="color:#d1d5db;font-weight:500">' + ratingBadge + m.label + '</div>';
         html += '<div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">';
@@ -740,25 +740,38 @@ var API_HELP_HTML = '';
     html += '</div></div>';
   });
 
-  // 安全说明
+  // 注释说明（连接测试 + 安全 + 价格）
   html += '<div style="margin-top:16px;padding:14px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);border-radius:8px;font-size:12px;line-height:1.8;color:#d1d5db">';
+  // 连接测试说明
+  html += '<div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(251,191,36,.15)">';
+  html += '<div style="color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px">';
+  html += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>';
+  html += '<span>连接测试说明</span></div>';
+  html += '<div class="tip-item">1. 测试按钮调用的是 <strong>/chat/completions</strong> 接口，而当前选择的模型是图像生成模型，部分平台图像模型未注册在此接口下，可能导致测试不通；</div>';
+  html += '<div class="tip-item">2. 实际图片生成走的是 <strong>/images/generations</strong> 接口（阿里百炼为通义万相专用 API），测试不通不影响正常生成；</div>';
+  html += '<div class="tip-item">3. 如果测试不通，建议直接填写好 API Key 和模型后，点击「生成图片」验证能否正常出图；</div>';
+  html += '<div class="tip-item">4. 如生成图片仍失败，请检查 API Key 是否有效、模型是否已开通、端点地址是否正确。</div>';
+  html += '</div>';
+  // 安全说明
   html += '<div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(251,191,36,.15)">';
   html += '<div style="color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px">';
   html += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>';
   html += '<span>API Key 安全说明</span></div>';
-  html += '<div style="padding-left:22px">1. 你填入的 API Key 和端点仅保存在浏览器 localStorage 中，不会写入硬盘或 Cookie；</div>';
-  html += '<div style="padding-left:22px">2. 配置信息仅发送至你指定的 API 端点用于身份验证，不会上传至任何第三方服务器；</div>';
-  html += '<div style="padding-left:22px">3. 普通刷新（F5 / Ctrl+R）不会清空配置，可继续使用；</div>';
-  html += '<div style="padding-left:22px">4. 关闭标签页后重新打开，配置依然保留，无需重复填写；</div>';
-  html += '<div style="padding-left:22px">5. 点击页面上方「清空配置」按钮即可手动清除。</div>';
+  html += '<div class="tip-item">1. 你填入的 API Key 和端点仅保存在浏览器 localStorage 中，不会写入硬盘或 Cookie；</div>';
+  html += '<div class="tip-item">2. 配置信息仅发送至你指定的 API 端点用于身份验证，不会上传至任何第三方服务器；</div>';
+  html += '<div class="tip-item">3. 普通刷新（F5 / Ctrl+R）不会清空配置，可继续使用；</div>';
+  html += '<div class="tip-item">4. 关闭标签页后重新打开，配置依然保留，无需重复填写；</div>';
+  html += '<div class="tip-item">5. 点击页面上方「清空配置」按钮即可手动清除。</div>';
   html += '</div>';
-  html += '<div><div style="color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px">';
+  // 价格与模型说明
+  html += '<div>';
+  html += '<div style="color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px">';
   html += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>';
   html += '<span>价格与模型说明</span></div>';
-  html += '<div style="padding-left:22px">1. 免费额度为各平台新用户活动，具体额度和有效期以平台官网为准；</div>';
-  html += '<div style="padding-left:22px">2. 价格信息仅供参考，各平台可能随时调整，请以平台官网实时价格为准；</div>';
-  html += '<div style="padding-left:22px">3. 效果标注 ⭐⭐⭐ 为顶级推荐，⭐⭐ 为优秀，⭐ 为良好，— 为不支持图像生成；</div>';
-  html += '<div style="padding-left:22px">4. 多视图布局生成对模型要求较高，推荐优先使用 CogView-4、FLUX.1-pro、通义万相-增强版。</div>';
+  html += '<div class="tip-item">1. 免费额度为各平台新用户活动，具体额度和有效期以平台官网为准；</div>';
+  html += '<div class="tip-item">2. 价格信息仅供参考，各平台可能随时调整，请以平台官网实时价格为准；</div>';
+  html += '<div class="tip-item">3. 效果标注 ⭐⭐⭐ 为顶级推荐，⭐⭐ 为优秀，⭐ 为良好，— 为不支持图像生成；</div>';
+  html += '<div class="tip-item">4. 多视图布局生成对模型要求较高，推荐优先使用 CogView-4、FLUX.1-pro、通义万相-增强版。</div>';
   html += '</div></div>';
 
   API_HELP_HTML = html;

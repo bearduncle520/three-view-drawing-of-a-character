@@ -116,7 +116,7 @@
     </div>
 
       <!-- Upload + Prompt 左右横排 -->
-      <div class="upload-wrap" style="display:flex;flex-direction:row;gap:12px;align-items:stretch;margin-top:12px">
+      <div class="upload-wrap" style="display:flex;gap:12px;align-items:stretch;margin-top:12px">
         <div class="upload" id="upload" style="flex:1;min-height:200px">
           <input type="file" id="finp" accept=".jpg,.jpeg,.png,.webp" style="display:none">
           <div id="uempty" style="width:100%;display:flex;flex-direction:column;align-items:center">
@@ -311,7 +311,7 @@
           <label class="f-label" style="margin-bottom:6px;justify-content:center">图1</label>
           <div class="upload" id="stitch-upload1" style="min-height:140px" onclick="document.getElementById('stitch-inp1').click()">
             <input type="file" id="stitch-inp1" accept=".jpg,.jpeg,.png,.webp" style="display:none" onchange="stitchLoadImg(1,this)">
-            <div id="stitch-empty1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg><p class="u-hint" style="margin-top:6px">点击选择图片</p></div>
+            <div id="stitch-empty1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg><p>点击选择图片</p></div>
             <div class="u-prev" id="stitch-prev1" style="display:none"><img id="stitch-img1" alt=""></div>
           </div>
         </div>
@@ -319,7 +319,7 @@
           <label class="f-label" style="margin-bottom:6px;justify-content:center">图2</label>
           <div class="upload" id="stitch-upload2" style="min-height:140px" onclick="document.getElementById('stitch-inp2').click()">
             <input type="file" id="stitch-inp2" accept=".jpg,.jpeg,.png,.webp" style="display:none" onchange="stitchLoadImg(2,this)">
-            <div id="stitch-empty2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg><p class="u-hint" style="margin-top:6px">点击选择图片</p></div>
+            <div id="stitch-empty2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg><p>点击选择图片</p></div>
             <div class="u-prev" id="stitch-prev2" style="display:none"><img id="stitch-img2" alt=""></div>
           </div>
         </div>
