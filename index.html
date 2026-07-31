@@ -14,12 +14,24 @@
 <!-- ======== Header ======== -->
 <header class="header fade-in">
   <div class="h-icon">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+    <svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+      <path d="M616.96 183.808h-209.92c-21.504 0-39.424-17.408-39.424-39.424V68.096C367.616 30.72 397.824 0 434.688 0h154.624c36.864 0 67.072 30.72 67.072 68.096v76.288c0 22.016-17.408 39.424-39.424 39.424zM446.464 104.96h131.072v-26.112H446.464v26.112z" fill="#fff"/>
+      <path d="M879.616 1024H144.384c-21.504 0-39.424-17.408-39.424-39.424v-133.12c0-53.248 44.544-96.256 99.328-96.256H353.28v-85.504c0-21.504 17.408-39.424 39.424-39.424h238.592c21.504 0 39.424 17.408 39.424 39.424v85.504h148.48c54.784 0 99.328 43.008 99.328 96.256v133.12c0.512 22.016-17.408 39.424-38.912 39.424zM183.808 945.152h656.384v-93.696c0-9.728-9.216-17.408-20.992-17.408h-158.208c-38.4 0-69.632-30.208-69.632-68.096v-57.344H432.128v57.344c0 37.376-31.232 68.096-69.632 68.096H204.8c-11.264 0-20.992 7.68-20.992 17.408v93.696z" fill="#fff"/>
+      <path d="M770.56 709.12H253.952c-53.248 0-96.256-45.056-96.256-99.84V205.312c0-55.296 43.008-99.84 96.256-99.84h516.608c53.248 0 96.256 45.056 96.256 99.84V609.28c-0.512 54.784-43.52 99.84-96.256 99.84zM253.952 183.808c-9.216 0-17.408 9.728-17.408 21.504V609.28c0 11.776 8.192 21.504 17.408 21.504h516.608c9.216 0 17.408-9.728 17.408-21.504V205.312c0-11.776-8.192-21.504-17.408-21.504H253.952z" fill="#fff"/>
+      <path d="M65.536 498.688c-21.504 0-39.424-17.408-39.424-39.424V302.08c0-21.504 17.408-39.424 39.424-39.424s39.424 17.408 39.424 39.424v157.696c0 21.504-17.408 38.912-39.424 38.912zM958.464 498.688c-21.504 0-39.424-17.408-39.424-39.424V302.08c0-21.504 17.408-39.424 39.424-39.424s39.424 17.408 39.424 39.424v157.696c0 21.504-17.92 38.912-39.424 38.912z" fill="#fbbf24"/>
+      <path d="M407.04 354.304c0 29.184-23.552 52.736-52.736 52.736-29.184 0-52.736-23.552-52.736-52.736C302.08 325.632 325.632 302.08 354.304 302.08c29.184 0 52.736 23.552 52.736 52.224M721.92 354.304c0 29.184-23.552 52.736-52.736 52.736-29.184 0-52.736-23.552-52.736-52.736 0-29.184 23.552-52.736 52.736-52.736 29.184 0.512 52.736 24.064 52.736 52.736" fill="#fbbf24"/>
     </svg>
   </div>
   <h1 class="h-title">角色形象一致性三视图提示词</h1>
   <span class="h-badge">大肖像+三视图</span>
+  <a href="/image/" target="_blank" title="用免费额度根据本页提示词生成三视图" class="gen-btn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    生成三视图
+  </a>
+  <button class="sponsor-btn" onclick="showSponsor()">
+    <span style="font-size:16px;font-weight:700;line-height:1">¥</span>
+    赞助
+  </button>
 </header>
 
 <!-- ======== Step 01 ======== -->
@@ -27,8 +39,8 @@
   <div class="card-hdr">
     <span class="card-step">01</span>
     <h2 class="card-title">选择模型 &amp; 上传角色图</h2>
+    <p class="card-sub">选择AI模型，上传角色参考图，自动分析画风</p>
   </div>
-  <p class="card-sub">选择AI模型，上传角色参考图，自动分析画风</p>
 
   <div class="grid-2">
     <!-- Model Config -->
@@ -127,8 +139,8 @@
   <div class="card-hdr">
     <span class="card-step">02</span>
     <h2 class="card-title">画风风格分析结果</h2>
+    <p class="card-sub">基于上传图片的AI分析结果，可手动微调</p>
   </div>
-  <p class="card-sub">基于上传图片的AI分析结果，可手动微调</p>
 
   <div class="sy5">
     <div class="grid-2s">
@@ -170,67 +182,32 @@
         <span>构图排版引擎</span>
       </div>
 
-      <div class="og">
-        <div class="oc sel" data-l="classic" onclick="selLayout('classic')">
-          <div class="oc-hdr">
-            <div class="oc-ico bl">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-              </svg>
-            </div>
-            <span class="oc-ttl">经典宽幅横图</span>
-            <span class="oc-rec" style="margin-left:auto;margin-top:0;font-size:11px;color:#6b7280">16:9</span>
+      <div class="og-ref">
+        <div class="oc-ref sel" data-l="closeup" onclick="selLayout('closeup')">
+          <div class="oc-ref-icon pu">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
-          <p class="oc-desc">A-pose 三视图布局，两种排版可选</p>
-        </div>
-
-        <div class="oc" data-l="patch" onclick="selLayout('patch')">
-          <div class="oc-hdr">
-            <div class="oc-ico pu">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/>
-              </svg>
-            </div>
-            <span class="oc-ttl">16:9特写补丁</span>
-          </div>
-          <p class="oc-desc">6宫格微刻阵列，不污染原画风</p>
-          <div class="oc-rec">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 13 14 20 7"/></svg>
-            推荐：16:9
+          <div class="oc-ref-body">
+            <span class="oc-ref-title">肩颈以上特写+全身三视图</span>
+            <span class="oc-ref-desc">左侧头部特写 + 右侧正面/半侧/背面全身A-pose</span>
           </div>
         </div>
-      </div>
-
-      <!-- 经典宽幅子选项 -->
-      <div id="classic-sub" class="mt3" style="display:block">
-        <label class="f-label" style="color:#6b7280;font-size:11px">经典宽幅排版模式</label>
-        <select class="sel" id="classic-sub-select" style="margin-top:8px">
-          <option value="apose">A-pose三视图（正面 + 侧面 + 背面）</option>
-          <option value="closeup" selected>左侧特写+A-pose（胸部以上特写 + 三全身像）</option>
-        </select>
-      </div>
-
-      <!-- 16:9特写补丁子选项 -->
-      <div id="patch-sub" class="mt3" style="display:none">
-        <label class="f-label" style="color:#6b7280;font-size:11px">6宫格特写阵列</label>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">
-          <div style="background:#16162a;border:1px solid #2d2d4a;border-radius:8px;padding:10px 8px;text-align:center">
-            <span style="display:block;font-size:11px;color:#d1d5db">侧面头部特写</span>
+        <div class="oc-ref" data-l="apose" onclick="selLayout('apose')">
+          <div class="oc-ref-icon bl">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
-          <div style="background:#16162a;border:1px solid #2d2d4a;border-radius:8px;padding:10px 8px;text-align:center">
-            <span style="display:block;font-size:11px;color:#d1d5db">顶部头部特写</span>
+          <div class="oc-ref-body">
+            <span class="oc-ref-title">全身三视图</span>
+            <span class="oc-ref-desc">正面 + 侧面 + 背面，标准A-pose全身像</span>
           </div>
-          <div style="background:#16162a;border:1px solid #2d2d4a;border-radius:8px;padding:10px 8px;text-align:center">
-            <span style="display:block;font-size:11px;color:#d1d5db">背面头部特写</span>
+        </div>
+        <div class="oc-ref" data-l="patch" onclick="selLayout('patch')">
+          <div class="oc-ref-icon gr">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
           </div>
-          <div style="background:#16162a;border:1px solid #2d2d4a;border-radius:8px;padding:10px 8px;text-align:center">
-            <span style="display:block;font-size:11px;color:#d1d5db">胸腹部特写</span>
-          </div>
-          <div style="background:#16162a;border:1px solid #2d2d4a;border-radius:8px;padding:10px 8px;text-align:center">
-            <span style="display:block;font-size:11px;color:#d1d5db">背腰部特写</span>
-          </div>
-          <div style="background:#16162a;border:1px solid #2d2d4a;border-radius:8px;padding:10px 8px;text-align:center">
-            <span style="display:block;font-size:11px;color:#d1d5db">脚步特写</span>
+          <div class="oc-ref-body">
+            <span class="oc-ref-title">局部特写六视图</span>
+            <span class="oc-ref-desc">6宫格微刻阵列，多角度细节特写</span>
           </div>
         </div>
       </div>
@@ -250,8 +227,8 @@
   <div class="card-hdr">
     <span class="card-step">03</span>
     <h2 class="card-title">完整提示词</h2>
+    <p class="card-sub">基于上传图片的分析结果生成的完整提示词，可复制到生成工具使用</p>
   </div>
-  <p class="card-sub">基于上传图片的分析结果生成的完整提示词，可复制到生成工具使用</p>
 
   <div class="p-tabs" id="ltabs">
     <button class="b-tab on" data-l="zh" onclick="swLang('zh')">中文</button>
@@ -619,90 +596,28 @@
   </div>
 </div>
 
-<!-- ======== Footer - 实验室功能 ======== -->
-<div class="f-p fade-in">
-  <button class="b-foot" onclick="toggleFoot()">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/>
-    </svg>
-    <span>图片本地拼接</span>
-    <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="6 9 12 15 18 9"/>
-    </svg>
-  </button>
-  <div class="f-c" id="fcont">
-    <p style="font-size:13px;color:#d1d5db;margin-bottom:12px">将三视图与特写图本地拼接为一张完整布局图，支持横向 / 竖向。</p>
+</div>
 
-    <!-- 图片上传区 -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-      <div>
-        <label class="f-label" style="margin-bottom:6px">图1（三视图）</label>
-        <div class="upload" id="stitch-upload1" style="min-height:120px;padding:16px" onclick="document.getElementById('stitch-inp1').click()">
-          <input type="file" id="stitch-inp1" accept=".jpg,.jpeg,.png,.webp" style="display:none" onchange="stitchLoadImg(1,this)">
-          <div id="stitch-empty1">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <p class="u-hint" style="margin-top:6px">点击选择三视图</p>
-          </div>
-          <div class="u-prev" id="stitch-prev1" style="display:none">
-            <img id="stitch-img1" alt="" style="width:80px;height:80px">
-          </div>
-        </div>
+  <!-- ======== 赞助弹窗 ======== -->
+  <div id="sponsor-overlay" onclick="closeSponsor(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:1000;justify-content:center;align-items:center" class="flex ac jc">
+    <div onclick="event.stopPropagation()" style="background:#1a1a2e;border:1px solid #2d2d4a;border-radius:14px;padding:32px;max-width:480px;width:92%;text-align:center">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:#fbbf24">赞助支持</h3>
+      <p style="font-size:13px;line-height:1.8;color:#9ca3af;margin-bottom:16px">
+        为了持续提供稳定的 AI 图像生成服务，保障服务器正常运行，<br>
+        如果您觉得本工具对您有帮助，欢迎赞助支持 ❤️
+      </p>
+      <div style="display:inline-block;padding:12px;background:#16162a;border:1px solid #2d2d4a;border-radius:10px;margin-bottom:16px">
+        <img src="image/sponsor-qr.png" alt="赞助二维码" style="width:180px;height:180px;display:block">
       </div>
-      <div>
-        <label class="f-label" style="margin-bottom:6px">图2（特写图）</label>
-        <div class="upload" id="stitch-upload2" style="min-height:120px;padding:16px" onclick="document.getElementById('stitch-inp2').click()">
-          <input type="file" id="stitch-inp2" accept=".jpg,.jpeg,.png,.webp" style="display:none" onchange="stitchLoadImg(2,this)">
-          <div id="stitch-empty2">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <p class="u-hint" style="margin-top:6px">点击选择特写图</p>
-          </div>
-          <div class="u-prev" id="stitch-prev2" style="display:none">
-            <img id="stitch-img2" alt="" style="width:80px;height:80px">
-          </div>
-        </div>
+      <p style="font-size:11px;color:#6b7280;margin-bottom:20px">扫码赞助，您的支持是本工具持续运行的最大动力</p>
+      <div style="display:flex;gap:10px">
+        <button onclick="closeSponsor()" class="b-grad" style="padding:10px;min-height:40px;font-size:13px;flex:1">已赞助</button>
+        <button onclick="closeSponsor()" class="b-sec" style="padding:10px;min-height:40px;font-size:13px;flex:1">稍后赞助</button>
       </div>
     </div>
-
-    <!-- 方向选择 + 操作按钮 -->
-    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;margin-top:20px">
-      <div style="display:flex;gap:6px;flex:1">
-        <button class="b-tab on" id="stitch-dir-h" onclick="stitchSetDir('h')" style="flex:1;text-align:center">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="3" y1="12" x2="21" y2="12"/><polyline points="18 15 21 12 18 9"/></svg>
-          横向
-        </button>
-        <button class="b-tab" id="stitch-dir-v" onclick="stitchSetDir('v')" style="flex:1;text-align:center">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="12" y1="3" x2="12" y2="21"/><polyline points="9 18 12 21 15 18"/></svg>
-          竖向
-        </button>
-      </div>
-      <button class="b-grad" id="stitch-btn" onclick="doStitch()" disabled style="flex:0 0 auto;width:auto;padding:6px 16px;min-height:unset;font-size:12px">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        开始拼接
-      </button>
-    </div>
-
-    <!-- 拼接结果 -->
-    <div id="stitch-result" style="display:none">
-      <div style="border:1px solid #2d2d4a;border-radius:8px;padding:12px;background:#16162a;margin-bottom:8px;text-align:center">
-        <img id="stitch-output" alt="拼接结果" style="max-width:100%;max-height:400px;border-radius:4px">
-      </div>
-      <div style="display:flex;gap:8px">
-        <button class="b-grad" onclick="stitchDownload('jpg')" style="padding:10px 20px;min-height:40px;flex:1">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          下载 JPG
-        </button>
-        <button class="b-grad" onclick="stitchDownload('png')" style="padding:10px 20px;min-height:40px;flex:1">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          下载 PNG
-        </button>
-      </div>
-    </div>
-
-    <div id="stitch-err" style="font-size:12px;color:#f87171;display:none;margin-top:4px"></div>
   </div>
-</div>
 
-</div>
+
 
 <script src="script.js">
 </script>
@@ -719,12 +634,13 @@
     <a href="core.html" target="_blank" rel="noopener" class="footer-design-link" title="浏览器内核检测">Core</a><span class="footer-sep">-</span>
     <a href="/mess/" target="_blank" rel="noopener" title="更多更多更多......(*￣▽￣)">Mess</a>
   </div>
-  <div class="footer-copy">Copyright &copy; 2019-<span id="timeyear"></span> <a href="https://www.zhuye.xyz/" target="_blank" rel="noopener" title="简主页 - ZHUYE.XYZ">ZHUYE.XYZ</a> All Rights Reserved.</div>
-  <!--TIME-->
-  <script type="text/javascript" src="https://cdn.zhuye.xyz/js/timeyear.js"></script>
-  <!--百度统计-->
-  <script type="text/javascript" src="https://cdn.zhuye.xyz/js/bdtj-zhuye.js"></script>
+  <div class="footer-copy">Copyright &copy; 2019-<span id="timeyear"></span> <a href="https://www.zhuye.xyz/" target="_blank" rel="noopener noreferrer">ZHUYE.XYZ</a> All Rights Reserved.</div>
 </footer>
+
+<!--TIME-->
+<script type="text/javascript" src="https://cdn.zhuye.xyz/js/timeyear.js"></script>
+<!--百度统计-->
+<script type="text/javascript" src="https://cdn.zhuye.xyz/js/bdtj-zhuye.js"></script>
 
 </body>
 </html>
