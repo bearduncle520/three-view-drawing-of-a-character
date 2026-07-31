@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>角色形象多视图生成</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ======== Header ======== -->
+  <header class="header fade-in">
+    <div class="h-icon">
+      <svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+        <path d="M616.96 183.808h-209.92c-21.504 0-39.424-17.408-39.424-39.424V68.096C367.616 30.72 397.824 0 434.688 0h154.624c36.864 0 67.072 30.72 67.072 68.096v76.288c0 22.016-17.408 39.424-39.424 39.424zM446.464 104.96h131.072v-26.112H446.464v26.112z" fill="#fff"></path>
+        <path d="M879.616 1024H144.384c-21.504 0-39.424-17.408-39.424-39.424v-133.12c0-53.248 44.544-96.256 99.328-96.256H353.28v-85.504c0-21.504 17.408-39.424 39.424-39.424h238.592c21.504 0 39.424 17.408 39.424 39.424v85.504h148.48c54.784 0 99.328 43.008 99.328 96.256v133.12c0.512 22.016-17.408 39.424-38.912 39.424zM183.808 945.152h656.384v-93.696c0-9.728-9.216-17.408-20.992-17.408h-158.208c-38.4 0-69.632-30.208-69.632-68.096v-57.344H432.128v57.344c0 37.376-31.232 68.096-69.632 68.096H204.8c-11.264 0-20.992 7.68-20.992 17.408v93.696z" fill="#fff"></path>
+        <path d="M770.56 709.12H253.952c-53.248 0-96.256-45.056-96.256-99.84V205.312c0-55.296 43.008-99.84 96.256-99.84h516.608c53.248 0 96.256 45.056 96.256 99.84V609.28c-0.512 54.784-43.52 99.84-96.256 99.84zM253.952 183.808c-9.216 0-17.408 9.728-17.408 21.504V609.28c0 11.776 8.192 21.504 17.408 21.504h516.608c9.216 0 17.408-9.728 17.408-21.504V205.312c0-11.776-8.192-21.504-17.408-21.504H253.952z" fill="#fff"></path>
+        <path d="M65.536 498.688c-21.504 0-39.424-17.408-39.424-39.424V302.08c0-21.504 17.408-39.424 39.424-39.424s39.424 17.408 39.424 39.424v157.696c0 21.504-17.408 38.912-39.424 38.912zM958.464 498.688c-21.504 0-39.424-17.408-39.424-39.424V302.08c0-21.504 17.408-39.424 39.424-39.424s39.424 17.408 39.424 39.424v157.696c0 21.504-17.92 38.912-39.424 38.912z" fill="#fbbf24"></path>
+        <path d="M407.04 354.304c0 29.184-23.552 52.736-52.736 52.736-29.184 0-52.736-23.552-52.736-52.736C302.08 325.632 325.632 302.08 354.304 302.08c29.184 0 52.736 23.552 52.736 52.224M721.92 354.304c0 29.184-23.552 52.736-52.736 52.736-29.184 0-52.736-23.552-52.736-52.736 0-29.184 23.552-52.736 52.736-52.736 29.184 0.512 52.736 24.064 52.736 52.736" fill="#fbbf24"></path>
+      </svg>
+    </div>
+    <h1 class="h-title">角色形象多视图生成</h1>
+    <span class="h-badge">AI 生图</span>
+    <button class="sponsor-btn" onclick="showSponsor()">
+      <span style="font-size:16px;font-weight:700;line-height:1">¥</span>
+      赞助
+    </button>
+  </header>
+
+  <!-- ======== Step 01 ======== -->
+  <section class="card fade-in d1">
+    <div class="card-hdr">
+      <span class="card-step">01</span>
+      <h2 class="card-title">选择模型 &amp; 上传参考图</h2>
+    </div>
+    <p class="card-sub">选择AI图像生成模型，上传角色参考图并输入提示词</p>
+
+    <!-- 模型配置标题（单独一行） -->
+    <div class="flex ac gap-2 mb4" style="margin-top:20px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+      </svg>
+      <span class="txm cw" style="font-weight:500;font-size:15px">模型配置</span>
+    </div>
+
+    <div class="card" style="margin-top:12px;padding:16px 20px">
+      <!-- 平台提示 -->
+      <div id="platform-tip" style="display:none;font-size:11px;line-height:1.5;margin-bottom:10px;padding:8px 12px;border-radius:6px;border:1px solid rgba(251,191,36,.25);background:rgba(251,191,36,.06);color:#fde68a">
+        <strong>效果提示：</strong><span id="tip-text">多视图/布局类图片对模型能力要求较高。推荐使用 <strong>CogView-4</strong>（布局理解最强）、<strong>FLUX.1-pro</strong>（画质最优）、<strong>通义万相-增强版</strong>（角色一致性佳）。其它模型生成效果因模型能力而异，建议多尝试不同模型。</span>
+        <div id="modelinfo" style="display:none;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.08);color:#9ca3af;font-size:10px">
+          <span style="color:#34d399">免费额度：<span id="mfree" style="color:#d1d5db">-</span></span>
+          <span style="color:#6b7280;margin:0 6px">|</span>
+          <span style="color:#fbbf24">价格：<span id="mprice" style="color:#d1d5db">-</span></span>
+        </div>
+      </div>
+
+      <!-- Row 1: 选择平台 + 选择模型 + 测试连接 -->
+      <div style="display:flex;gap:10px;margin-bottom:10px">
+        <div style="flex:1">
+          <label class="f-label" style="font-size:11px;margin-bottom:3px">选择平台</label>
+          <select class="sel" id="pselect" onchange="onPlatformChange()" style="padding:7px 10px;font-size:12px">
+            <option value="" disabled selected>请选择平台</option>
+            <option value="阿里百炼">阿里百炼（通义万相）</option>
+            <option value="豆包">豆包（火山引擎）</option>
+            <option value="硅基流动">硅基流动（SiliconFlow）</option>
+            <option value="腾讯混元">腾讯混元</option>
+            <option value="智谱">智谱 AI</option>
+            <option value="自定义">自定义</option>
+          </select>
+        </div>
+        <div style="flex:1" id="model-select-group">
+          <label class="f-label" style="font-size:11px;margin-bottom:3px">选择模型 <span id="model-cap" style="font-size:9px;color:#6b7280;margin-left:4px"></span></label>
+          <select class="sel" id="modelselect" onchange="onModelChange()" disabled style="padding:7px 10px;font-size:12px">
+            <option value="" disabled selected>请先选择平台</option>
+          </select>
+        </div>
+        <div style="flex:0 0 120px;display:flex;align-items:flex-end">
+          <div class="s-btn wait" id="connbtn" onclick="onConnBtnClick()" style="width:100%;padding:8px 10px;font-size:12px;white-space:nowrap;line-height:1.4;text-align:center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> 等待配置
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: API Key + API 端点 + 清除配置 -->
+      <div style="display:flex;gap:10px">
+        <div style="flex:1">
+          <label class="f-label" style="font-size:11px;margin-bottom:3px">API Key
+            <button onclick="showApiHelp()" type="button" style="background:none;border:none;color:#6b7280;cursor:pointer;padding:0;display:inline-flex;vertical-align:middle" title="各平台获取 API Key 方式">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </button>
+          </label>
+          <div class="inp-wrap">
+            <input type="password" class="inp" id="apikey" placeholder="API Key" oninput="onKeyChange()" style="padding:7px 10px;font-size:12px">
+            <button class="tgl" onclick="toggleKey()" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="keyeye">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div style="flex:1">
+          <label class="f-label" style="font-size:11px;margin-bottom:3px">API 端点</label>
+          <input type="text" class="inp" id="apiendpoint" placeholder="端点地址" readonly style="padding:7px 10px;font-size:12px">
+        </div>
+        <div style="flex:0 0 120px;display:flex;align-items:flex-end">
+          <div class="s-btn clear" id="clearbtn" onclick="clearApiConfig()" title="清除配置" style="width:100%;padding:8px 10px;font-size:12px;line-height:1.4;text-align:center">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> 清除配置
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+      <!-- Upload + Prompt 左右横排 -->
+      <div class="upload-wrap" style="display:flex;flex-direction:row;gap:12px;align-items:stretch;margin-top:12px">
+        <div class="upload" id="upload" style="flex:1;min-height:200px">
+          <input type="file" id="finp" accept=".jpg,.jpeg,.png,.webp" style="display:none">
+          <div id="uempty" style="width:100%;display:flex;flex-direction:column;align-items:center">
+            <div class="u-icon" style="margin:0 auto 12px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </div>
+            <p class="u-text">拖拽参考图到这里，或点击上传</p>
+            <p class="u-hint">支持 JPG / PNG / WebP，上传参考图可提高角色一致性</p>
+          </div>
+          <div class="u-prev" id="uprev" onclick="reUpload()">
+            <img id="previmg" alt="预览">
+            <span class="nm" id="fname"></span>
+            <span class="sz" id="fsize"></span>
+          </div>
+        </div>
+        <div style="flex:1.5;display:flex;flex-direction:column">
+          <textarea class="inp" id="promptInput" placeholder="提示词（描述角色特征），如：一个年轻女性，长发，穿着白色连衣裙，白色背景，柔和光影..." style="flex:1;min-height:200px;resize:vertical;font-family:inherit;padding:12px 14px;font-size:14px;line-height:1.6" oninput="checkGenReady()"></textarea>
+        </div>
+      </div>
+      <span id="errormsg" style="font-size:12px;color:#f87171;display:none;margin-top:8px"></span>
+  </section>
+
+  <!-- ======== Step 02 ======== -->
+  <section class="card fade-in d2">
+    <div class="card-hdr">
+      <span class="card-step">02</span>
+      <h2 class="card-title">图片比例与分辨率</h2>
+    </div>
+    <p class="card-sub">选择图片输出尺寸与分辨率，点击生成图片</p>
+
+      <!-- 尺寸选择 + 生成按钮 左右排列 -->
+      <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:stretch">
+        <div style="padding:14px 16px;background:rgba(139,92,246,.04);border:1px solid rgba(139,92,246,.12);border-radius:8px">
+          <div class="flex ac" style="margin-bottom:8px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+            <span class="txm cw" style="font-weight:500;font-size:13px">图片比例与分辨率</span>
+          </div>
+          <!-- 比例行 -->
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px">
+            <span style="font-size:11px;color:#9ca3af;margin-right:4px">比例</span>
+            <button class="sz-btn" data-ar="1:1" onclick="selAspect(this)">1:1</button>
+            <button class="sz-btn" data-ar="4:3" onclick="selAspect(this)">4:3</button>
+            <button class="sz-btn" data-ar="3:4" onclick="selAspect(this)">3:4</button>
+            <button class="sz-btn on" data-ar="16:9" onclick="selAspect(this)">16:9</button>
+            <button class="sz-btn" data-ar="9:16" onclick="selAspect(this)">9:16</button>
+            <button class="sz-btn" data-ar="custom" onclick="selAspect(this)">自定义</button>
+            <span id="ar-custom" style="display:none">
+              <input type="number" class="inp" id="ar-w" placeholder="宽" min="256" max="8192" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomAr()">
+              <span style="color:#9ca3af;font-size:11px;margin:0 2px">x</span>
+              <input type="number" class="inp" id="ar-h" placeholder="高" min="256" max="8192" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomAr()">
+              <span style="color:#6b7280;font-size:10px">px</span>
+            </span>
+          </div>
+          <!-- 分辨率行 -->
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px">
+            <span style="font-size:11px;color:#9ca3af;margin-right:4px">分辨率</span>
+            <button class="k-btn on" data-k="1" onclick="selK(this)">1K</button>
+            <button class="k-btn" data-k="2" onclick="selK(this)">2K</button>
+            <button class="k-btn" data-k="3" onclick="selK(this)">3K</button>
+            <button class="k-btn" data-k="4" onclick="selK(this)">4K</button>
+            <button class="k-btn" data-k="8" onclick="selK(this)">8K</button>
+            <button class="k-btn" data-k="custom" onclick="selK(this)">自定义</button>
+            <span id="k-custom" style="display:none">
+              <input type="number" class="inp" id="k-input" placeholder="倍数" min="1" max="16" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomK()">
+              <span style="color:#6b7280;font-size:10px">x</span>
+            </span>
+          </div>
+          <!-- 输出张数行 -->
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px">
+            <span style="font-size:11px;color:#9ca3af;margin-right:4px">输出张数</span>
+            <button class="n-btn on" data-n="1" onclick="selN(this)">1</button>
+            <button class="n-btn" data-n="2" onclick="selN(this)">2</button>
+            <button class="n-btn" data-n="3" onclick="selN(this)">3</button>
+            <button class="n-btn" data-n="4" onclick="selN(this)">4</button>
+            <button class="n-btn" data-n="custom" onclick="selN(this)">自定义</button>
+            <span id="n-custom" style="display:none">
+              <input type="number" class="inp" id="n-input" placeholder="张数" min="1" max="10" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomN()">
+              <span style="color:#6b7280;font-size:10px">张</span>
+            </span>
+          </div>
+          <div id="sz-info" style="font-size:12px;color:#d1d5db;margin-top:10px;padding:8px 10px;border-radius:6px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.15)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span style="color:#9ca3af">当前配置：</span><span id="sz-display" style="color:#c4b5fd;font-weight:500">16:9 + 1K = 1024x576</span>
+            <span style="color:#6b7280;margin:0 6px">|</span>
+            <span style="color:#9ca3af">输出</span> <span id="n-display" style="color:#fbbf24;font-weight:500">1</span> <span style="color:#9ca3af">张</span>
+          </div>
+        </div>
+        <button class="b-grad" id="genbtn" onclick="genImage()" disabled style="aspect-ratio:1;height:100%;padding:8px;font-size:13px;border-radius:10px;min-height:0;flex-direction:column;gap:4px;line-height:1.2;white-space:nowrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>生成图片</span>
+          </button>
+      </div>
+  </section>
+
+  <!-- ======== Step 03 ======== -->
+  <section class="card fade-in d3">
+    <div class="card-hdr">
+      <span class="card-step">03</span>
+      <h2 class="card-title">生成结果</h2>
+    </div>
+    <p class="card-sub">AI 生成的图片，可点击下载</p>
+
+    <div id="result-empty" style="text-align:center;padding:40px 20px;color:#6b7280">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline>
+      </svg>
+      <p>配置好模型并点击"生成图片"后，结果将显示在这里</p>
+    </div>
+
+    <div id="result-loading" style="display:none;text-align:center;padding:40px 20px">
+      <svg class="spin" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+      </svg>
+      <p style="margin-top:12px;color:#9ca3af;font-size:14px" id="loading-text">AI 正在生成图片，请稍候...</p>
+    </div>
+
+    <div id="result-content" style="display:none">
+      <div style="border:1px solid #2d2d4a;border-radius:8px;padding:12px;background:#16162a;text-align:center;overflow:hidden">
+        <img id="result-img" alt="生成的图片" style="max-width:100%;max-height:600px;border-radius:4px;display:block;margin:0 auto">
+      </div>
+      <div style="margin-top:12px;display:flex;flex-direction:row;gap:8px">
+        <button class="b-grad" onclick="downloadResult('png')" style="flex:1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          下载 PNG
+        </button>
+        <button class="b-grad" onclick="downloadResult('jpg')" style="flex:1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          下载 JPG
+        </button>
+        <button class="b-sec" onclick="resetResult()" style="flex:0.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+          重新生成
+        </button>
+      </div>
+      <div style="margin-top:8px;font-size:11px;color:#6b7280;text-align:center">
+        生成耗时：<span id="gen-time">-</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== API 帮助弹窗 ======== -->
+  <div id="api-help-overlay" onclick="closeApiHelp(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center" class="flex ac jc">
+    <div onclick="event.stopPropagation()" style="background:#1a1a2e;border:1px solid #2d2d4a;border-radius:12px;padding:24px;max-width:640px;width:92%;max-height:85vh;overflow-y:auto">
+      <div class="flex ac" style="justify-content:space-between;margin-bottom:16px">
+        <span style="font-size:16px;font-weight:600">各平台获取 API Key 与端点</span>
+        <button onclick="closeApiHelp()" style="background:none;border:none;color:#9ca3af;cursor:pointer;padding:4px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div style="font-size:13px;line-height:1.7" id="api-help-content"></div>
+    </div>
+  </div>
+
+  <!-- ======== 赞助弹窗 ======== -->
+  <div id="sponsor-overlay" onclick="closeSponsor(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:1000;justify-content:center;align-items:center" class="flex ac jc">
+    <div onclick="event.stopPropagation()" style="background:#1a1a2e;border:1px solid #2d2d4a;border-radius:14px;padding:32px;max-width:480px;width:92%;text-align:center">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:#fbbf24">赞助支持</h3>
+      <p style="font-size:13px;line-height:1.8;color:#9ca3af;margin-bottom:16px">
+        为了持续提供稳定的 AI 图像生成服务，保障服务器正常运行，<br>
+        如果您觉得本工具对您有帮助，欢迎赞助支持 ❤️
+      </p>
+      <div style="display:inline-block;padding:12px;background:#16162a;border:1px solid #2d2d4a;border-radius:10px;margin-bottom:16px">
+        <img src="sponsor-qr.png" alt="赞助二维码" style="width:180px;height:180px;display:block">
+      </div>
+      <p style="font-size:11px;color:#6b7280;margin-bottom:20px">扫码赞助，您的支持是本工具持续运行的最大动力</p>
+      <div style="display:flex;gap:10px">
+        <button onclick="closeSponsor()" class="b-grad" style="padding:10px;min-height:40px;font-size:13px;flex:1">已赞助</button>
+        <button onclick="closeSponsor()" class="b-sec" style="padding:10px;min-height:40px;font-size:13px;flex:1">稍后赞助</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== Step 04 ======== -->
+  <section class="card fade-in d4 collapsed">
+    <div class="card-hdr" style="cursor:pointer" onclick="toggleFoot()">
+      <span class="card-step">04</span>
+      <h2 class="card-title" style="flex:1">图片本地拼接</h2>
+      <svg class="arr" id="f-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s;color:#6b7280">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+    <p class="card-sub">将多张图片本地拼接为一张完整布局图，支持横向 / 竖向</p>
+    <div id="fcont">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px">
+        <div style="text-align:center">
+          <label class="f-label" style="margin-bottom:6px;justify-content:center">图1</label>
+          <div class="upload" id="stitch-upload1" style="min-height:140px" onclick="document.getElementById('stitch-inp1').click()">
+            <input type="file" id="stitch-inp1" accept=".jpg,.jpeg,.png,.webp" style="display:none" onchange="stitchLoadImg(1,this)">
+            <div id="stitch-empty1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg><p class="u-hint" style="margin-top:6px">点击选择图片</p></div>
+            <div class="u-prev" id="stitch-prev1" style="display:none"><img id="stitch-img1" alt=""></div>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <label class="f-label" style="margin-bottom:6px;justify-content:center">图2</label>
+          <div class="upload" id="stitch-upload2" style="min-height:140px" onclick="document.getElementById('stitch-inp2').click()">
+            <input type="file" id="stitch-inp2" accept=".jpg,.jpeg,.png,.webp" style="display:none" onchange="stitchLoadImg(2,this)">
+            <div id="stitch-empty2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg><p class="u-hint" style="margin-top:6px">点击选择图片</p></div>
+            <div class="u-prev" id="stitch-prev2" style="display:none"><img id="stitch-img2" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;margin-top:0">
+        <div style="display:flex;gap:6px;flex:1">
+          <button class="b-tab on" id="stitch-dir-h" onclick="stitchSetDir('h')" style="flex:1;text-align:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="3" y1="12" x2="21" y2="12"></line><polyline points="18 15 21 12 18 9"></polyline></svg> 横向</button>
+          <button class="b-tab" id="stitch-dir-v" onclick="stitchSetDir('v')" style="flex:1;text-align:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="12" y1="3" x2="12" y2="21"></line><polyline points="9 18 12 21 15 18"></polyline></svg> 竖向</button>
+        </div>
+        <button class="b-grad" id="stitch-btn" onclick="doStitch()" disabled style="flex:0 0 auto;width:auto;padding:6px 16px;min-height:unset;font-size:12px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 开始拼接</button>
+      </div>
+      <div id="stitch-result" style="display:none">
+        <div style="border:1px solid #2d2d4a;border-radius:8px;padding:12px;background:#16162a;margin-bottom:8px;text-align:center"><img id="stitch-output" alt="拼接结果" style="max-width:100%;max-height:400px;border-radius:4px"></div>
+        <div style="display:flex;gap:8px">
+          <button class="b-grad" onclick="stitchDownload('jpg')" style="padding:10px 20px;min-height:40px;flex:1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> 下载 JPG</button>
+          <button class="b-grad" onclick="stitchDownload('png')" style="padding:10px 20px;min-height:40px;flex:1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> 下载 PNG</button>
+        </div>
+      </div>
+      <div id="stitch-err" style="font-size:12px;color:#f87171;display:none;margin-top:4px"></div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="https://design.zhuye.xyz/" target="_blank" rel="noopener" class="footer-design-link">Design</a><span class="footer-sep">-</span>
+    <a href="https://photo.zhuye.xyz/" target="_blank" rel="noopener">Photo</a><span class="footer-sep">-</span>
+    <a href="https://yun.zhuye.xyz/" target="_blank" rel="noopener">System</a><span class="footer-sep">-</span>
+    <a href="https://music.zhuye.xyz/" target="_blank" rel="noopener">Music</a><span class="footer-sep">-</span>
+    <a href="https://tici.zhuye.xyz/" target="_blank" rel="noopener">Tici</a><span class="footer-sep">-</span>
+    <a href="https://game.zhuye.xyz/" target="_blank" rel="noopener">Game</a><span class="footer-sep">-</span>
+    <a href="https://zhuye.xyz/chrome/" target="_blank" rel="noopener">Chrome</a><span class="footer-sep">-</span>
+    <a href="https://zhuye.xyz/core.html" target="_blank" rel="noopener">Core</a><span class="footer-sep">-</span>
+    <a href="https://zhuye.xyz/mess/" target="_blank" rel="noopener">Mess</a>
+  </div>
+  <div class="footer-copy">Copyright © 2019-<span id="timeyear">2026</span> <a href="https://www.zhuye.xyz/" target="_blank" rel="noopener">ZHUYE.XYZ</a> All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
