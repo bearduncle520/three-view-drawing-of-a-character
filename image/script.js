@@ -10,20 +10,26 @@ var PLATFORMS = {
     name: '阿里百炼（通义万相）',
     endpoint: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
     imgGen: true,
-    desc: '通义万相图像生成模型，角色一致性表现优秀',
+    desc: '万相系列图像生成模型，wan2.7支持多图参考生成（使用V2多模态API，无需额外开通）',
     models: [
-      { id: 'wanx2.1-t2i-turbo', label: '通义万相-快照（快速图像生成）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.02 元/张', note: '快速生成，角色一致性佳' },
-      { id: 'wanx2.1-t2i-plus', label: '通义万相-增强版（高清图像生成）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.08 元/张', note: '高清画质，适合多视图输出' },
+      { id: 'wan2.7-image-pro', label: '万相2.7 Image Pro（旗舰版）', rating: '⭐⭐⭐', free: '新用户赠百元免费额度', price: '0.12 元/张', note: '支持多图参考生成，4K输出，最新旗舰，推荐' },
+      { id: 'wan2.7-image', label: '万相2.7 Image（标准版）', rating: '⭐⭐⭐', free: '新用户赠百元免费额度', price: '0.06 元/张', note: '支持多图参考生成，画质优秀' },
+      { id: 'wan2.6-image', label: '万相2.6 Image（图文混排）', rating: '⭐⭐⭐', free: '新用户赠百元免费额度', price: '0.05 元/张', note: '支持图文一体化，多图融合，参考图生成' },
+      { id: 'wan2.5-i2i-preview', label: '万相2.5 I2I Preview（图生图）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.04 元/张', note: '支持多图参考生成，指令编辑，预览版' },
+      { id: 'wanx2.1-t2i-plus', label: '通义万相-增强版（V1兼容）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.08 元/张', note: 'V1格式，支持ref_image参考图' },
+      { id: 'wanx2.1-t2i-turbo', label: '通义万相-快照（V1快速版）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.02 元/张', note: 'V1格式，支持ref_image参考图，快速生成' },
+      { id: 'kling/kling-v3-image-generation', label: '可灵Kling V3（图像生成）', rating: '⭐⭐⭐', free: '新用户赠百元免费额度', price: '0.10 元/张', note: '支持最多10张参考图，风格一致，异步API' },
     ]
   },
+
   '豆包': {
     name: '豆包（火山引擎）',
     endpoint: 'https://ark.cn-beijing.volces.com/api/v3',
     imgGen: true,
-    desc: '火山引擎豆包模型，Doubao Seed 系列支持图像生成',
+    desc: '火山引擎豆包模型，Seedream系列支持参考图生图',
     models: [
-      { id: 'doubao-seed-2.1-pro', label: 'Doubao Seed 2.1 Pro（旗舰图像生成）', rating: '⭐⭐', free: '新用户赠 50 万 tokens', price: '0.02 元/张', note: '豆包旗舰图像生成模型，综合能力强' },
-      { id: 'doubao-seed-2.1-turbo', label: 'Doubao Seed 2.1 Turbo（快速图像生成）', rating: '⭐', free: '新用户赠 50 万 tokens', price: '0.008 元/张', note: '轻量版，生成速度快' },
+      { id: 'doubao-seedream-5.0-lite', label: 'Seedream 5.0 Lite（参考图生图）', rating: '⭐⭐⭐', free: '新用户赠 50 万 tokens', price: '0.04 元/张', note: '最新模型，支持参考图，角色一致性佳，推荐' },
+      { id: 'doubao-seedream-5.0-pro', label: 'Seedream 5.0 Pro（专业图像生成）', rating: '⭐⭐⭐', free: '新用户赠 50 万 tokens', price: '0.08 元/张', note: '旗舰模型，支持参考图，画质最优' },
     ]
   },
   '硅基流动': {
@@ -32,35 +38,26 @@ var PLATFORMS = {
     imgGen: true,
     desc: '开源图像生成模型平台，FLUX系列画质极高，模型丰富',
     models: [
-      { id: 'black-forest-labs/FLUX.1-pro', label: 'FLUX.1-pro（专业版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.15 元/张', note: '画质顶级，细节丰富，推荐' },
-      { id: 'black-forest-labs/FLUX.1-dev', label: 'FLUX.1-dev（开发版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.06 元/张', note: '高质量开源模型，多视图表现好' },
-      { id: 'black-forest-labs/FLUX.1-schnell', label: 'FLUX.1-schnell（快速版）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '生成速度快，适合快速测试' },
-      { id: 'black-forest-labs/FLUX.1-pro-ultra', label: 'FLUX.1-pro-ultra（超高清版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.25 元/张', note: '超高清画质，细节最丰富，角色表现力最强' },
-      { id: 'stabilityai/stable-diffusion-3-5-large', label: 'SD 3.5 Large（SD最新大模型）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.05 元/张', note: '构图能力强，细节丰富' },
-      { id: 'stabilityai/stable-diffusion-3-5-medium', label: 'SD 3.5 Medium（轻量版）', rating: '⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '轻量版，速度较快' },
-      { id: 'Kwai-Kolors/Kolors-diffusers', label: 'Kolors 可图（快手开源）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.03 元/张', note: '快手开源，中文理解强' },
-      { id: 'stabilityai/stable-diffusion-xl-base-1.0', label: 'SDXL 1.0（经典大模型）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '经典SDXL模型，生态成熟' },
-      { id: 'stabilityai/sdxl-turbo', label: 'SDXL Turbo（极速版）', rating: '⭐', free: '新用户赠 14 元余额', price: '0.01 元/张', note: '1-2步生成，适合快速迭代' },
+      { id: 'black-forest-labs/FLUX.1-pro', label: 'FLUX.1-pro（专业版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.15 元/张', note: '画质顶级，支持参考图，推荐' },
+      { id: 'black-forest-labs/FLUX.1-dev', label: 'FLUX.1-dev（开发版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.06 元/张', note: '高质量开源模型，支持参考图，多视图表现好' },
+      { id: 'black-forest-labs/FLUX.1-schnell', label: 'FLUX.1-schnell（快速版）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '生成速度快，支持参考图，适合快速测试' },
+      { id: 'black-forest-labs/FLUX.1-pro-ultra', label: 'FLUX.1-pro-ultra（超高清版）', rating: '⭐⭐⭐', free: '新用户赠 14 元余额', price: '0.25 元/张', note: '超高清画质，支持参考图，角色表现力最强' },
+      { id: 'stabilityai/stable-diffusion-3-5-large', label: 'SD 3.5 Large（SD最新大模型）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.05 元/张', note: '构图能力强，支持参考图，细节丰富' },
+      { id: 'stabilityai/stable-diffusion-3-5-medium', label: 'SD 3.5 Medium（轻量版）', rating: '⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '轻量版，支持参考图，速度较快' },
+      { id: 'Kwai-Kolors/Kolors-diffusers', label: 'Kolors 可图（快手开源）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.03 元/张', note: '快手开源，中文理解强，支持参考图' },
+      { id: 'stabilityai/stable-diffusion-xl-base-1.0', label: 'SDXL 1.0（经典大模型）', rating: '⭐⭐', free: '新用户赠 14 元余额', price: '0.02 元/张', note: '经典SDXL模型，生态成熟，支持参考图' },
+      { id: 'stabilityai/sdxl-turbo', label: 'SDXL Turbo（极速版）', rating: '⭐', free: '新用户赠 14 元余额', price: '0.01 元/张', note: '1-2步生成，支持参考图，适合快速迭代' },
     ]
   },
-  '腾讯混元': {
-    name: '腾讯混元',
-    endpoint: 'https://api.hunyuan.cloud.tencent.com/v1',
-    imgGen: true,
-    desc: '腾讯混元图像生成模型，中文理解好',
-    models: [
-      { id: 'hunyuan-image', label: 'Hunyuan-Image（标准图像生成）', rating: '⭐⭐', free: '每月赠 100 张', price: '0.03 元/张', note: '混元图像生成，中文场景表现好' },
-      { id: 'hunyuan-image-plus', label: 'Hunyuan-Image-Plus（增强图像生成）', rating: '⭐⭐', free: '每月赠 100 张', price: '0.06 元/张', note: '增强版，画质更优，推荐' },
-    ]
-  },
+
   '智谱': {
     name: '智谱 AI',
     endpoint: 'https://open.bigmodel.cn/api/paas/v4',
     imgGen: true,
     desc: 'CogView系列图像生成模型，布局理解强',
     models: [
-      { id: 'cogview-4', label: 'CogView-4（最新图像生成）', rating: '⭐⭐⭐', free: '新用户赠 500 万 tokens', price: '0.06 元/张', note: '布局理解最强，多视图效果最佳，推荐' },
-      { id: 'cogview-3', label: 'CogView-3（稳定图像生成）', rating: '⭐⭐', free: '新用户赠 500 万 tokens', price: '0.04 元/张', note: '稳定可靠，适合日常使用' },
+      { id: 'cogview-4', label: 'CogView-4（最新图像生成）', rating: '⭐⭐⭐', free: '新用户赠 500 万 tokens', price: '0.06 元/张', note: '布局理解最强，多视图效果最佳，支持参考图，推荐' },
+
     ]
   },
   '自定义': {
@@ -209,10 +206,10 @@ function updateModeTip(platform) {
   }
   ptip.style.display = 'block';
   var TIPS = {
-    '阿里百炼': { text: '通义万相系列角色一致性表现优秀，推荐 <strong>通义万相-增强版</strong>（高清画质，适合多视图输出）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
-    '豆包': { text: 'Doubao Seed 系列图像生成综合能力强，推荐 <strong>Doubao Seed 2.1 Pro</strong>（旗舰图像生成）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '阿里百炼': { text: '万相系列推荐 <strong>wan2.7-image-pro</strong>，可灵AI支持最多10张参考图，均支持多图参考生成', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '千问图像': { text: '千问图像系列擅长文本渲染与复杂布局，推荐 <strong>Qwen-Image-Max</strong>（旗舰版，画质最佳）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
     '硅基流动': { text: 'FLUX 系列画质顶级，多视图效果优秀，推荐 <strong>FLUX.1-pro</strong>（专业级画质）或 <strong>FLUX.1-dev</strong>（性价比高）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
-    '腾讯混元': { text: '混元图像生成中文场景表现好，推荐 <strong>Hunyuan-Image-Plus</strong>（增强版画质更优）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '豆包': { text: 'Seedream 系列支持参考图生图，角色一致性表现优秀，推荐 <strong>Seedream 5.0 Lite</strong>（支持参考图，性价比高）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
     '智谱': { text: 'CogView-4 布局理解能力最强，多视图效果最佳，推荐 <strong>CogView-4</strong>（最新图像生成模型）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
     '自定义': { text: '自行配置兼容 OpenAI 格式的图像生成 API，需确保端点支持 /v1/images/generations 接口', border: 'rgba(251,191,36,.25)', bg: 'rgba(251,191,36,.06)', color: '#fde68a' }
   };
@@ -277,6 +274,7 @@ async function testConnection() {
     var url = ep.replace(/\/+$/, '') + '/chat/completions';
     var modelSel = document.getElementById('modelselect');
     var modelName = modelSel.value || 'gpt-3.5-turbo';
+    if (platform === '阿里百炼') modelName = 'qwen-turbo';
     var resp = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
@@ -474,42 +472,115 @@ async function genImage() {
   try {
     var imageUrl = '';
 
-    // 阿里百炼 - 通义万相专用API
+    // 阿里百炼 - 通义万相
     if (platform === '阿里百炼') {
-      var wanxUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis';
-      var wanxBody = {
-        model: model,
-        input: { prompt: genPrompt },
-        parameters: { size: CURRENT_SIZE.replace('x', '*'), n: CURRENT_N }
-      };
-      var resp = await fetch(wanxUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
-        body: JSON.stringify(wanxBody)
-      });
-      if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
-      var result = await resp.json();
-      if (result.output && result.output.results && result.output.results[0]) {
-        imageUrl = result.output.results[0].url;
+      // 可灵 Kling 系列使用异步 API
+      if (model.indexOf('kling/') === 0) {
+        var klingUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/image-generation/generation';
+        var content = [{ text: genPrompt }];
+        if (currentImageData) {
+          content.unshift({ image: currentImageData });
+        }
+        var klingBody = {
+          model: model,
+          input: { messages: [{ role: 'user', content: content }] },
+          parameters: { n: CURRENT_N, aspect_ratio: '1:1', resolution: '1k' }
+        };
+        var resp = await fetch(klingUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key, 'X-DashScope-Async': 'enable' },
+          body: JSON.stringify(klingBody)
+        });
+        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+        var result = await resp.json();
+        var taskId = result.output && result.output.task_id;
+        if (!taskId) throw new Error('未获取到任务ID');
+        // 轮询任务结果
+        var pollUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/image-generation/generation/' + taskId;
+        for (var i = 0; i < 60; i++) {
+          await new Promise(function(r) { setTimeout(r, 2000); });
+          var pollResp = await fetch(pollUrl, {
+            headers: { 'Authorization': 'Bearer ' + key }
+          });
+          if (!pollResp.ok) continue;
+          var pollResult = await pollResp.json();
+          var status = pollResult.output && pollResult.output.task_status;
+          if (status === 'SUCCEEDED') {
+            var results = pollResult.output.results;
+            if (results && results[0]) {
+              imageUrl = results[0].image || results[0].url;
+              if (!imageUrl && results[0].content) {
+                var c = results[0].content;
+                if (Array.isArray(c)) {
+                  var img = c.find(function(x) { return x.image; });
+                  if (img) imageUrl = img.image;
+                }
+              }
+            }
+            break;
+          } else if (status === 'FAILED') {
+            throw new Error('可灵AI生成失败: ' + (pollResult.output.message || '未知错误'));
+          }
+        }
+        if (!imageUrl) throw new Error('可灵AI生成超时，请稍后重试');
+      } else if (model.indexOf('wan2.7') === 0 || model === 'wan2.6-image' || model === 'wan2.5-i2i-preview') {
+        var wanUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation';
+        var content = [{ text: genPrompt }];
+        if (currentImageData) {
+          content.unshift({ image: currentImageData });
+        }
+        var wanBody = {
+          model: model,
+          input: {
+            messages: [{ role: 'user', content: content }]
+          },
+          parameters: { size: CURRENT_SIZE.replace('x', '*'), n: CURRENT_N }
+        };
+        var resp = await fetch(wanUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+          body: JSON.stringify(wanBody)
+        });
+        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+        var result = await resp.json();
+        // 尝试多种响应格式
+        var choices = result.output && result.output.choices;
+        if (choices && choices[0]) {
+          var content = choices[0].content || (choices[0].message && choices[0].message.content) || [];
+          if (typeof content === 'string') {
+            imageUrl = content;
+          } else if (Array.isArray(content)) {
+            var imgItem = content.find(function(c) { return c.image; }) || content.find(function(c) { return c.image_url && c.image_url.url; });
+            if (imgItem) imageUrl = imgItem.image || (imgItem.image_url && imgItem.image_url.url);
+          }
+        }
+        // 兼容旧版响应格式
+        if (!imageUrl && result.output && result.output.results) {
+          if (result.output.results[0]) imageUrl = result.output.results[0].url || result.output.results[0].image;
+        }
+      } else {
+        // wanx2.1 系列使用 V1 文生图 API
+        var wanxUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/text2image/image-synthesis';
+        var wanxBody = {
+          model: model,
+          input: { prompt: genPrompt },
+          parameters: { size: CURRENT_SIZE.replace('x', '*'), n: CURRENT_N }
+        };
+        if (currentImageData) {
+          wanxBody.input.ref_image = currentImageData;
+        }
+        var resp = await fetch(wanxUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+          body: JSON.stringify(wanxBody)
+        });
+        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+        var result = await resp.json();
+        if (result.output && result.output.results && result.output.results[0]) {
+          imageUrl = result.output.results[0].url;
+        }
       }
     }
-    // 腾讯混元
-    else if (platform === '腾讯混元') {
-      var hyUrl = ep.replace(/\/+$/, '') + '/images/generations';
-      var hyBody = { model: model, prompt: genPrompt, n: CURRENT_N, size: CURRENT_SIZE, response_format: 'b64_json' };
-      var resp = await fetch(hyUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
-        body: JSON.stringify(hyBody)
-      });
-      if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
-      var result = await resp.json();
-      if (result.data && result.data[0]) {
-        if (result.data[0].b64_json) imageUrl = 'data:image/png;base64,' + result.data[0].b64_json;
-        else if (result.data[0].url) imageUrl = result.data[0].url;
-      }
-    }
-
     // 智谱 AI - CogView API
     else if (platform === '智谱') {
       var zgUrl = ep.replace(/\/+$/, '') + '/images/generations';
@@ -530,6 +601,9 @@ async function genImage() {
     else if (platform === '豆包') {
       var dbUrl = ep.replace(/\/+$/, '') + '/images/generations';
       var dbBody = { model: model, prompt: genPrompt, n: CURRENT_N, size: CURRENT_SIZE, response_format: 'b64_json' };
+      if (currentImageData && model.indexOf('seedream') >= 0) {
+        dbBody.reference_images = [{ image: currentImageData }];
+      }
       var resp = await fetch(dbUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
@@ -547,9 +621,9 @@ async function genImage() {
       var url = ep.replace(/\/+$/, '') + '/images/generations';
       var body = { model: model, prompt: genPrompt, n: CURRENT_N, size: CURRENT_SIZE, response_format: 'b64_json' };
 
-      // 硅基流动 FLUX 系列推荐使用当前选择尺寸
-      if (platform === '硅基流动') {
-        body.size = CURRENT_SIZE;
+      // 硅基流动 FLUX/SD 系列支持参考图
+      if (platform === '硅基流动' && currentImageData) {
+        body.image = currentImageData;
       }
 
       var resp = await fetch(url, {
@@ -621,15 +695,16 @@ var API_HELP_HTML = '';
       color: '#c4b5fd',
       steps: [
         '① 打开 <a href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener">阿里云百炼控制台</a> → 右上角选择「华北2（北京）」地域',
-        '② 左侧导航「API Key 管理」→ 点击「创建 API Key」→ 设置权限后确认',
-        '③ 弹窗中复制 API Key 并妥善保存（关闭后无法再次查看）',
-        '④ 通义万相是阿里云图像生成模型，支持文生图',
-        '⑤ 推荐模型：通义万相-增强版（高清画质，适合多视图输出）',
+        '② 左侧导航「API Key 管理」→ 点击「创建 API Key」→ 复制并保存',
+        '③ 在控制台左侧「业务空间」查看 WorkspaceId（用于 wan2.7 系列 API 端点）',
+        '④ wan2.7 系列使用 V2 多模态 API（支持参考图），wanx2.1 系列使用 V1 文生图 API',
+        '⑤ 推荐模型：wan2.7-image-pro（旗舰4K）、可灵Kling V3（多参考图）、wan2.6-image（图文混排）',
       ],
-      ep: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
-      note: '通义万相图像生成走独立API端点，本工具已自动适配',
+      ep: 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation',
+      note: 'wan2.7系列使用V2多模态API（端点需替换WorkspaceId）；wanx2.1系列使用V1文生图API',
       models: PLATFORMS['阿里百炼'].models
     },
+
     {
       name: '硅基流动（SiliconFlow）',
       color: '#86efac',
@@ -641,7 +716,7 @@ var API_HELP_HTML = '';
         '⑤ 推荐模型：FLUX.1-pro（画质顶级）、FLUX.1-dev（性价比高）',
       ],
       ep: 'https://api.siliconflow.cn/v1',
-      note: '支持 OpenAI 兼容的图像生成 API，即开即用',
+      note: '支持 OpenAI 兼容的图像生成 API；FLUX/SD系列支持参考图，通过 image 参数传入',
       models: PLATFORMS['硅基流动'].models
     },
     {
@@ -652,26 +727,13 @@ var API_HELP_HTML = '';
         '② 点击「创建 API Key」→ 复制并妥善保存密钥',
         '③ 进入「模型广场」找到图像生成模型并开通',
         '④ 新用户赠 50 万 tokens 体验额度',
-        '⑤ 推荐模型：Doubao Seed 2.1 Pro（旗舰图像生成）',
+        '⑤ 推荐模型：Seedream 5.0 Lite（支持参考图，性价比高）',
       ],
       ep: 'https://ark.cn-beijing.volces.com/api/v3',
-      note: '需先开通对应模型服务才可使用',
+      note: '需先开通对应模型服务才可使用；Seedream 系列支持参考图生图，通过 reference_images 参数传入',
       models: PLATFORMS['豆包'].models
     },
-    {
-      name: '腾讯混元',
-      color: '#c4b5fd',
-      steps: [
-        '① 打开 <a href="https://console.cloud.tencent.com/cam/capi" target="_blank" rel="noopener">腾讯云控制台 → 访问管理 → API 密钥管理</a>',
-        '② 登录后点击「新建密钥」→ 生成 SecretId 和 SecretKey',
-        '③ 复制 SecretId 并作为 API Key 填入（混元 API 使用 SecretId 认证）',
-        '④ 混元图像生成模型每月赠 100 张免费额度',
-        '⑤ 推荐模型：Hunyuan-Image-Plus（增强版画质更优）',
-      ],
-      ep: 'https://api.hunyuan.cloud.tencent.com/v1',
-      note: '使用 SecretId 作为 API Key，SecretKey 暂不需要',
-      models: PLATFORMS['腾讯混元'].models
-    },
+
     {
       name: '智谱 AI',
       color: '#93c5fd',
@@ -748,9 +810,10 @@ var API_HELP_HTML = '';
   html += '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>';
   html += '<span>连接测试说明</span></div>';
   html += '<div class="tip-item">1. 测试按钮调用的是 <strong>/chat/completions</strong> 接口，而当前选择的模型是图像生成模型，部分平台图像模型未注册在此接口下，可能导致测试不通；</div>';
-  html += '<div class="tip-item">2. 实际图片生成走的是 <strong>/images/generations</strong> 接口（阿里百炼为通义万相专用 API），测试不通不影响正常生成；</div>';
-  html += '<div class="tip-item">3. 如果测试不通，建议直接填写好 API Key 和模型后，点击「生成图片」验证能否正常出图；</div>';
-  html += '<div class="tip-item">4. 如生成图片仍失败，请检查 API Key 是否有效、模型是否已开通、端点地址是否正确。</div>';
+  html += '<div class="tip-item">2. 阿里百炼已自动使用 <strong>qwen-turbo</strong> 模型进行连接测试，可正常验证 API Key 有效性；</div>';
+  html += '<div class="tip-item">3. 实际图片生成走的是 <strong>/images/generations</strong> 接口（阿里百炼为通义万相专用API），测试不通不影响正常生成；</div>';
+  html += '<div class="tip-item">4. 如果测试不通，建议直接填写好 API Key 和模型后，点击「生成图片」验证能否正常出图；</div>';
+  html += '<div class="tip-item">5. 如生成图片仍失败，请检查 API Key 是否有效、模型是否已开通、端点地址是否正确。</div>';
   html += '</div>';
   // 安全说明
   html += '<div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(251,191,36,.15)">';
