@@ -65,7 +65,6 @@
             <option value="" disabled selected>请选择平台</option>
             <option value="阿里百炼">阿里百炼（通义万相）</option>
             <option value="豆包">豆包（火山引擎）</option>
-            <option value="豆包">豆包（火山引擎）</option>
             <option value="硅基流动">硅基流动（SiliconFlow）</option>
             <option value="智谱">智谱 AI</option>
             <option value="自定义">自定义</option>
@@ -248,13 +247,13 @@
         <img id="result-img" alt="生成的图片" style="max-width:100%;max-height:600px;border-radius:4px;display:block;margin:0 auto">
       </div>
       <div style="margin-top:12px;display:flex;flex-direction:row;gap:8px">
-        <button class="b-grad" onclick="downloadResult('png')" style="flex:1">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          下载 PNG
-        </button>
         <button class="b-grad" onclick="downloadResult('jpg')" style="flex:1">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           下载 JPG
+        </button>
+        <button class="b-grad" onclick="downloadResult('png')" style="flex:1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          下载 PNG
         </button>
         <button class="b-sec" onclick="resetResult()" style="flex:0.5">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>

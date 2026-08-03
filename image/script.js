@@ -10,15 +10,22 @@ var PLATFORMS = {
     name: '阿里百炼（通义万相）',
     endpoint: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
     imgGen: true,
-    desc: '万相系列图像生成模型，wan2.7支持多图参考生成（使用V2多模态API，无需额外开通）',
+    desc: '万相+千问+可灵系列图像生成模型，支持参考图+提示词生图（使用V2多模态API或异步API）',
     models: [
-      { id: 'wan2.7-image-pro', label: '万相2.7 Image Pro（旗舰版）', rating: '⭐⭐⭐', free: '新用户赠百元免费额度', price: '0.12 元/张', note: '支持多图参考生成，4K输出，最新旗舰，推荐' },
-      { id: 'wan2.7-image', label: '万相2.7 Image（标准版）', rating: '⭐⭐⭐', free: '新用户赠百元免费额度', price: '0.06 元/张', note: '支持多图参考生成，画质优秀' },
-      { id: 'wan2.6-image', label: '万相2.6 Image（图文混排）', rating: '⭐⭐⭐', free: '新用户赠百元免费额度', price: '0.05 元/张', note: '支持图文一体化，多图融合，参考图生成' },
-      { id: 'wan2.5-i2i-preview', label: '万相2.5 I2I Preview（图生图）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.04 元/张', note: '支持多图参考生成，指令编辑，预览版' },
-      { id: 'wanx2.1-t2i-plus', label: '通义万相-增强版（V1兼容）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.08 元/张', note: 'V1格式，支持ref_image参考图' },
-      { id: 'wanx2.1-t2i-turbo', label: '通义万相-快照（V1快速版）', rating: '⭐⭐', free: '新用户赠百元免费额度', price: '0.02 元/张', note: 'V1格式，支持ref_image参考图，快速生成' },
-      { id: 'kling/kling-v3-image-generation', label: '可灵Kling V3（图像生成）', rating: '⭐⭐⭐', free: '新用户赠百元免费额度', price: '0.10 元/张', note: '支持最多10张参考图，风格一致，异步API' },
+      { id: 'wan2.7-image-pro', label: '万相2.7 Image Pro（旗舰版）', rating: '⭐⭐⭐', free: '50张免费（90天）', price: '0.50 元/张', note: '支持多图参考，4K输出，组图生成，最新旗舰，推荐' },
+      { id: 'wan2.7-image', label: '万相2.7 Image（标准版）', rating: '⭐⭐⭐', free: '50张免费（90天）', price: '0.20 元/张', note: '支持多图参考，2K输出，画质优秀' },
+      { id: 'wan2.6-image', label: '万相2.6 Image（图文混排）', rating: '⭐⭐⭐', free: '50张免费（90天）', price: '0.20 元/张', note: '支持图文一体化，多图融合，参考图生成' },
+      { id: 'wan2.5-i2i-preview', label: '万相2.5 I2I Preview（图生图）', rating: '⭐⭐', free: '50张免费（90天）', price: '0.20 元/张', note: '支持多图参考生成，指令编辑，预览版' },
+      { id: 'qwen-image-3.0-pro', label: '千问图像3.0 Pro（生成与编辑）', rating: '⭐⭐⭐', free: '限时免费（邀测中）', price: '限时免费', note: '支持1-3张参考图+提示词，T2I+I2I，邀测阶段需申请开通，推荐' },
+      { id: 'qwen-image-2.0-pro', label: '千问图像2.0 Pro（生成与编辑）', rating: '⭐⭐⭐', free: '100张免费（90天）', price: '0.50 元/张', note: '支持1-3张参考图+提示词，文字渲染强，角色一致性佳，推荐' },
+      { id: 'qwen-image-2.0', label: '千问图像2.0（加速版）', rating: '⭐⭐', free: '100张免费（90天）', price: '0.20 元/张', note: '支持1-3张参考图+提示词，兼顾效果与速度' },
+      { id: 'qwen-image-edit-max', label: '千问图像编辑 Max', rating: '⭐⭐⭐', free: '100张免费（90天）', price: '0.50 元/张', note: '支持1-3张参考图，工业设计、几何推理、角色一致性更强' },
+      { id: 'qwen-image-edit-plus', label: '千问图像编辑 Plus', rating: '⭐⭐', free: '100张免费（90天）', price: '0.20 元/张', note: '支持1-3张参考图，多图输出，自定义分辨率' },
+      { id: 'qwen-image-edit', label: '千问图像编辑（基础版）', rating: '⭐', free: '100张免费（90天）', price: '0.30 元/张', note: '支持单图编辑和多图融合，固定1张输出' },
+      { id: 'wanx2.1-t2i-plus', label: '通义万相2.1增强版（V1兼容）', rating: '⭐⭐', free: '500张免费（90天）', price: '0.20 元/张', note: 'V1格式，支持ref_image参考图' },
+      { id: 'wanx2.1-t2i-turbo', label: '通义万相2.1快速版（V1兼容）', rating: '⭐⭐', free: '500张免费（90天）', price: '0.14 元/张', note: 'V1格式，支持ref_image参考图，快速生成' },
+      { id: 'kling/kling-v3-image-generation', label: '可灵Kling V3（图像生成）', rating: '⭐⭐⭐', free: '无免费额度', price: '0.20 元/张', note: '支持最多10张参考图，风格一致，异步API' },
+      { id: 'kling/kling-v3-omni-image-generation', label: '可灵Kling V3 Omni（全能版）', rating: '⭐⭐⭐', free: '无免费额度', price: '0.20 元/张', note: '支持参考图，1K/2K/4K输出，异步API' },
     ]
   },
 
@@ -206,9 +213,8 @@ function updateModeTip(platform) {
   }
   ptip.style.display = 'block';
   var TIPS = {
-    '阿里百炼': { text: '万相系列推荐 <strong>wan2.7-image-pro</strong>，可灵AI支持最多10张参考图，均支持多图参考生成', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
-    '千问图像': { text: '千问图像系列擅长文本渲染与复杂布局，推荐 <strong>Qwen-Image-Max</strong>（旗舰版，画质最佳）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
-    '硅基流动': { text: 'FLUX 系列画质顶级，多视图效果优秀，推荐 <strong>FLUX.1-pro</strong>（专业级画质）或 <strong>FLUX.1-dev</strong>（性价比高）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+    '阿里百炼': { text: '万相系列推荐 <strong>wan2.7-image-pro</strong>；千问系列推荐 <strong>qwen-image-2.0-pro</strong>（文字渲染强，角色一致性佳）；可灵AI支持最多10张参考图。均支持参考图+提示词生图', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
+'硅基流动': { text: 'FLUX 系列画质顶级，多视图效果优秀，推荐 <strong>FLUX.1-pro</strong>（专业级画质）或 <strong>FLUX.1-dev</strong>（性价比高）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
     '豆包': { text: 'Seedream 系列支持参考图生图，角色一致性表现优秀，推荐 <strong>Seedream 5.0 Lite</strong>（支持参考图，性价比高）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
     '智谱': { text: 'CogView-4 布局理解能力最强，多视图效果最佳，推荐 <strong>CogView-4</strong>（最新图像生成模型）', border: 'rgba(52,211,153,.25)', bg: 'rgba(16,185,129,.06)', color: '#a7f3d0' },
     '自定义': { text: '自行配置兼容 OpenAI 格式的图像生成 API，需确保端点支持 /v1/images/generations 接口', border: 'rgba(251,191,36,.25)', bg: 'rgba(251,191,36,.06)', color: '#fde68a' }
@@ -449,6 +455,31 @@ function checkGenReady() {
   document.getElementById('genbtn').disabled = !canGen;
 }
 
+// ---- 阿里百炼错误解析 ----
+function parseBailianError(status, errText) {
+  var msg = 'HTTP ' + status;
+  try {
+    var err = JSON.parse(errText);
+    var code = err.code || '';
+    var message = err.message || '';
+    msg = 'HTTP ' + status + ' [' + code + '] ' + message;
+    if (status === 403 || code === 'AccessDenied') {
+      msg += '\n\n该模型可能尚未开通。请前往阿里云百炼控制台 → 模型广场，搜索该模型并点击「立即开通」或「申请开通」（邀测模型需等待审批）。';
+    } else if (code === 'DataInspectionFailed') {
+      msg += '\n\n输入内容触发了安全审核，请修改提示词后重试。';
+    } else if (code === 'Throttling') {
+      msg += '\n\n请求被限流，请稍后重试。';
+    } else if (code === 'ModelServiceUnavailable') {
+      msg += '\n\n模型服务暂时不可用，请稍后重试。';
+    } else if (code === 'InvalidParameter') {
+      msg += '\n\n参数错误，请检查提示词和图片设置。';
+    }
+  } catch(e) {
+    if (errText) msg = 'HTTP ' + status + ': ' + errText.substring(0, 200);
+  }
+  return msg;
+}
+
 // ---- Image Generation ----
 async function genImage() {
   var key = document.getElementById('apikey').value.trim();
@@ -460,6 +491,12 @@ async function genImage() {
 
   if (!key || !ep || !model || !userPrompt) { showError('请完善 API 配置和提示词'); return; }
   if (pf && !pf.imgGen) { showError('该平台不支持图像生成，请选择其他平台'); return; }
+
+  // 前置检查：千问图像编辑系列必须有参考图
+  if (platform === '阿里百炼' && model.indexOf('qwen-image-edit') === 0 && !currentImageData) {
+    showError('该模型为图像编辑模型，必须上传参考图后才能使用');
+    return;
+  }
 
   showLoading(true);
   hideError();
@@ -491,12 +528,12 @@ async function genImage() {
           headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key, 'X-DashScope-Async': 'enable' },
           body: JSON.stringify(klingBody)
         });
-        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error(parseBailianError(resp.status, e)); }
         var result = await resp.json();
         var taskId = result.output && result.output.task_id;
-        if (!taskId) throw new Error('未获取到任务ID');
+        if (!taskId) throw new Error('未获取到任务ID（' + (result.message || JSON.stringify(result).substring(0, 100)) + '）');
         // 轮询任务结果
-        var pollUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/image-generation/generation/' + taskId;
+        var pollUrl = 'https://dashscope.aliyuncs.com/api/v1/tasks/' + taskId;
         for (var i = 0; i < 60; i++) {
           await new Promise(function(r) { setTimeout(r, 2000); });
           var pollResp = await fetch(pollUrl, {
@@ -523,7 +560,7 @@ async function genImage() {
           }
         }
         if (!imageUrl) throw new Error('可灵AI生成超时，请稍后重试');
-      } else if (model.indexOf('wan2.7') === 0 || model === 'wan2.6-image' || model === 'wan2.5-i2i-preview') {
+      } else if (model.indexOf('wan2.7') === 0 || model === 'wan2.6-image' || model === 'wan2.5-i2i-preview' || model.indexOf('qwen-image') === 0) {
         var wanUrl = 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation';
         var content = [{ text: genPrompt }];
         if (currentImageData) {
@@ -541,7 +578,7 @@ async function genImage() {
           headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
           body: JSON.stringify(wanBody)
         });
-        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error(parseBailianError(resp.status, e)); }
         var result = await resp.json();
         // 尝试多种响应格式
         var choices = result.output && result.output.choices;
@@ -574,7 +611,7 @@ async function genImage() {
           headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
           body: JSON.stringify(wanxBody)
         });
-        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error('HTTP ' + resp.status + ': ' + e.substring(0, 100)); }
+        if (!resp.ok) { var e = await resp.text().catch(function() { return ''; }); throw new Error(parseBailianError(resp.status, e)); }
         var result = await resp.json();
         if (result.output && result.output.results && result.output.results[0]) {
           imageUrl = result.output.results[0].url;
@@ -662,19 +699,54 @@ function showLoading(show) {
 }
 
 // ---- Download & Reset ----
-function downloadResult(fmt) {
+async function downloadResult(fmt) {
   var img = document.getElementById('result-img');
   if (!img || !img.src) return;
+  var fileName = 'character_closeup_threeview.' + fmt;
   var link = document.createElement('a');
-  link.download = 'character_closeup_threeview.' + fmt;
-  if (img.src.indexOf('data:') === 0) { link.href = img.src; }
-  else {
-    var c = document.createElement('canvas');
-    c.width = img.naturalWidth; c.height = img.naturalHeight;
-    c.getContext('2d').drawImage(img, 0, 0);
-    link.href = fmt === 'jpg' ? c.toDataURL('image/jpeg', 0.92) : c.toDataURL('image/png');
+  link.download = fileName;
+
+  // data: URL — 可直接用于 canvas，无跨域问题
+  if (img.src.indexOf('data:') === 0) {
+    if (fmt === 'jpg') {
+      var c = document.createElement('canvas');
+      c.width = img.naturalWidth; c.height = img.naturalHeight;
+      c.getContext('2d').drawImage(img, 0, 0);
+      link.href = c.toDataURL('image/jpeg', 0.92);
+    } else {
+      link.href = img.src;
+    }
+    document.body.appendChild(link); link.click(); document.body.removeChild(link);
+    return;
   }
-  document.body.appendChild(link); link.click(); document.body.removeChild(link);
+
+  // 远程 URL — 先 fetch 为 blob，避免 canvas 跨域污染
+  try {
+    var resp = await fetch(img.src);
+    var blob = await resp.blob();
+    var blobUrl = URL.createObjectURL(blob);
+
+    if (fmt === 'jpg' && blob.type !== 'image/jpeg') {
+      // 需要转格式：通过 Image 加载 blob URL（同源，不污染 canvas）
+      var tmpImg = new Image();
+      tmpImg.onload = function() {
+        var c = document.createElement('canvas');
+        c.width = tmpImg.naturalWidth; c.height = tmpImg.naturalHeight;
+        c.getContext('2d').drawImage(tmpImg, 0, 0);
+        link.href = c.toDataURL('image/jpeg', 0.92);
+        document.body.appendChild(link); link.click(); document.body.removeChild(link);
+        URL.revokeObjectURL(blobUrl);
+      };
+      tmpImg.src = blobUrl;
+    } else {
+      link.href = blobUrl;
+      document.body.appendChild(link); link.click(); document.body.removeChild(link);
+      setTimeout(function() { URL.revokeObjectURL(blobUrl); }, 1000);
+    }
+  } catch(e) {
+    // fetch 失败（CORS 等），降级为新窗口打开
+    window.open(img.src, '_blank');
+  }
 }
 
 function resetResult() {
@@ -696,12 +768,16 @@ var API_HELP_HTML = '';
       steps: [
         '① 打开 <a href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener">阿里云百炼控制台</a> → 右上角选择「华北2（北京）」地域',
         '② 左侧导航「API Key 管理」→ 点击「创建 API Key」→ 复制并保存',
-        '③ 在控制台左侧「业务空间」查看 WorkspaceId（用于 wan2.7 系列 API 端点）',
-        '④ wan2.7 系列使用 V2 多模态 API（支持参考图），wanx2.1 系列使用 V1 文生图 API',
-        '⑤ 推荐模型：wan2.7-image-pro（旗舰4K）、可灵Kling V3（多参考图）、wan2.6-image（图文混排）',
+        '③ 万相/千问系列使用 V2 多模态 API（multimodal-generation/generation），支持参考图+提示词',
+        '④ wanx2.1 系列使用 V1 文生图 API（text2image/image-synthesis），支持 ref_image 参数',
+        '⑤ 可灵系列使用异步 API（image-generation/generation），需轮询任务结果',
+        '⑥ 开通方法：在百炼控制台 → 模型广场，搜索模型名称，点击「立即开通」或「申请开通」',
+        '⑦ qwen-image-3.0-pro 处于邀测阶段，需申请开通后等待审批通过才能使用',
+        '⑧ 可灵系列需在模型广场找到可灵AI卡片，点击「立即开通」并确认授权',
+        '⑨ 推荐模型：wan2.7-image-pro（旗舰4K）、qwen-image-2.0-pro（文字渲染强）、可灵Kling V3（多参考图）',
       ],
       ep: 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation',
-      note: 'wan2.7系列使用V2多模态API（端点需替换WorkspaceId）；wanx2.1系列使用V1文生图API',
+      note: '万相/千问系列使用V2多模态API；wanx2.1系列使用V1文生图API；可灵系列使用异步API（需X-DashScope-Async: enable）',
       models: PLATFORMS['阿里百炼'].models
     },
 
@@ -834,7 +910,7 @@ var API_HELP_HTML = '';
   html += '<div class="tip-item">1. 免费额度为各平台新用户活动，具体额度和有效期以平台官网为准；</div>';
   html += '<div class="tip-item">2. 价格信息仅供参考，各平台可能随时调整，请以平台官网实时价格为准；</div>';
   html += '<div class="tip-item">3. 效果标注 ⭐⭐⭐ 为顶级推荐，⭐⭐ 为优秀，⭐ 为良好，— 为不支持图像生成；</div>';
-  html += '<div class="tip-item">4. 多视图布局生成对模型要求较高，推荐优先使用 CogView-4、FLUX.1-pro、通义万相-增强版。</div>';
+  html += '<div class="tip-item">4. 多视图布局生成对模型要求较高，推荐优先使用 wan2.7-image-pro、qwen-image-2.0-pro、CogView-4、FLUX.1-pro。</div>';
   html += '</div></div>';
 
   API_HELP_HTML = html;
