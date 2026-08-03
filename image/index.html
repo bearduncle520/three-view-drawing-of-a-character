@@ -57,7 +57,7 @@
         </div>
       </div>
 
-      <!-- Row 1: 选择平台 + 选择模型 + 测试连接 -->
+      <!-- Row 1: 选择平台 + 选择模型 -->
       <div style="display:flex;gap:10px;margin-bottom:10px">
         <div style="flex:1">
           <label class="f-label" style="font-size:11px;margin-bottom:3px">选择平台</label>
@@ -77,15 +77,10 @@
             <option value="" disabled selected>请先选择平台</option>
           </select>
         </div>
-        <div style="flex:0 0 120px;display:flex;align-items:flex-end">
-          <div class="s-btn wait" id="connbtn" onclick="onConnBtnClick()" style="width:100%;padding:8px 10px;font-size:12px;white-space:nowrap;line-height:1.4;text-align:center">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> 等待配置
-          </div>
-        </div>
       </div>
 
-      <!-- Row 2: API Key + API 端点 + 清除配置 -->
-      <div style="display:flex;gap:10px">
+      <!-- Row 2: API Key + API 端点 -->
+      <div style="display:flex;gap:10px;margin-bottom:10px">
         <div style="flex:1">
           <label class="f-label" style="font-size:11px;margin-bottom:3px">API Key
             <button onclick="showApiHelp()" type="button" style="background:none;border:none;color:#6b7280;cursor:pointer;padding:0;display:inline-flex;vertical-align:middle" title="各平台获取 API Key 方式">
@@ -105,7 +100,16 @@
           <label class="f-label" style="font-size:11px;margin-bottom:3px">API 端点</label>
           <input type="text" class="inp" id="apiendpoint" placeholder="端点地址" readonly style="padding:7px 10px;font-size:12px">
         </div>
-        <div style="flex:0 0 120px;display:flex;align-items:flex-end">
+      </div>
+
+      <!-- Row 3: 等待配置 + 清除配置 -->
+      <div style="display:flex;gap:10px">
+        <div style="flex:1">
+          <div class="s-btn wait" id="connbtn" onclick="onConnBtnClick()" style="width:100%;padding:8px 10px;font-size:12px;white-space:nowrap;line-height:1.4;text-align:center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> 等待配置
+          </div>
+        </div>
+        <div style="flex:1">
           <div class="s-btn clear" id="clearbtn" onclick="clearApiConfig()" title="清除配置" style="width:100%;padding:8px 10px;font-size:12px;line-height:1.4;text-align:center">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> 清除配置
           </div>
@@ -135,7 +139,7 @@
           </div>
         </div>
         <div style="flex:1.5;display:flex;flex-direction:column">
-          <textarea class="inp" id="promptInput" placeholder="提示词（描述角色特征），如：一个年轻女性，长发，穿着白色连衣裙，白色背景，柔和光影..." style="flex:1;min-height:200px;resize:vertical;font-family:inherit;padding:12px 14px;font-size:14px;line-height:1.6" oninput="checkGenReady()"></textarea>
+          <textarea class="inp" id="promptInput" placeholder="提示词（描述角色特征）" style="flex:1;min-height:200px;resize:vertical;font-family:inherit;padding:12px 14px;font-size:14px;line-height:1.6" oninput="checkGenReady()"></textarea>
         </div>
       </div>
       <span id="errormsg" style="font-size:12px;color:#f87171;display:none;margin-top:8px"></span>
@@ -306,7 +310,7 @@
     </div>
     <p class="card-sub">将多张图片本地拼接为一张完整布局图，支持横向 / 竖向</p>
     <div id="fcont">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px">
         <div style="text-align:center">
           <label class="f-label" style="margin-bottom:6px;justify-content:center">图1</label>
           <div class="upload" id="stitch-upload1" style="min-height:140px" onclick="document.getElementById('stitch-inp1').click()">
@@ -324,12 +328,10 @@
           </div>
         </div>
       </div>
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;margin-top:0">
-        <div style="display:flex;gap:6px;flex:1">
-          <button class="b-tab on" id="stitch-dir-h" onclick="stitchSetDir('h')" style="flex:1;text-align:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="3" y1="12" x2="21" y2="12"></line><polyline points="18 15 21 12 18 9"></polyline></svg> 横向</button>
-          <button class="b-tab" id="stitch-dir-v" onclick="stitchSetDir('v')" style="flex:1;text-align:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="12" y1="3" x2="12" y2="21"></line><polyline points="9 18 12 21 15 18"></polyline></svg> 竖向</button>
-        </div>
-        <button class="b-grad" id="stitch-btn" onclick="doStitch()" disabled style="flex:0 0 auto;width:auto;padding:6px 16px;min-height:unset;font-size:12px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 开始拼接</button>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:0">
+        <button class="b-tab on" id="stitch-dir-h" onclick="stitchSetDir('h')" style="flex:1;text-align:center;white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="3" y1="12" x2="21" y2="12"></line><polyline points="18 15 21 12 18 9"></polyline></svg> 横向</button>
+        <button class="b-tab" id="stitch-dir-v" onclick="stitchSetDir('v')" style="flex:1;text-align:center;white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="12" y1="3" x2="12" y2="21"></line><polyline points="9 18 12 21 15 18"></polyline></svg> 竖向</button>
+        <button class="b-grad" id="stitch-btn" onclick="doStitch()" disabled style="flex:1;text-align:center;padding:6px 6px;min-height:unset;font-size:12px;white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 开始拼接</button>
       </div>
       <div id="stitch-result" style="display:none">
         <div style="border:1px solid #2d2d4a;border-radius:8px;padding:12px;background:#16162a;margin-bottom:8px;text-align:center"><img id="stitch-output" alt="拼接结果" style="max-width:100%;max-height:400px;border-radius:4px"></div>

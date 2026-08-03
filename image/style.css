@@ -111,7 +111,7 @@ body {
 .b-sec:hover { border-color: #6b7280; color: #fff; }
 
 .b-tab {
-  padding: 6px 16px; border-radius: 8px; font-size: 12px; cursor: pointer;
+  padding: 6px 16px; border-radius: 8px; font-size: 12px; cursor: pointer; height: 44px; box-sizing: border-box;
   transition: 0.2s; border: 1px solid #2d2d4a; background: #2a2a3e; color: #9ca3af;
 }
 .b-tab:hover { border-color: #6b7280; }
@@ -236,6 +236,9 @@ body {
 #stitch-prev1, #stitch-prev2 { width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
 #stitch-prev1 img, #stitch-prev2 img { max-width: 100%; max-height: 160px; width: auto; height: auto; object-fit: contain; border-radius: 6px; border: 1px solid rgba(16,185,129,.3); }
 
+/* ---- 拼图按钮统一高度 ---- */
+#stitch-dir-h, #stitch-dir-v, #stitch-btn { height: 44px; box-sizing: border-box; }
+
 /* ---- 尺寸选择器 ---- */
 
 .sz-btn {
@@ -265,4 +268,57 @@ body {
   font-size: 12px; font-weight: 500; transition: all .2s; min-width: 48px;
 }
 .n-btn:hover { border-color: #8b5cf6; color: #d1d5db; }
-.n-btn.on { border-color: #8b5cf6; background: rgba(139,92,246,.15); color: #c4b5fd; }
+.n-btn.on { border-color: #8b5cf6; background: rgba(139,92,246,.15); color: #c4b5fd; }/* ---- 竖屏适配 ---- */
+@media (max-width: 720px) {
+  .container { padding: 16px 10px; }
+  .card { padding: 14px; }
+  .card-sub { margin-left: 0; margin-bottom: 10px; }
+  .card-hdr { flex-wrap: wrap; gap: 6px; }
+  .card-step { display: none; }
+  .h-title { font-size: 15px; }
+  .h-badge { font-size: 10px; padding: 2px 8px; }
+  .h-icon svg { width: 22px !important; height: 22px !important; }
+  .sponsor-btn { font-size: 11px; padding: 4px 12px; }
+
+  /* Step 02 尺寸选择 grid 改为单列 */
+  [style*="grid-template-columns:1fr auto"] { grid-template-columns: 1fr !important; }
+  #genbtn { aspect-ratio: auto !important; height: 40px !important; flex-direction: row !important; font-size: 12px !important; }
+
+  /* 上传+提示词 改为上下排列 */
+  .upload-wrap { flex-direction: column !important; }
+  .upload-wrap textarea { min-height: 100px !important; }
+
+  /* 模型配置行 所有flex行内子项占满 */
+  .config-row > div,
+  [style*="display:flex"][style*="margin-bottom"] > div,
+  [style*="display:flex;gap:10px"] > div { flex: 1 1 100% !important; }
+  [style*="flex:0"] { flex: 1 1 100% !important; }
+  .s-btn { width: 100% !important; justify-content: center !important; }
+
+  /* 比例/分辨率/张数按钮 */
+  .sz-btn, .k-btn, .n-btn { padding: 4px 10px; font-size: 11px; min-width: 34px; }
+  #ar-custom input, #k-custom input, #n-custom input { width: 48px !important; font-size: 10px !important; }
+
+  /* 拼图区 改为单列 */
+  #fcont > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 36px !important; }
+  #stitch-dir-h, #stitch-dir-v { font-size: 11px !important; padding: 5px 6px !important; white-space: nowrap; height: 44px !important; }
+  #stitch-dir-h svg, #stitch-dir-v svg { width: 12px !important; height: 12px !important; margin-right: 2px !important; }
+  [style*="gap:12px"][style*="margin-bottom:12px"] { gap: 6px !important; }
+  #stitch-btn { font-size: 11px !important; padding: 5px 10px !important; white-space: nowrap; height: 44px !important; }
+  #stitch-btn svg { width: 12px !important; height: 12px !important; }
+
+  /* 赞助弹窗 */
+  #sponsor-overlay > div { max-width: 94% !important; padding: 24px 16px !important; }
+  #sponsor-overlay img { width: 140px !important; height: 140px !important; }
+
+  /* 帮助弹窗 */
+  #api-help-overlay > div { max-width: 96% !important; padding: 14px !important; }
+  .api-acc-hd { font-size: 12px !important; padding: 8px 10px !important; }
+
+  /* 结果 */
+  #result-content img { max-width: 100% !important; }
+
+  /* 底部 */
+  .site-footer { font-size: 10px; padding: 10px 10px 14px; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 2px 4px; }
+}
