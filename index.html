@@ -56,22 +56,16 @@
         <label class="f-label">选择平台</label>
         <select class="sel" id="pselect" onchange="onPlatformChange()">
           <option value="" disabled selected>请选择平台</option>
-          <option value="阿里百炼">阿里百炼（通义千问视觉模型）</option>
-          <option value="Kimi">Kimi（月之暗面）</option>
-          <option value="腾讯混元">腾讯混元</option>
-          <option value="豆包">豆包（火山引擎）</option>
-          <option value="智谱">智谱 AI</option>
-          <option value="DeepSeek">DeepSeek（深度求索）</option>
-          <option value="硅基流动">硅基流动（SiliconFlow）</option>
-          <option value="讯飞星辰">讯飞星辰（MaaS平台）</option>
-          <option value="自定义">自定义</option>
+          <option value="阿里百炼">阿里云百炼平台</option>
+          <option value="自定义">自定义平台</option>
         </select>
       </div>
       <div class="mb3" id="model-select-group" style="display:none">
-        <label class="f-label">选择模型</label>
+        <label class="f-label" id="model-label">选择模型</label>
         <select class="sel" id="modelselect" onchange="onModelChange()">
           <option value="" disabled selected>请先选择平台</option>
         </select>
+        <input type="text" class="inp" id="custommodel" placeholder="输入模型ID，如 GLM-4.7" style="display:none;margin-top:8px" oninput="onCustomModelInput()">
         <div id="modelinfo" style="margin-top:6px;font-size:11px;line-height:1.6;display:none">
           <span style="color:#34d399">🎁 免费额度：<span id="mfree" style="color:#d1d5db">-</span></span>
           <br><span style="color:#fbbf24">💰 价格：<span id="mprice" style="color:#d1d5db">-</span></span>
@@ -268,288 +262,98 @@
       <!-- 阿里百炼 -->
       <div class="api-acc">
         <div class="api-acc-h on" onclick="toggleApiAcc(this)">
-          <span style="color:#c4b5fd;font-weight:600;font-size:14px">阿里百炼（通义千问视觉模型）</span>
+          <span style="color:#c4b5fd;font-weight:600;font-size:14px">阿里云百炼平台</span>
           <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="api-acc-bd on">
-          <div>① 打开 <a href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener noreferrer">阿里云百炼控制台</a> → 右上角选择「华北2（北京）」地域</div>
-          <div>② 左侧导航「API Key 管理」→ 点击「创建 API Key」→ 设置权限后确认</div>
-          <div>③ 弹窗中复制 API Key 并妥善保存（关闭后无法再次查看）</div>
+          <div>① 点击注册 <a href="https://www.aliyun.com/minisite/goods?userCode=j6muymoj" target="_blank" rel="noopener noreferrer">阿里云百炼平台</a> 账号，新用户领取专属优惠；</div>
+          <div>② 完成实名认证后，打开 <a href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener noreferrer">阿里云百炼控制台</a>，右上角选择「华北2（北京）」地域，阅读并同意服务协议，系统自动开通百炼服务并发放各模型新人免费额度（每个模型100万Token，90天有效）；</div>
+          <div>③ 左侧导航「API Key 管理」→ 点击「创建 API Key」→ 设置权限后确认，弹窗中复制 API Key 并妥善保存（关闭后无法再次查看）；</div>
+          <div>④ 将 API Key 填入上方密钥框，选择模型后即可使用。</div>
           <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://dashscope.aliyuncs.com/compatible-mode/v1</span>
+            <span class="lbl">HTTP 请求地址</span>：<span class="val">https://dashscope.aliyuncs.com/compatible-mode/v1</span>
           </div>
           <div style="margin-top:8px;font-size:11px;line-height:1.8">
             <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.7-Plus（多模态智能体，2026.06）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠百元免费额度</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.002 元/千tokens，输出 0.008 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3.8-Max（全能旗舰，1M上下文，2026.07）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 12元/百万Token，输出 36元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.6-Plus（旗舰视觉，1M上下文，2026.07）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠百元免费额度</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.004 元/千tokens，输出 0.012 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3.7-Plus（多模态智能体，1M上下文，2026.05）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 2元/百万Token，输出 8元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.6-Flash（轻量视觉，高性价比，2026.07）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠百元免费额度</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.0005 元/千tokens，输出 0.002 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3.7-Flash（轻量高性价比，1M上下文，2026.07）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.2元/百万Token，输出 0.8元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen-VL-Max（旗舰视觉模型，2025.08）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠百元免费额度</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.0035 元/千tokens，输出 0.014 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3.6-Plus（旗舰视觉，1M上下文，2026.04）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 2元/百万Token，输出 12元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen-VL-Plus（增强视觉，2025.03）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠百元免费额度</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.0015 元/千tokens，输出 0.0045 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3.6-Flash（轻量视觉，1M上下文，2026.04）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 1.2元/百万Token，输出 7.2元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen-VL-Flash（快速视觉，2025.01）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠百元免费额度</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.0005 元/千tokens，输出 0.002 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3.5-Plus（平衡视觉，1M上下文，2026.02）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.8元/百万Token，输出 4.8元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3-VL-32B-Instruct（2025.05）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠百元免费额度</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.001 元/千tokens，输出 0.004 元/千tokens</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- DeepSeek -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#93c5fd;font-weight:600;font-size:14px">DeepSeek（深度求索）</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://platform.deepseek.com/" target="_blank" rel="noopener noreferrer">DeepSeek 平台</a> → 注册/登录后进入 API Keys 页面</div>
-          <div>② 点击「创建 API Key」，复制并保存密钥</div>
-          <div>③ 将 API Key 填入上方密钥框，选择模型后即可使用</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://api.deepseek.com/v1</span>
-          </div>
-          <div style="margin-top:8px;font-size:11px;line-height:1.8">
-            <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">DeepSeek Chat（V4 多模态，支持图片）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 500 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.5 元/百万tokens，输出 2 元/百万tokens</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 硅基流动 -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#86efac;font-weight:600;font-size:14px">硅基流动（SiliconFlow）</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://cloud.siliconflow.com/" target="_blank" rel="noopener noreferrer">SiliconCloud 平台</a> → 注册/登录</div>
-          <div>② 进入「API 密钥」页面创建密钥，新用户赠 14 元余额</div>
-          <div>③ 将 API Key 填入上方密钥框，选择模型后即可使用</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://api.siliconflow.cn/v1</span>
-          </div>
-          <div style="margin-top:8px;font-size:11px;line-height:1.8">
-            <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">DeepSeek-VL2（多模态视觉理解）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 14 元余额</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 $0.13/M tokens，输出 $0.42/M tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3.5-Flash（轻量视觉，1M上下文，2026.02）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.2元/百万Token，输出 2元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen2-VL-72B-Instruct（旗舰视觉）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 14 元余额</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 $0.35/M tokens，输出 $0.35/M tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3-VL-Plus（视觉Coding增强，2025.12）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 1元/百万Token，输出 10元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen2-VL-7B-Instruct（轻量视觉）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 14 元余额</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 $0.08/M tokens，输出 $0.08/M tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen3-VL-Flash（快速视觉，2026.01）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.15元/百万Token，输出 1.5元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">InternVL2-76B（上海AI Lab，强视觉理解）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 14 元余额</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 $0.28/M tokens，输出 $0.28/M tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen-VL-Max（旧版旗舰视觉）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 1.6元/百万Token，输出 4元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">InternVL2-40B（中等规模视觉模型）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 14 元余额</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 $0.18/M tokens，输出 $0.18/M tokens</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 讯飞星辰 -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#fde68a;font-weight:600;font-size:14px">讯飞星辰（MaaS平台）</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://maas.xfyun.cn/" target="_blank" rel="noopener noreferrer">讯飞星辰MaaS平台</a> → 注册/登录</div>
-          <div>② 进入「计费管理」→「API Key管理」创建密钥</div>
-          <div>③ 将 API Key 填入上方密钥框，选择模型后即可使用</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://maas-api.xfyun.cn/v1</span>
-          </div>
-          <div style="margin-top:8px;font-size:11px;line-height:1.8">
-            <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Spark X2（星火旗舰，多模态理解）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 100 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 3 元/百万tokens，输出 3 元/百万tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Qwen-VL-Plus（旧版增强视觉）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.8元/百万Token，输出 2元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Spark X2 Flash（轻量快速，多模态）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 100 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 1 元/百万tokens，输出 2 元/百万tokens</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Kimi -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#c4b5fd;font-weight:600;font-size:14px">Kimi（月之暗面）</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://platform.kimi.ai/console/api-keys" target="_blank" rel="noopener noreferrer">Kimi 开放平台控制台</a> → 登录账号</div>
-          <div>② 左侧「API Keys」→ 点击「Create API Key」</div>
-          <div>③ 填写名称后创建 → 复制 API Key 并妥善保存</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://api.moonshot.ai/v1</span>
-          </div>
-          <div style="margin-top:8px;font-size:11px;line-height:1.8">
-            <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Kimi-K3（旗舰多模态，2.8T参数，1M上下文，2026.07）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 500 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 8 元/百万tokens，输出 32 元/百万tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Kimi-K2.7-Code（Kimi旗舰编程模型）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 6.5元/百万Token，输出 27元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Kimi-K2.5（多模态视觉旗舰，2026.01）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 500 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 2 元/百万tokens，输出 12 元/百万tokens</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 腾讯混元 -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#c4b5fd;font-weight:600;font-size:14px">腾讯混元</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://console.cloud.tencent.com/cam/capi" target="_blank" rel="noopener noreferrer">腾讯云控制台 → 访问管理 → API 密钥管理</a></div>
-          <div>② 登录后点击「新建密钥」→ 生成 SecretId 和 SecretKey</div>
-          <div>③ 复制 SecretId 并作为 API Key 填入（混元 API 使用 SecretId 认证）</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://api.hunyuan.cloud.tencent.com/v1</span>
-          </div>
-          <div style="margin-top:8px;font-size:11px;line-height:1.8">
-            <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Hunyuan-Vision（视觉理解，2025.10）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：每月赠 100 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.003 元/千tokens，输出 0.009 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Kimi-K2.6（Kimi多模态旗舰）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 6.5元/百万Token，输出 27元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Hunyuan-Vision-1.5-Thinking（视觉推理增强，2025.10）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：每月赠 100 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.005 元/千tokens，输出 0.015 元/千tokens</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 豆包 -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#c4b5fd;font-weight:600;font-size:14px">豆包（火山引擎）</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://console.volcengine.com/ark/region:ark+cn-beijing/apiKey" target="_blank" rel="noopener noreferrer">火山引擎方舟平台 → API Key 管理</a></div>
-          <div>② 登录后点击「创建 API Key」→ 复制生成的 Key</div>
-          <div>③ 在「模型推理」中开通相应模型的推理接入点</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://ark.cn-beijing.volces.com/api/v3</span>
-          </div>
-          <div style="margin-top:8px;font-size:11px;line-height:1.8">
-            <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Doubao Seed 2.1 Pro（旗舰多模态，2026.06）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 50 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.005 元/千tokens，输出 0.02 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">Kimi-K3（Kimi最新旗舰，长程推理）</div>
+              <div style="color:#9ca3af;font-size:10px">🎁 免费额度：无</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 20元/百万Token，输出 100元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Doubao Seed 2.1 Turbo（快速多模态，2026.06）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 50 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.002 元/千tokens，输出 0.008 元/千tokens</div>
+              <div style="color:#d1d5db;font-weight:500">MiniMax-M2.5（思考模式多模态）</div>
+              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 2.1元/百万Token，输出 8.4元/百万Token</div>
             </div>
             <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Doubao-1.5-Pro-32k（多模态视觉，2025.01）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 50 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.0008 元/千tokens，输出 0.002 元/千tokens</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Doubao-Vision-Pro-32k（视觉理解专用）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 50 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.003 元/千tokens，输出 0.009 元/千tokens</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- 智谱 -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#c4b5fd;font-weight:600;font-size:14px">智谱 AI</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 打开 <a href="https://open.bigmodel.cn/usercenter/apikeys" target="_blank" rel="noopener noreferrer">智谱 AI 开放平台 → 个人中心 → API Keys</a></div>
-          <div>② 登录后点击「添加 API Key」→ 选择权限后确认</div>
-          <div>③ 复制生成的 API Key 并妥善保存（格式：xxxx.xxxx）</div>
-          <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">https://open.bigmodel.cn/api/paas/v4</span>
-          </div>
-          <div style="margin-top:8px;font-size:11px;line-height:1.8">
-            <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">GLM-4V-Flash（免费视觉模型）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：永久免费</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：免费</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">GLM-4V-Plus（多模态视觉，2025.07）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 500 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.005 元/千tokens，输出 0.01 元/千tokens</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">GLM-4V-Plus-0111（视觉增强版，2025.01）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 500 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.008 元/千tokens，输出 0.02 元/千tokens</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">GLM-4.6V（多模态基座，2025.12）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 500 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 1 元/百万tokens，输出 4 元/百万tokens</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">GLM-4.1V-Thinking（视觉推理增强）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 500 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.002 元/千tokens，输出 0.008 元/千tokens</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">GLM-5V-Turbo（多模态 Agent，2026.04）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：新用户赠 500 万 tokens</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 5 元/百万tokens，输出 22 元/百万tokens</div>
+              <div style="color:#d1d5db;font-weight:500">MiniMax-M3（最新旗舰多模态）</div>
+              <div style="color:#9ca3af;font-size:10px">🎁 免费额度：无</div>
+              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 4.2元/百万Token，输出 16.8元/百万Token</div>
             </div>
           </div>
         </div>
@@ -557,15 +361,21 @@
       <!-- 自定义 -->
       <div class="api-acc">
         <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#9ca3af;font-weight:600;font-size:14px">自定义</span>
+          <span style="color:#9ca3af;font-weight:600;font-size:14px">自定义平台</span>
           <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </div>
         <div class="api-acc-bd">
-          <div>① 自行配置 API Key</div>
-          <div>② 自行填写 API 端点地址</div>
-          <div>③ 模型名称在模型下拉框中直接输入自定义值</div>
+          <div>① 自定义平台采用「OpenAI 兼容」接口，适用于任何兼容 OpenAI API 格式的模型服务；</div>
+          <div>② 在上方「API Key」输入框中填入你的密钥；</div>
+          <div>③ 在「API 端点」输入框中填入完整的 HTTP 请求地址（含路径，不含 /chat/completions 后缀）；</div>
+          <div>④ 在「输入模型ID」框中填入模型名称（如 gpt-4o、glm-4.7 等）。</div>
           <div class="ep-box">
-            <span class="lbl">API 端点</span>：<span class="val">自行填写</span>
+            <span class="lbl">HTTP 请求地址示例</span>：
+          </div>
+          <div style="margin-top:4px;font-size:11px;line-height:1.8;color:#9ca3af">
+            <div>• OpenAI：<span style="color:#d1d5db">https://api.openai.com/v1</span></div>
+            <div>• 本地部署（如 vLLM）：<span style="color:#d1d5db">http://localhost:8000/v1</span></div>
+            <div>• 其他兼容平台：请参照各平台文档填写</div>
           </div>
         </div>
       </div>
@@ -587,7 +397,7 @@
             <span>价格与免责声明</span>
           </div>
           <div style="padding-left:22px">1. 免费额度为各平台新用户活动，具体额度和有效期以平台官网为准；</div>
-          <div style="padding-left:22px">2. 价格信息截止至 2026年7月29日，各平台可能随时调整，请以平台官网实时价格为准；</div>
+          <div style="padding-left:22px">2. 价格信息平台可能随时调整，请以平台官网实时价格为准；</div>
           <div style="padding-left:22px">3. 模型列表及价格仅供参考，实际可用模型以各平台 API 返回为准。</div>
         </div>
       </div>

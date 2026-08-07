@@ -106,7 +106,7 @@ body{--t2:#9ca3af;--a:#8b5cf6;font-family:-apple-system,BlinkMacSystemFont,"Sego
 
 .mb3{margin-bottom:12px}.mb4{margin-bottom:16px}
 .sy5>*+*{margin-top:20px}
-.flex{display:flex}.ac{align-items:center}.jc{justify-content:center}
+.flex{display:flex}.ac{align-items:center}.jc{justify-content:center}.gap-2{gap:8px}
 .txm{font-size:14px}
 .cw{color:#fff}
 
@@ -133,7 +133,6 @@ body{--t2:#9ca3af;--a:#8b5cf6;font-family:-apple-system,BlinkMacSystemFont,"Sego
 .api-acc-bd .ep-box{padding:6px 10px;background:rgba(251,191,36,.1);border-radius:4px;border:1px solid rgba(251,191,36,.2);margin-top:6px;font-size:11px}
 .api-acc-bd .ep-box .lbl{color:#fbbf24}
 .api-acc-bd .ep-box .val{color:#d1d5db}
-.api-acc-bd .ep-box .sub{color:#6b7280}
 
 /* ======== 生成三视图按钮 ======== */
 .gen-btn{display:flex;align-items:center;gap:6px;padding:6px 16px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.3);border-radius:8px;color:#c4b5fd;font-size:12px;cursor:pointer;transition:all .2s;white-space:nowrap;text-decoration:none;margin-left:auto}
