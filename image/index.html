@@ -63,18 +63,16 @@
           <label class="f-label" style="font-size:11px;margin-bottom:3px">选择平台</label>
           <select class="sel" id="pselect" onchange="onPlatformChange()" style="padding:7px 10px;font-size:12px">
             <option value="" disabled selected>请选择平台</option>
-            <option value="阿里百炼">阿里百炼（通义万相）</option>
-            <option value="豆包">豆包（火山引擎）</option>
-            <option value="硅基流动">硅基流动（SiliconFlow）</option>
-            <option value="智谱">智谱 AI</option>
+            <option value="阿里百炼">阿里云百炼</option>
             <option value="自定义">自定义</option>
           </select>
         </div>
         <div style="flex:1" id="model-select-group">
-          <label class="f-label" style="font-size:11px;margin-bottom:3px">选择模型 <span id="model-cap" style="font-size:9px;color:#6b7280;margin-left:4px"></span></label>
+          <label class="f-label" style="font-size:11px;margin-bottom:3px" id="model-label">选择模型 <span id="model-cap" style="font-size:9px;color:#6b7280;margin-left:4px"></span></label>
           <select class="sel" id="modelselect" onchange="onModelChange()" disabled style="padding:7px 10px;font-size:12px">
             <option value="" disabled selected>请先选择平台</option>
           </select>
+          <input type="text" class="inp" id="modelinput" placeholder="如 GLM-4.2" oninput="onModelInputChange()" style="padding:7px 10px;font-size:12px;display:none">
         </div>
       </div>
 
