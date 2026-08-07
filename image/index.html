@@ -119,21 +119,17 @@
       <!-- Upload + Prompt 左右横排 -->
       <div class="upload-wrap" style="display:flex;gap:12px;align-items:stretch;margin-top:12px">
         <div class="upload" id="upload" style="flex:1;min-height:200px">
-          <input type="file" id="finp" accept=".jpg,.jpeg,.png,.webp" style="display:none">
+          <input type="file" id="finp" accept=".jpg,.jpeg,.png,.webp" multiple style="display:none">
           <div id="uempty" style="width:100%;display:flex;flex-direction:column;align-items:center">
             <div class="u-icon" style="margin:0 auto 12px">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
               </svg>
             </div>
-            <p class="u-text">拖拽参考图到这里，或点击上传</p>
-            <p class="u-hint">支持 JPG / PNG / WebP，上传参考图可提高角色一致性</p>
+            <p class="u-text" id="upload-text">拖拽参考图到这里，或点击上传</p>
+            <p class="u-hint" id="upload-hint">支持 JPG / PNG / WebP，上传参考图可提高角色一致性</p>
           </div>
-          <div class="u-prev" id="uprev" onclick="reUpload()">
-            <img id="previmg" alt="预览">
-            <span class="nm" id="fname"></span>
-            <span class="sz" id="fsize"></span>
-          </div>
+          <div class="u-prev" id="uprev" style="display:none;flex-wrap:wrap;gap:8px"></div>
         </div>
         <div style="flex:1.5;display:flex;flex-direction:column">
           <textarea class="inp" id="promptInput" placeholder="提示词（描述角色特征）" style="flex:1;min-height:200px;resize:vertical;font-family:inherit;padding:12px 14px;font-size:14px;line-height:1.6" oninput="checkGenReady()"></textarea>
@@ -167,6 +163,7 @@
             <button class="sz-btn" data-ar="3:4" onclick="selAspect(this)">3:4</button>
             <button class="sz-btn on" data-ar="16:9" onclick="selAspect(this)">16:9</button>
             <button class="sz-btn" data-ar="9:16" onclick="selAspect(this)">9:16</button>
+            <button class="sz-btn" data-ar="21:9" onclick="selAspect(this)">21:9</button>
             <button class="sz-btn" data-ar="custom" onclick="selAspect(this)">自定义</button>
             <span id="ar-custom" style="display:none">
               <input type="number" class="inp" id="ar-w" placeholder="宽" min="256" max="8192" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomAr()">
@@ -180,9 +177,7 @@
             <span style="font-size:11px;color:#9ca3af;margin-right:4px">分辨率</span>
             <button class="k-btn on" data-k="1" onclick="selK(this)">1K</button>
             <button class="k-btn" data-k="2" onclick="selK(this)">2K</button>
-            <button class="k-btn" data-k="3" onclick="selK(this)">3K</button>
             <button class="k-btn" data-k="4" onclick="selK(this)">4K</button>
-            <button class="k-btn" data-k="8" onclick="selK(this)">8K</button>
             <button class="k-btn" data-k="custom" onclick="selK(this)">自定义</button>
             <span id="k-custom" style="display:none">
               <input type="number" class="inp" id="k-input" placeholder="倍数" min="1" max="16" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomK()">
@@ -241,19 +236,9 @@
     </div>
 
     <div id="result-content" style="display:none">
-      <div style="border:1px solid #2d2d4a;border-radius:8px;padding:12px;background:#16162a;text-align:center;overflow:hidden">
-        <img id="result-img" alt="生成的图片" style="max-width:100%;max-height:600px;border-radius:4px;display:block;margin:0 auto">
-      </div>
+      <div id="result-list" style="display:flex;flex-direction:column;gap:12px"></div>
       <div style="margin-top:12px;display:flex;flex-direction:row;gap:8px">
-        <button class="b-grad" onclick="downloadResult('jpg')" style="flex:1">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          下载 JPG
-        </button>
-        <button class="b-grad" onclick="downloadResult('png')" style="flex:1">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          下载 PNG
-        </button>
-        <button class="b-sec" onclick="resetResult()" style="flex:0.5">
+        <button class="b-grad" onclick="resetResult()" style="flex:1">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
           重新生成
         </button>

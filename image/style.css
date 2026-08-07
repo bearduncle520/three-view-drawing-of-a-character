@@ -154,23 +154,54 @@ body {
 .u-icon svg { width: 24px; height: 24px; color: #9ca3af; }
 .u-text { font-size: 14px; color: #d1d5db; }
 .u-hint { font-size: 12px; color: #6b7280; margin-top: 4px; }
-.u-prev { display: none; flex-direction: column; align-items: center; gap: 8px; width: 100%; }
-.u-prev img { width: 100px; height: 100px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(16,185,129,.3); }
-
-.upload.ok .u-prev { flex: 1; justify-content: center; position: relative; }
-.upload.ok .u-prev:hover::after {
-  content: "点击重新上传"; position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(0,0,0,.65); color: #fff; font-size: 14px;
-  font-weight: 500; border-radius: 8px; cursor: pointer;
+/* 多图上传预览 */
+.u-prev { display: none; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px; width: 100%; }
+.u-prev-item {
+  position: relative; width: 90px; display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 6px; border: 1px solid rgba(16,185,129,.2); border-radius: 8px; background: rgba(16,185,129,.03);
 }
+.u-prev-item img { width: 80px; height: 80px; object-fit: cover; border-radius: 6px; }
+.u-prev-name { font-size: 10px; color: #34d399; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.u-prev-size { font-size: 9px; color: #6b7280; }
+.u-prev-del {
+  position: absolute; top: 2px; right: 2px; width: 18px; height: 18px;
+  border-radius: 50%; border: none; background: rgba(239,68,68,.8); color: #fff;
+  cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0;
+}
+.u-prev-del:hover { background: rgba(239,68,68,1); }
+
+.upload.ok { min-height: auto; padding: 16px; }
+.upload.ok .u-prev { flex: 1; }
+
 @media (min-width: 1024px) {
   .upload-wrap { height: 100%; }
-  .upload.ok .u-prev img { max-width: 100%; max-height: 360px; width: auto; height: auto; object-fit: contain; }
-  .u-prev .nm, .u-prev .sz { flex-shrink: 0; }
 }
-.u-prev .nm { font-size: 14px; color: #34d399; }
-.u-prev .sz { font-size: 12px; color: #6b7280; }
+
+/* 禁用状态的按钮 */
+.sz-btn.disabled, .k-btn.disabled, .n-btn.disabled {
+  opacity: 0.35; cursor: not-allowed; pointer-events: none;
+}
+
+/* 多图结果区域 */
+.result-img-wrapper {
+  position: relative; border: 1px solid #2d2d4a; border-radius: 8px; padding: 8px;
+  background: #16162a; text-align: center; overflow: hidden;
+}
+.result-img-item { max-width: 100%; max-height: 600px; border-radius: 4px; display: block; margin: 0 auto; }
+.result-img-num {
+  position: absolute; bottom: 8px; right: 12px; font-size: 11px;
+  color: #9ca3af; background: rgba(0,0,0,.5); padding: 2px 8px; border-radius: 4px;
+}
+.result-dl-overlay {
+  position: absolute; top: 8px; right: 12px; display: none; gap: 6px;
+}
+.result-img-wrapper:hover .result-dl-overlay { display: flex; }
+.result-dl-btn {
+  padding: 6px 12px; border-radius: 6px; border: 1px solid rgba(139,92,246,.4);
+  background: rgba(26,26,46,.85); color: #c4b5fd; font-size: 11px; cursor: pointer;
+  transition: 0.2s; white-space: nowrap; backdrop-filter: blur(4px);
+}
+.result-dl-btn:hover { background: rgba(139,92,246,.3); color: #fff; border-color: rgba(139,92,246,.6); }
 
 .mb4 { margin-bottom: 16px; }
 .flex { display: flex; }
@@ -317,6 +348,10 @@ body {
 
   /* 结果 */
   #result-content img { max-width: 100% !important; }
+  .result-img-item { max-height: 400px !important; }
+  .result-dl-overlay { display: flex !important; } /* 竖屏始终显示下载按钮 */
+  .u-prev-item { width: 72px; }
+  .u-prev-item img { width: 64px; height: 64px; }
 
   /* 底部 */
   .site-footer { font-size: 10px; padding: 10px 10px 14px; }
