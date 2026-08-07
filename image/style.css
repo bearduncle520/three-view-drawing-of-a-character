@@ -130,7 +130,7 @@ body {
 .s-btn.ok { background: rgba(16,185,129,.1); border-color: rgba(16,185,129,.3); color: #34d399; cursor: default; }
 .s-btn.fail { background: rgba(239,68,68,.1); border-color: rgba(239,68,68,.3); color: #f87171; cursor: pointer; }
 .s-btn.fail:hover { background: rgba(239,68,68,.2); border-color: rgba(239,68,68,.5); }
-.s-btn .spin { animation: 1s linear infinite spin; }
+.spin { animation: 1s linear infinite spin; }
 .s-btn.clear {
   width: auto; padding: 10px 14px; border-color: #4b5563; color: #9ca3af;
   cursor: pointer; flex-shrink: 0; white-space: nowrap; font-size: 12px;
