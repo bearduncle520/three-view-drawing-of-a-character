@@ -309,7 +309,7 @@
           <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
         <div class="set-acc-bd">
-          <p style="font-size:11px;color:#6b7280;margin-bottom:10px">导出 API Key、API 端点、WebDAV 配置为 JSON 文件，导入时选择该文件自动恢复全部配置</p>
+          <p style="font-size:11px;color:#6b7280;margin-bottom:10px">导出 API Key、API 端点为 JSON 文件，导入时选择该文件自动恢复全部配置</p>
           <div style="display:flex;gap:8px">
             <button class="b-grad" onclick="exportSettings()" style="padding:8px 16px;min-height:36px;font-size:12px;flex:1">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
@@ -367,63 +367,21 @@
         </div>
       </div>
 
-      <!-- 手风琴2：本地 & 云备份 -->
+      <!-- 手风琴2：本地手动备份 -->
       <div class="set-acc">
         <div class="set-acc-h" onclick="toggleSetAcc(this)">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-          <span style="font-size:13px;font-weight:500;flex:1">本地 & 云备份</span>
+          <span style="font-size:13px;font-weight:500;flex:1">本地手动备份</span>
           <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
         <div class="set-acc-bd">
-          <!-- 一键备份 Markdown -->
           <div style="margin-bottom:12px">
+            <p style="font-size:10px;color:#6b7280;margin-bottom:4px">将所有历史记录中的生成图片和提示词导出为 Markdown 文件，图片以 Base64 内嵌，本地下载</p>
             <button class="b-grad" onclick="backupMarkdown()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
               一键备份所有图片和提示词（Markdown）
             </button>
-            <p style="font-size:10px;color:#6b7280;margin-top:4px">将所有历史记录导出为 Markdown 文件，图片以 Base64 内嵌，本地下载</p>
           </div>
-
-          <!-- WebDAV 设置 -->
-          <div style="border-top:1px solid #2d2d4a;padding-top:12px;margin-bottom:12px">
-            <label style="font-size:12px;font-weight:500;color:#c4b5fd;display:block;margin-bottom:6px">WebDAV 自动备份</label>
-            <div class="set-preset-row">
-              <label class="f-label" style="font-size:11px">WebDAV 服务器地址</label>
-              <input type="text" id="webdav-url" class="inp" style="width:100%;font-size:12px" placeholder="如 https://dav.jianguoyun.com/dav/"></input>
-            </div>
-            <div class="set-preset-row">
-              <label class="f-label" style="font-size:11px">CORS 代理（坚果云等需选，自动拼接地址）</label>
-              <select id="webdav-proxy" class="inp" style="width:100%;font-size:12px;background:#1a1a2e;color:#d1d5db;border:1px solid #2d2d4a;border-radius:6px;padding:6px 10px">
-                <option value="">不使用代理（直连）</option>
-                <option value="corsproxy">corsproxy.io（推荐）</option>
-                <option value="allorigins">api.allorigins.win</option>
-                <option value="thingproxy">thingproxy.freeboard.io</option>
-                <option value="custom">自定义</option>
-              </select>
-              <input type="text" id="webdav-proxy-custom" class="inp" style="width:100%;font-size:12px;margin-top:6px;display:none" placeholder="输入完整代理前缀，如 https://your-proxy.com/?url="></input>
-              <p style="font-size:10px;color:#6b7280;margin-top:3px;line-height:1.5">坚果云等不支持 CORS 的 WebDAV 服务器必须选择代理。程序自动拼接地址，无需手动拼接。公共代理可能不稳定或限制 PUT 请求，如均不可用，建议自建 Cloudflare Worker 反代（免费），选「自定义」填入地址。</p>
-            </div>
-            <div class="set-preset-row">
-              <label class="f-label" style="font-size:11px">用户名</label>
-              <input type="text" id="webdav-user" class="inp" style="width:100%;font-size:12px"></input>
-            </div>
-            <div class="set-preset-row">
-              <label class="f-label" style="font-size:11px">密码</label>
-              <div style="position:relative">
-                <input type="password" id="webdav-pass" class="inp" style="width:100%;font-size:12px;padding-right:30px"></input>
-                <button type="button" onclick="togglePresetKey('webdav-pass', this)" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:#6b7280;cursor:pointer;padding:2px">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                </button>
-              </div>
-            </div>
-            <div style="display:flex;gap:8px;margin-top:6px">
-              <button class="b-sec" onclick="saveWebDAVConfig()" style="padding:6px 12px;min-height:32px;font-size:11px;flex:1">保存配置</button>
-              <button class="b-sec" onclick="testWebDAV()" style="padding:6px 12px;min-height:32px;font-size:11px;flex:1">测试连接</button>
-            </div>
-            <p style="font-size:10px;color:#6b7280;margin-top:4px">保存后每次生成图片自动备份到 WebDAV，文件名用当时时间精确到秒命名</p>
-            <p style="font-size:10px;color:#fbbf24;margin-top:2px">注：坚果云等不支持 CORS 的服务器须在上方选择代理，程序自动拼接地址</p>
-          </div>
-
         </div>
       </div>
 
@@ -437,7 +395,7 @@
         <div class="set-acc-bd">
           <p style="font-size:11px;color:#f87171;margin-bottom:10px">⚠️ 以下操作不可恢复，请谨慎执行</p>
           <button class="b-sec" onclick="clearAllApiConfig()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%;margin-bottom:8px;border-color:rgba(239,68,68,.4);color:#f87171">
-            一键清除 API Key & 端点 / WebDAV 设置
+            一键清除 API Key & 端点
           </button>
           <button class="b-sec" onclick="clearAllHistory()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%;border-color:rgba(239,68,68,.4);color:#f87171">
             一键清除本地生成图片和提示词
@@ -519,13 +477,6 @@
 </div>
 
 <script src="script.js"></script>
-<script>
-  document.getElementById('webdav-proxy').addEventListener('change', function() {
-    var customInput = document.getElementById('webdav-proxy-custom');
-    customInput.style.display = (this.value === 'custom') ? 'block' : 'none';
-  });
-</script>
-
 <footer class="site-footer">
   <div class="footer-links">
     <a href="https://design.zhuye.xyz/" target="_blank" rel="noopener" class="footer-design-link">Design</a><span class="footer-sep">-</span>
