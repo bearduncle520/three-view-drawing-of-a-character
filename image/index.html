@@ -24,10 +24,20 @@
     </div>
     <h1 class="h-title">角色形象多视图生成</h1>
     <span class="h-badge">AI 生图</span>
-    <button class="sponsor-btn" onclick="showSponsor()">
-      <span style="font-size:16px;font-weight:700;line-height:1">¥</span>
-      赞助
-    </button>
+    <div style="margin-left:auto;display:flex;gap:8px">
+      <button class="sponsor-btn" onclick="showSponsor()">
+        <span style="font-size:16px;font-weight:700;line-height:1">¥</span>
+        赞助
+      </button>
+      <button class="sponsor-btn" onclick="showApiHelp()" title="各平台获取 API Key 方式" style="padding:6px 12px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span style="font-size:12px">帮助</span>
+      </button>
+      <button class="sponsor-btn" onclick="showSettings()" title="设置" style="padding:6px 12px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <span style="font-size:12px">设置</span>
+      </button>
+    </div>
   </header>
 
   <!-- ======== Step 01 ======== -->
@@ -80,7 +90,7 @@
       <div style="display:flex;gap:10px;margin-bottom:10px">
         <div style="flex:1">
           <label class="f-label" style="font-size:11px;margin-bottom:3px">API Key
-            <button onclick="showApiHelp()" type="button" style="background:none;border:none;color:#6b7280;cursor:pointer;padding:0;display:inline-flex;vertical-align:middle" title="各平台获取 API Key 方式">
+            <button onclick="showApiHelp()" type="button" style="background:none;border:none;color:#6b7280;cursor:pointer;padding:0;display:inline-flex;vertical-align:middle;margin-left:3px" title="各平台获取 API Key 方式">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
             </button>
           </label>
@@ -281,10 +291,159 @@
     </div>
   </div>
 
-  <!-- ======== Step 04 ======== -->
+  <!-- ======== 设置弹窗 ======== -->
+  <div id="settings-overlay" onclick="closeSettings(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center" class="flex ac jc">
+    <div onclick="event.stopPropagation()" style="background:#1a1a2e;border:1px solid #2d2d4a;border-radius:12px;padding:24px;max-width:640px;width:92%;max-height:85vh;overflow-y:auto">
+      <div class="flex ac" style="justify-content:space-between;margin-bottom:16px">
+        <span style="font-size:16px;font-weight:600">设置</span>
+        <button onclick="closeSettings()" style="background:none;border:none;color:#9ca3af;cursor:pointer;padding:4px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+
+      <!-- 手风琴1：API Key & 端点管理 -->
+      <div class="set-acc">
+        <div class="set-acc-h" onclick="toggleSetAcc(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <span style="font-size:13px;font-weight:500;flex:1">API Key & 端点管理</span>
+          <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="set-acc-bd">
+          <p style="font-size:11px;color:#6b7280;margin-bottom:10px">保存多个平台的 API Key 和端点，切换平台时自动填充</p>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">阿里云百炼 API Key</label>
+            <div style="position:relative">
+              <input type="password" id="preset-bailian-key" class="inp" style="width:100%;font-size:12px;padding-right:30px" placeholder="sk-..."></input>
+              <button type="button" onclick="togglePresetKey('preset-bailian-key', this)" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:#6b7280;cursor:pointer;padding:2px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </button>
+            </div>
+          </div>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">阿里云百炼 端点</label>
+            <input type="text" id="preset-bailian-ep" class="inp" style="width:100%;font-size:12px" value="https://dashscope.aliyuncs.com/compatible-mode/v1" readonly></input>
+          </div>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">自定义平台 API Key</label>
+            <div style="position:relative">
+              <input type="password" id="preset-custom-key" class="inp" style="width:100%;font-size:12px;padding-right:30px" placeholder="sk-..."></input>
+              <button type="button" onclick="togglePresetKey('preset-custom-key', this)" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:#6b7280;cursor:pointer;padding:2px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </button>
+            </div>
+          </div>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">自定义平台 端点</label>
+            <input type="text" id="preset-custom-ep" class="inp" style="width:100%;font-size:12px" placeholder="如 https://api.openai.com/v1"></input>
+          </div>
+          <button class="b-grad" onclick="savePresets()" style="padding:8px 16px;min-height:36px;font-size:12px;margin-top:4px;width:100%">保存预设</button>
+        </div>
+      </div>
+
+      <!-- 手风琴2：本地 & 云备份 -->
+      <div class="set-acc">
+        <div class="set-acc-h" onclick="toggleSetAcc(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span style="font-size:13px;font-weight:500;flex:1">本地 & 云备份</span>
+          <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="set-acc-bd">
+          <!-- 一键备份 Markdown -->
+          <div style="margin-bottom:12px">
+            <button class="b-grad" onclick="backupMarkdown()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              一键备份所有图片和提示词（Markdown）
+            </button>
+            <p style="font-size:10px;color:#6b7280;margin-top:4px">将所有历史记录导出为 Markdown 文件，图片以 Base64 内嵌，本地下载</p>
+          </div>
+
+          <!-- WebDAV 设置 -->
+          <div style="border-top:1px solid #2d2d4a;padding-top:12px;margin-bottom:12px">
+            <label style="font-size:12px;font-weight:500;color:#c4b5fd;display:block;margin-bottom:6px">WebDAV 自动备份</label>
+            <div class="set-preset-row">
+              <label class="f-label" style="font-size:11px">WebDAV 服务器地址</label>
+              <input type="text" id="webdav-url" class="inp" style="width:100%;font-size:12px" placeholder="如 https://dav.example.com/backup/"></input>
+            </div>
+            <div class="set-preset-row">
+              <label class="f-label" style="font-size:11px">用户名</label>
+              <input type="text" id="webdav-user" class="inp" style="width:100%;font-size:12px"></input>
+            </div>
+            <div class="set-preset-row">
+              <label class="f-label" style="font-size:11px">密码</label>
+              <div style="position:relative">
+                <input type="password" id="webdav-pass" class="inp" style="width:100%;font-size:12px;padding-right:30px"></input>
+                <button type="button" onclick="togglePresetKey('webdav-pass', this)" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:#6b7280;cursor:pointer;padding:2px">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </button>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:6px">
+              <button class="b-sec" onclick="saveWebDAVConfig()" style="padding:6px 12px;min-height:32px;font-size:11px;flex:1">保存配置</button>
+              <button class="b-sec" onclick="testWebDAV()" style="padding:6px 12px;min-height:32px;font-size:11px;flex:1">测试连接</button>
+            </div>
+            <p style="font-size:10px;color:#6b7280;margin-top:4px">保存后每次生成图片自动备份到 WebDAV，文件名用当时时间精确到秒命名</p>
+            <p style="font-size:10px;color:#fbbf24;margin-top:2px">注：WebDAV 服务器需支持 CORS 跨域访问，否则浏览器无法直接连接</p>
+          </div>
+
+          <!-- 导出 API Key -->
+          <div style="border-top:1px solid #2d2d4a;padding-top:12px">
+            <button class="b-sec" onclick="exportApiConfig()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+              一键导出 API Key & 端点（JSON）
+            </button>
+            <p style="font-size:10px;color:#6b7280;margin-top:4px">导出当前所有预设配置为 JSON 文件，本地下载，不做云备份</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 手风琴3：清空设置 -->
+      <div class="set-acc">
+        <div class="set-acc-h" onclick="toggleSetAcc(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+          <span style="font-size:13px;font-weight:500;flex:1">清空设置</span>
+          <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="set-acc-bd">
+          <p style="font-size:11px;color:#f87171;margin-bottom:10px">⚠️ 以下操作不可恢复，请谨慎执行</p>
+          <button class="b-sec" onclick="clearAllApiConfig()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%;margin-bottom:8px;border-color:rgba(239,68,68,.4);color:#f87171">
+            一键清除 API Key & 端点
+          </button>
+          <button class="b-sec" onclick="clearAllHistory()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%;border-color:rgba(239,68,68,.4);color:#f87171">
+            一键清除本地生成图片和提示词
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== Step 04: 图片生成历史 ======== -->
   <section class="card fade-in d4 collapsed">
-    <div class="card-hdr" style="cursor:pointer" onclick="toggleFoot()">
+    <div class="card-hdr" style="cursor:pointer" onclick="toggleHistory()">
       <span class="card-step">04</span>
+      <h2 class="card-title" style="flex:1">图片生成历史</h2>
+      <svg class="arr" id="h-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s;color:#6b7280">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+    <p class="card-sub">图片与提示词存储于浏览器本地，清除浏览器数据将丢失，最多保留 100 次生成结果</p>
+    <div id="history-content" style="display:none">
+      <div id="history-empty" style="text-align:center;padding:40px 20px;color:#6b7280">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px">
+          <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <p>暂无生成历史，生成图片后将自动保存到这里</p>
+      </div>
+      <div id="history-list" style="display:none"></div>
+      <div id="history-load-more" style="display:none;text-align:center;padding:12px">
+        <span style="font-size:12px;color:#6b7280">向下滚动加载更多</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Step 05: 图片本地拼接 ======== -->
+  <section class="card fade-in d5 collapsed">
+    <div class="card-hdr" style="cursor:pointer" onclick="toggleFoot()">
+      <span class="card-step">05</span>
       <h2 class="card-title" style="flex:1">图片本地拼接</h2>
       <svg class="arr" id="f-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s;color:#6b7280">
         <polyline points="6 9 12 15 18 9"></polyline>
