@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>角色形象一致性三视图提示词</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>角色形象&场景图像生成</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -11,402 +11,266 @@
 
 <div class="container">
 
-<!-- ======== Header ======== -->
-<header class="header fade-in">
-  <div class="h-icon">
-    <svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
-      <path d="M616.96 183.808h-209.92c-21.504 0-39.424-17.408-39.424-39.424V68.096C367.616 30.72 397.824 0 434.688 0h154.624c36.864 0 67.072 30.72 67.072 68.096v76.288c0 22.016-17.408 39.424-39.424 39.424zM446.464 104.96h131.072v-26.112H446.464v26.112z" fill="#fff"/>
-      <path d="M879.616 1024H144.384c-21.504 0-39.424-17.408-39.424-39.424v-133.12c0-53.248 44.544-96.256 99.328-96.256H353.28v-85.504c0-21.504 17.408-39.424 39.424-39.424h238.592c21.504 0 39.424 17.408 39.424 39.424v85.504h148.48c54.784 0 99.328 43.008 99.328 96.256v133.12c0.512 22.016-17.408 39.424-38.912 39.424zM183.808 945.152h656.384v-93.696c0-9.728-9.216-17.408-20.992-17.408h-158.208c-38.4 0-69.632-30.208-69.632-68.096v-57.344H432.128v57.344c0 37.376-31.232 68.096-69.632 68.096H204.8c-11.264 0-20.992 7.68-20.992 17.408v93.696z" fill="#fff"/>
-      <path d="M770.56 709.12H253.952c-53.248 0-96.256-45.056-96.256-99.84V205.312c0-55.296 43.008-99.84 96.256-99.84h516.608c53.248 0 96.256 45.056 96.256 99.84V609.28c-0.512 54.784-43.52 99.84-96.256 99.84zM253.952 183.808c-9.216 0-17.408 9.728-17.408 21.504V609.28c0 11.776 8.192 21.504 17.408 21.504h516.608c9.216 0 17.408-9.728 17.408-21.504V205.312c0-11.776-8.192-21.504-17.408-21.504H253.952z" fill="#fff"/>
-      <path d="M65.536 498.688c-21.504 0-39.424-17.408-39.424-39.424V302.08c0-21.504 17.408-39.424 39.424-39.424s39.424 17.408 39.424 39.424v157.696c0 21.504-17.408 38.912-39.424 38.912zM958.464 498.688c-21.504 0-39.424-17.408-39.424-39.424V302.08c0-21.504 17.408-39.424 39.424-39.424s39.424 17.408 39.424 39.424v157.696c0 21.504-17.92 38.912-39.424 38.912z" fill="#fbbf24"/>
-      <path d="M407.04 354.304c0 29.184-23.552 52.736-52.736 52.736-29.184 0-52.736-23.552-52.736-52.736C302.08 325.632 325.632 302.08 354.304 302.08c29.184 0 52.736 23.552 52.736 52.224M721.92 354.304c0 29.184-23.552 52.736-52.736 52.736-29.184 0-52.736-23.552-52.736-52.736 0-29.184 23.552-52.736 52.736-52.736 29.184 0.512 52.736 24.064 52.736 52.736" fill="#fbbf24"/>
-    </svg>
-  </div>
-  <h1 class="h-title">角色形象一致性三视图提示词</h1>
-  <span class="h-badge">大肖像+三视图</span>
-  <a href="/image/" target="_blank" title="用免费额度根据本页提示词生成三视图" class="gen-btn">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-    生成三视图
-  </a>
-  <button class="sponsor-btn" onclick="showSponsor()">
-    <span style="font-size:16px;font-weight:700;line-height:1">¥</span>
-    赞助
-  </button>
-</header>
-
-<!-- ======== Step 01 ======== -->
-<section class="card fade-in d1">
-  <div class="card-hdr">
-    <span class="card-step">01</span>
-    <h2 class="card-title">选择模型 &amp; 上传角色图</h2>
-    <p class="card-sub">选择AI模型，上传角色参考图，自动分析画风</p>
-  </div>
-
-  <div class="grid-2">
-    <!-- Model Config -->
-    <div class="card" style="margin-top:0;padding:20px">
-      <div class="flex ac gap-2 mb4">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-        <span class="txm cw" style="font-weight:500">模型配置</span>
-      </div>
-
-      <div class="mb3">
-        <label class="f-label">选择平台</label>
-        <select class="sel" id="pselect" onchange="onPlatformChange()">
-          <option value="" disabled selected>请选择平台</option>
-          <option value="阿里百炼">阿里云百炼平台</option>
-          <option value="自定义">自定义平台</option>
-        </select>
-      </div>
-      <div class="mb3" id="model-select-group" style="display:none">
-        <label class="f-label" id="model-label">选择模型</label>
-        <select class="sel" id="modelselect" onchange="onModelChange()">
-          <option value="" disabled selected>请先选择平台</option>
-        </select>
-        <input type="text" class="inp" id="custommodel" placeholder="输入模型ID，如 GLM-4.7" style="display:none;margin-top:8px" oninput="onCustomModelInput()">
-        <div id="modelinfo" style="margin-top:6px;font-size:11px;line-height:1.6;display:none">
-          <span style="color:#34d399">🎁 免费额度：<span id="mfree" style="color:#d1d5db">-</span></span>
-          <br><span style="color:#fbbf24">💰 价格：<span id="mprice" style="color:#d1d5db">-</span></span>
-        </div>
-      </div>
-
-      <div class="mb3">
-        <label class="f-label">API Key
-          <button onclick="showApiHelp()" type="button" style="background:none;border:none;color:#6b7280;cursor:pointer;padding:0;display:inline-flex;vertical-align:middle" title="各平台获取 API Key 方式">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          </button>
-        </label>
-        <div class="inp-wrap">
-          <input type="password" class="inp" id="apikey" placeholder="请输入你的 API Key" oninput="onKeyChange()">
-          <button class="tgl" onclick="toggleKey()" type="button">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="keyeye">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div class="mb3">
-        <label class="f-label">API 端点</label>
-        <input type="text" class="inp" id="apiendpoint" placeholder="选择模型后自动填充" readonly>
-      </div>
-
-      <!-- 合并状态按钮 -->
-      <div style="display:flex;gap:8px;align-items:stretch">
-        <div class="s-btn wait" id="connbtn" onclick="onConnBtnClick()" style="flex:1">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> 等待配置
-        </div>
-        <div class="s-btn clear" id="clearbtn" onclick="clearApiConfig()" title="清空 API Key 与端点配置">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> 清空配置
-        </div>
-      </div>
-    </div>
-
-    <!-- Upload -->
-    <div class="upload-wrap" style="display:flex;flex-direction:column;gap:12px">
-      <div class="upload" id="upload">
-        <input type="file" id="finp" accept=".jpg,.jpeg,.png,.webp" style="display:none">
-        <div id="uempty" style="width:100%;display:flex;flex-direction:column;align-items:center">
-          <div class="u-icon" style="margin:0 auto 12px">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
-            </svg>
-          </div>
-          <p class="u-text">拖拽图片到这里，或点击上传</p>
-          <p class="u-hint">支持 JPG / PNG / WebP，建议上传清晰的正面角色图</p>
-        </div>
-        <div class="u-prev" id="uprev" onclick="reUpload()">
-          <img id="previmg" alt="预览">
-          <span class="nm" id="fname"></span>
-          <span class="sz" id="fsize"></span>
-        </div>
-      </div>
-      <span id="analysismsg" style="font-size:12px;color:#f87171;display:none"></span>
-    </div>
-  </div>
-</section>
-
-<!-- ======== Step 02 ======== -->
-<section class="card fade-in d2">
-  <div class="card-hdr">
-    <span class="card-step">02</span>
-    <h2 class="card-title">画风风格分析结果</h2>
-    <p class="card-sub">基于上传图片的AI分析结果，可手动微调</p>
-  </div>
-
-  <div class="sy5">
-    <div class="grid-2s">
-      <div>
-        <label class="f-label">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-          </svg>
-          风格定位
-        </label>
-        <input type="text" class="inp" id="style" placeholder="上传图片后自动分析..." readonly>
-      </div>
-      <div>
-        <label class="f-label">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-          </svg>
-          表面质感
-        </label>
-        <input type="text" class="inp" id="texture" placeholder="上传图片后自动分析..." readonly>
-      </div>
-    </div>
-
-    <div>
-      <label class="f-label">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/>
-        </svg>
-        比例体系
-      </label>
-      <input type="text" class="inp" id="proportion" placeholder="上传图片后自动分析..." readonly>
-    </div>
-
-    <div>
-      <div class="f-label mb3" style="margin-bottom:8px">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/>
-        </svg>
-        <span>构图排版引擎</span>
-      </div>
-
-      <div class="og-ref">
-        <div class="oc-ref sel" data-l="closeup" onclick="selLayout('closeup')">
-          <div class="oc-ref-icon pu">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <div class="oc-ref-body">
-            <span class="oc-ref-title">肩颈以上特写+全身三视图</span>
-            <span class="oc-ref-desc">左侧头部特写 + 右侧正面/半侧/背面全身A-pose</span>
-          </div>
-        </div>
-        <div class="oc-ref" data-l="apose" onclick="selLayout('apose')">
-          <div class="oc-ref-icon bl">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <div class="oc-ref-body">
-            <span class="oc-ref-title">全身三视图</span>
-            <span class="oc-ref-desc">正面 + 侧面 + 背面，标准A-pose全身像</span>
-          </div>
-        </div>
-        <div class="oc-ref" data-l="patch" onclick="selLayout('patch')">
-          <div class="oc-ref-icon gr">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="2" y="14" width="8" height="8" rx="1"/><rect x="14" y="14" width="8" height="8" rx="1"/></svg>
-          </div>
-          <div class="oc-ref-body">
-            <span class="oc-ref-title">局部特写六视图</span>
-            <span class="oc-ref-desc">6宫格微刻阵列，多角度细节特写</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button class="b-grad" id="genbtn" onclick="genPrompt()" disabled>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+  <!-- ======== Header ======== -->
+  <header class="header fade-in">
+    <div class="h-icon">
+      <svg viewBox="0 0 1024 1024" width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+        <path d="M616.96 183.808h-209.92c-21.504 0-39.424-17.408-39.424-39.424V68.096C367.616 30.72 397.824 0 434.688 0h154.624c36.864 0 67.072 30.72 67.072 68.096v76.288c0 22.016-17.408 39.424-39.424 39.424zM446.464 104.96h131.072v-26.112H446.464v26.112z" fill="#fff"></path>
+        <path d="M879.616 1024H144.384c-21.504 0-39.424-17.408-39.424-39.424v-133.12c0-53.248 44.544-96.256 99.328-96.256H353.28v-85.504c0-21.504 17.408-39.424 39.424-39.424h238.592c21.504 0 39.424 17.408 39.424 39.424v85.504h148.48c54.784 0 99.328 43.008 99.328 96.256v133.12c0.512 22.016-17.408 39.424-38.912 39.424zM183.808 945.152h656.384v-93.696c0-9.728-9.216-17.408-20.992-17.408h-158.208c-38.4 0-69.632-30.208-69.632-68.096v-57.344H432.128v57.344c0 37.376-31.232 68.096-69.632 68.096H204.8c-11.264 0-20.992 7.68-20.992 17.408v93.696z" fill="#fff"></path>
+        <path d="M770.56 709.12H253.952c-53.248 0-96.256-45.056-96.256-99.84V205.312c0-55.296 43.008-99.84 96.256-99.84h516.608c53.248 0 96.256 45.056 96.256 99.84V609.28c-0.512 54.784-43.52 99.84-96.256 99.84zM253.952 183.808c-9.216 0-17.408 9.728-17.408 21.504V609.28c0 11.776 8.192 21.504 17.408 21.504h516.608c9.216 0 17.408-9.728 17.408-21.504V205.312c0-11.776-8.192-21.504-17.408-21.504H253.952z" fill="#fff"></path>
+        <path d="M65.536 498.688c-21.504 0-39.424-17.408-39.424-39.424V302.08c0-21.504 17.408-39.424 39.424-39.424s39.424 17.408 39.424 39.424v157.696c0 21.504-17.408 38.912-39.424 38.912zM958.464 498.688c-21.504 0-39.424-17.408-39.424-39.424V302.08c0-21.504 17.408-39.424 39.424-39.424s39.424 17.408 39.424 39.424v157.696c0 21.504-17.92 38.912-39.424 38.912z" fill="#fbbf24"></path>
+        <path d="M407.04 354.304c0 29.184-23.552 52.736-52.736 52.736-29.184 0-52.736-23.552-52.736-52.736C302.08 325.632 325.632 302.08 354.304 302.08c29.184 0 52.736 23.552 52.736 52.224M721.92 354.304c0 29.184-23.552 52.736-52.736 52.736-29.184 0-52.736-23.552-52.736-52.736 0-29.184 23.552-52.736 52.736-52.736 29.184 0.512 52.736 24.064 52.736 52.736" fill="#fbbf24"></path>
       </svg>
-      生成提示词
-    </button>
-  </div>
-</section>
-
-<!-- ======== Step 03 ======== -->
-<section class="card fade-in d3">
-  <div class="card-hdr">
-    <span class="card-step">03</span>
-    <h2 class="card-title">完整提示词</h2>
-    <p class="card-sub">基于上传图片的分析结果生成的完整提示词，可复制到生成工具使用</p>
-  </div>
-
-  <div class="p-tabs" id="ltabs">
-    <button class="b-tab on" data-l="zh" onclick="swLang('zh')">中文</button>
-    <button class="b-tab" data-l="en" onclick="swLang('en')">English</button>
-    <button class="b-tab" data-l="json" onclick="swLang('json')">JSON</button>
-  </div>
-
-  <textarea class="p-area" id="ptext" readonly placeholder="请先上传图片并生成提示词"></textarea>
-
-  <div class="p-acts">
-    <button class="b-grad" id="cpybtn" onclick="copyPrompt()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-      </svg>
-      <span id="cpytext">复制提示词</span>
-    </button>
-    <button class="b-sec" onclick="resetAll()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
-      </svg>
-      重新开始
-    </button>
-  </div>
-</section>
-
-<!-- ======== API 帮助弹窗 ======== -->
-<div id="api-help-overlay" onclick="closeApiHelp(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center" class="flex ac jc">
-  <div onclick="event.stopPropagation()" style="background:#1a1a2e;border:1px solid #2d2d4a;border-radius:12px;padding:24px;max-width:600px;width:92%;max-height:85vh;overflow-y:auto">
-    <div class="flex ac" style="justify-content:space-between;margin-bottom:16px">
-      <span style="font-size:16px;font-weight:600">各平台获取 API Key 与端点</span>
-      <button onclick="closeApiHelp()" style="background:none;border:none;color:#9ca3af;cursor:pointer;padding:4px">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </div>
+    <h1 class="h-title">角色形象&场景图像生成</h1>
+    <span class="h-badge">AI 生图</span>
+    <div style="margin-left:auto;display:flex;gap:8px">
+      <button class="sponsor-btn" onclick="showSponsor()">
+        <span style="font-size:16px;font-weight:700;line-height:1">¥</span>
+        赞助
+      </button>
+      <button class="sponsor-btn" onclick="showApiHelp()" title="各平台获取 API Key 方式" style="padding:6px 12px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span style="font-size:12px">帮助</span>
+      </button>
+      <button class="sponsor-btn" onclick="showSettings()" title="设置" style="padding:6px 12px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        <span style="font-size:12px">设置</span>
       </button>
     </div>
-    <div style="font-size:13px;line-height:1.7">
+  </header>
 
-      <!-- 阿里百炼 -->
-      <div class="api-acc">
-        <div class="api-acc-h on" onclick="toggleApiAcc(this)">
-          <span style="color:#c4b5fd;font-weight:600;font-size:14px">阿里云百炼平台</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  <!-- ======== Step 01 ======== -->
+  <section class="card fade-in d1">
+    <div class="card-hdr">
+      <span class="card-step">01</span>
+      <h2 class="card-title">选择模型 &amp; 上传参考图</h2>
+    </div>
+    <p class="card-sub">选择AI图像生成模型，上传角色参考图并输入提示词</p>
+
+    <!-- 模型配置标题（单独一行） -->
+    <div class="flex ac gap-2 mb4" style="margin-top:20px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+      </svg>
+      <span class="txm cw" style="font-weight:500;font-size:15px">模型配置</span>
+    </div>
+
+    <div class="card" style="margin-top:12px;padding:16px 20px">
+      <!-- 平台提示 -->
+      <div id="platform-tip" style="display:none;font-size:11px;line-height:1.5;margin-bottom:10px;padding:8px 12px;border-radius:6px;border:1px solid rgba(251,191,36,.25);background:rgba(251,191,36,.06);color:#fde68a">
+        <strong>效果提示：</strong><span id="tip-text">多视图/布局类图片对模型能力要求较高。推荐使用 <strong>CogView-4</strong>（布局理解最强）、<strong>FLUX.1-pro</strong>（画质最优）、<strong>通义万相-增强版</strong>（角色一致性佳）。其它模型生成效果因模型能力而异，建议多尝试不同模型。</span>
+        <div id="modelinfo" style="display:none;margin-top:6px;padding-top:6px;border-top:1px solid rgba(255,255,255,.08);color:#9ca3af;font-size:10px">
+          <span style="color:#34d399">免费额度：<span id="mfree" style="color:#d1d5db">-</span></span>
+          <span style="color:#6b7280;margin:0 6px">|</span>
+          <span style="color:#fbbf24">价格：<span id="mprice" style="color:#d1d5db">-</span></span>
         </div>
-        <div class="api-acc-bd on">
-          <div>① 点击注册 <a href="https://www.aliyun.com/minisite/goods?userCode=j6muymoj" target="_blank" rel="noopener noreferrer">阿里云百炼平台</a> 账号，新用户领取专属优惠；</div>
-          <div>② 完成实名认证后，打开 <a href="https://bailian.console.aliyun.com/" target="_blank" rel="noopener noreferrer">阿里云百炼控制台</a>，右上角选择「华北2（北京）」地域，阅读并同意服务协议，系统自动开通百炼服务并发放各模型新人免费额度（每个模型100万Token，90天有效）；</div>
-          <div>③ 左侧导航「API Key 管理」→ 点击「创建 API Key」→ 设置权限后确认，弹窗中复制 API Key 并妥善保存（关闭后无法再次查看）；</div>
-          <div>④ 将 API Key 填入上方密钥框，选择模型后即可使用。</div>
-          <div class="ep-box">
-            <span class="lbl">HTTP 请求地址</span>：<span class="val">https://dashscope.aliyuncs.com/compatible-mode/v1</span>
+      </div>
+
+      <!-- Row 1: 选择平台 + 选择模型 -->
+      <div style="display:flex;gap:10px;margin-bottom:10px">
+        <div style="flex:1">
+          <label class="f-label" style="font-size:11px;margin-bottom:3px">选择平台</label>
+          <select class="sel" id="pselect" onchange="onPlatformChange()" style="padding:7px 10px;font-size:12px">
+            <option value="" disabled selected>请选择平台</option>
+            <option value="阿里百炼">阿里云百炼</option>
+            <option value="自定义">自定义</option>
+          </select>
+        </div>
+        <div style="flex:1" id="model-select-group">
+          <label class="f-label" style="font-size:11px;margin-bottom:3px" id="model-label">选择模型 <span id="model-cap" style="font-size:9px;color:#6b7280;margin-left:4px"></span></label>
+          <select class="sel" id="modelselect" onchange="onModelChange()" disabled style="padding:7px 10px;font-size:12px">
+            <option value="" disabled selected>请先选择平台</option>
+          </select>
+          <input type="text" class="inp" id="modelinput" placeholder="如 GLM-4.2" oninput="onModelInputChange()" style="padding:7px 10px;font-size:12px;display:none">
+        </div>
+      </div>
+
+      <!-- Row 2: API Key + API 端点 -->
+      <div style="display:flex;gap:10px;margin-bottom:10px">
+        <div style="flex:1">
+          <label class="f-label" style="font-size:11px;margin-bottom:3px">API Key
+            <button onclick="showApiHelp()" type="button" style="background:none;border:none;color:#6b7280;cursor:pointer;padding:0;display:inline-flex;vertical-align:middle;margin-left:3px" title="各平台获取 API Key 方式">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </button>
+          </label>
+          <div class="inp-wrap">
+            <input type="password" class="inp" id="apikey" placeholder="API Key" oninput="onKeyChange()" style="padding:7px 10px;font-size:12px">
+            <button class="tgl" onclick="toggleKey()" type="button">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="keyeye">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
           </div>
-          <div style="margin-top:8px;font-size:11px;line-height:1.8">
-            <div style="color:#fbbf24;font-weight:600;margin-bottom:4px">📋 支持模型及价格</div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.8-Max（全能旗舰，1M上下文，2026.07）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 12元/百万Token，输出 36元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.7-Plus（多模态智能体，1M上下文，2026.05）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 2元/百万Token，输出 8元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.7-Flash（轻量高性价比，1M上下文，2026.07）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.2元/百万Token，输出 0.8元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.6-Plus（旗舰视觉，1M上下文，2026.04）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 2元/百万Token，输出 12元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.6-Flash（轻量视觉，1M上下文，2026.04）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 1.2元/百万Token，输出 7.2元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.5-Plus（平衡视觉，1M上下文，2026.02）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.8元/百万Token，输出 4.8元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3.5-Flash（轻量视觉，1M上下文，2026.02）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.2元/百万Token，输出 2元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3-VL-Plus（视觉Coding增强，2025.12）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 1元/百万Token，输出 10元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen3-VL-Flash（快速视觉，2026.01）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.15元/百万Token，输出 1.5元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen-VL-Max（旧版旗舰视觉）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 1.6元/百万Token，输出 4元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Qwen-VL-Plus（旧版增强视觉）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 0.8元/百万Token，输出 2元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Kimi-K2.7-Code（Kimi旗舰编程模型）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 6.5元/百万Token，输出 27元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Kimi-K2.6（Kimi多模态旗舰）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 6.5元/百万Token，输出 27元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">Kimi-K3（Kimi最新旗舰，长程推理）</div>
-              <div style="color:#9ca3af;font-size:10px">🎁 免费额度：无</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 20元/百万Token，输出 100元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">MiniMax-M2.5（思考模式多模态）</div>
-              <div style="color:#34d399;font-size:10px">🎁 免费额度：100万Token（90天有效）</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 2.1元/百万Token，输出 8.4元/百万Token</div>
-            </div>
-            <div style="padding:5px 8px;margin-bottom:4px;background:rgba(139,92,246,.06);border-radius:4px;border:1px solid rgba(139,92,246,.12)">
-              <div style="color:#d1d5db;font-weight:500">MiniMax-M3（最新旗舰多模态）</div>
-              <div style="color:#9ca3af;font-size:10px">🎁 免费额度：无</div>
-              <div style="color:#fbbf24;font-size:10px">💰 价格：输入 4.2元/百万Token，输出 16.8元/百万Token</div>
-            </div>
+        </div>
+        <div style="flex:1">
+          <label class="f-label" style="font-size:11px;margin-bottom:3px">API 端点</label>
+          <input type="text" class="inp" id="apiendpoint" placeholder="端点地址" readonly style="padding:7px 10px;font-size:12px">
+        </div>
+      </div>
+
+      <!-- Row 3: 等待配置 + 清除配置 -->
+      <div style="display:flex;gap:10px">
+        <div style="flex:1">
+          <div class="s-btn wait" id="connbtn" onclick="onConnBtnClick()" style="width:100%;padding:8px 10px;font-size:12px;white-space:nowrap;line-height:1.4;text-align:center">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> 等待配置
+          </div>
+        </div>
+        <div style="flex:1">
+          <div class="s-btn clear" id="clearbtn" onclick="clearApiConfig()" title="清除配置" style="width:100%;padding:8px 10px;font-size:12px;line-height:1.4;text-align:center">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> 清除配置
           </div>
         </div>
       </div>
-      <!-- 自定义 -->
-      <div class="api-acc">
-        <div class="api-acc-h" onclick="toggleApiAcc(this)">
-          <span style="color:#9ca3af;font-weight:600;font-size:14px">自定义平台</span>
-          <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-        <div class="api-acc-bd">
-          <div>① 自定义平台采用「OpenAI 兼容」接口，适用于任何兼容 OpenAI API 格式的模型服务；</div>
-          <div>② 在上方「API Key」输入框中填入你的密钥；</div>
-          <div>③ 在「API 端点」输入框中填入完整的 HTTP 请求地址（含路径，不含 /chat/completions 后缀）；</div>
-          <div>④ 在「输入模型ID」框中填入模型名称（如 gpt-4o、glm-4.7 等）。</div>
-          <div class="ep-box">
-            <span class="lbl">HTTP 请求地址示例</span>：
-          </div>
-          <div style="margin-top:4px;font-size:11px;line-height:1.8;color:#9ca3af">
-            <div>• OpenAI：<span style="color:#d1d5db">https://api.openai.com/v1</span></div>
-            <div>• 本地部署（如 vLLM）：<span style="color:#d1d5db">http://localhost:8000/v1</span></div>
-            <div>• 其他兼容平台：请参照各平台文档填写</div>
-          </div>
-        </div>
-      </div>
-      <div style="margin-top:16px;padding:14px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.25);border-radius:8px;font-size:12px;line-height:1.8;color:#d1d5db">
-        <div style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid rgba(251,191,36,.15)">
-          <div style="color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <span>API Key 安全说明</span>
-          </div>
-          <div style="padding-left:22px">1. 你填入的 API Key 和端点仅保存在 localStorage 中，不会写入硬盘或 Cookie；</div>
-          <div style="padding-left:22px">2. 配置信息仅发送至你指定的 API 端点用于身份验证，不会上传至任何第三方服务器；</div>
-          <div style="padding-left:22px">3. 普通刷新（F5 / Ctrl+R）不会清空配置，可继续使用；</div>
-          <div style="padding-left:22px">4. 关闭标签页后重新打开，配置依然保留，无需重复填写；</div>
-          <div style="padding-left:22px">5. 点击上方「清空配置」按钮即可手动清除配置；强制刷新（Ctrl+F5 / Ctrl+Shift+R）不会清除已保存的配置，可放心使用。</div>
-        </div>
-        <div>
-          <div style="color:#fbbf24;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-            <span>价格与免责声明</span>
-          </div>
-          <div style="padding-left:22px">1. 免费额度为各平台新用户活动，具体额度和有效期以平台官网为准；</div>
-          <div style="padding-left:22px">2. 价格信息平台可能随时调整，请以平台官网实时价格为准；</div>
-          <div style="padding-left:22px">3. 模型列表及价格仅供参考，实际可用模型以各平台 API 返回为准。</div>
-        </div>
-      </div>
+
 
     </div>
-  </div>
-</div>
 
-</div>
+      <!-- Upload + Prompt 左右横排 -->
+      <div class="upload-wrap" style="display:flex;gap:12px;align-items:stretch;margin-top:12px">
+        <div class="upload" id="upload" style="flex:1;min-height:200px">
+          <input type="file" id="finp" accept=".jpg,.jpeg,.png,.webp" multiple style="display:none">
+          <div id="uempty" style="width:100%;display:flex;flex-direction:column;align-items:center">
+            <div class="u-icon" style="margin:0 auto 12px">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </div>
+            <p class="u-text" id="upload-text">拖拽参考图到这里，或点击上传</p>
+            <p class="u-hint" id="upload-hint">支持 JPG / PNG / WebP，上传参考图可提高角色一致性</p>
+          </div>
+          <div class="u-prev" id="uprev" style="display:none;flex-wrap:wrap;gap:8px"></div>
+        </div>
+        <div style="flex:1.5;display:flex;flex-direction:column">
+          <textarea class="inp" id="promptInput" placeholder="提示词（直接发送给大模型，无内置模板）" style="flex:1;min-height:200px;resize:vertical;font-family:inherit;padding:12px 14px;font-size:14px;line-height:1.6" oninput="checkGenReady()"></textarea>
+        </div>
+      </div>
+      <span id="errormsg" style="font-size:12px;color:#f87171;display:none;margin-top:8px"></span>
+  </section>
+
+  <!-- ======== Step 02 ======== -->
+  <section class="card fade-in d2">
+    <div class="card-hdr">
+      <span class="card-step">02</span>
+      <h2 class="card-title">图片比例与分辨率</h2>
+    </div>
+    <p class="card-sub">选择图片输出尺寸与分辨率，点击生成图片</p>
+
+      <!-- 尺寸选择 + 生成按钮 左右排列 -->
+      <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:stretch">
+        <div style="padding:14px 16px;background:rgba(139,92,246,.04);border:1px solid rgba(139,92,246,.12);border-radius:8px">
+          <div class="flex ac" style="margin-bottom:8px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="3" x2="9" y2="21"></line>
+            </svg>
+            <span class="txm cw" style="font-weight:500;font-size:13px">图片比例与分辨率</span>
+          </div>
+          <!-- 比例行 -->
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px">
+            <span style="font-size:11px;color:#9ca3af;margin-right:4px">比例</span>
+            <button class="sz-btn" data-ar="1:1" onclick="selAspect(this)">1:1</button>
+            <button class="sz-btn" data-ar="4:3" onclick="selAspect(this)">4:3</button>
+            <button class="sz-btn" data-ar="3:4" onclick="selAspect(this)">3:4</button>
+            <button class="sz-btn on" data-ar="16:9" onclick="selAspect(this)">16:9</button>
+            <button class="sz-btn" data-ar="9:16" onclick="selAspect(this)">9:16</button>
+            <button class="sz-btn" data-ar="21:9" onclick="selAspect(this)">21:9</button>
+            <button class="sz-btn" data-ar="custom" onclick="selAspect(this)">自定义</button>
+            <span id="ar-custom" style="display:none">
+              <input type="number" class="inp" id="ar-w" placeholder="宽" min="256" max="8192" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomAr()">
+              <span style="color:#9ca3af;font-size:11px;margin:0 2px">x</span>
+              <input type="number" class="inp" id="ar-h" placeholder="高" min="256" max="8192" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomAr()">
+              <span style="color:#6b7280;font-size:10px">px</span>
+            </span>
+          </div>
+          <!-- 分辨率行 -->
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:8px">
+            <span style="font-size:11px;color:#9ca3af;margin-right:4px">分辨率</span>
+            <button class="k-btn on" data-k="1" onclick="selK(this)">1K</button>
+            <button class="k-btn" data-k="2" onclick="selK(this)">2K</button>
+            <button class="k-btn" data-k="4" onclick="selK(this)">4K</button>
+            <button class="k-btn" data-k="custom" onclick="selK(this)">自定义</button>
+            <span id="k-custom" style="display:none">
+              <input type="number" class="inp" id="k-input" placeholder="倍数" min="1" max="16" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomK()">
+              <span style="color:#6b7280;font-size:10px">x</span>
+            </span>
+          </div>
+          <!-- 输出张数行 -->
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px">
+            <span style="font-size:11px;color:#9ca3af;margin-right:4px">输出张数</span>
+            <button class="n-btn on" data-n="1" onclick="selN(this)">1</button>
+            <button class="n-btn" data-n="2" onclick="selN(this)">2</button>
+            <button class="n-btn" data-n="3" onclick="selN(this)">3</button>
+            <button class="n-btn" data-n="4" onclick="selN(this)">4</button>
+            <button class="n-btn" data-n="custom" onclick="selN(this)">自定义</button>
+            <span id="n-custom" style="display:none">
+              <input type="number" class="inp" id="n-input" placeholder="张数" min="1" max="10" style="width:60px;padding:4px 6px;font-size:11px" oninput="onCustomN()">
+              <span style="color:#6b7280;font-size:10px">张</span>
+            </span>
+          </div>
+          <div id="sz-info" style="font-size:12px;color:#d1d5db;margin-top:10px;padding:8px 10px;border-radius:6px;background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.15)">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:4px"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <span style="color:#9ca3af">当前配置：</span><span id="sz-display" style="color:#c4b5fd;font-weight:500">16:9 + 1K = 1024x576</span>
+            <span style="color:#6b7280;margin:0 6px">|</span>
+            <span style="color:#9ca3af">输出</span> <span id="n-display" style="color:#fbbf24;font-weight:500">1</span> <span style="color:#9ca3af">张</span>
+          </div>
+        </div>
+        <button class="b-grad" id="genbtn" onclick="genImage()" disabled style="aspect-ratio:1;height:100%;padding:8px;font-size:13px;border-radius:10px;min-height:0;flex-direction:column;gap:4px;line-height:1.2;white-space:nowrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>生成图片</span>
+          </button>
+      </div>
+  </section>
+
+  <!-- ======== Step 03 ======== -->
+  <section class="card fade-in d3">
+    <div class="card-hdr">
+      <span class="card-step">03</span>
+      <h2 class="card-title">生成结果</h2>
+    </div>
+    <p class="card-sub">AI 生成的图片，可点击下载</p>
+
+    <div id="result-empty" style="text-align:center;padding:40px 20px;color:#6b7280">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline>
+      </svg>
+      <p>配置好模型并点击"生成图片"后，结果将显示在这里</p>
+    </div>
+
+    <div id="result-loading" style="display:none;text-align:center;padding:40px 20px">
+      <svg class="spin" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="2" x2="12" y2="6"></line><line x1="12" y1="18" x2="12" y2="22"></line><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line><line x1="2" y1="12" x2="6" y2="12"></line><line x1="18" y1="12" x2="22" y2="12"></line><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+      </svg>
+      <p style="margin-top:12px;color:#9ca3af;font-size:14px" id="loading-text">AI 正在生成图片，请稍候...</p>
+    </div>
+
+    <div id="result-content" style="display:none">
+      <div id="result-list" style="display:flex;flex-direction:column;gap:12px"></div>
+      <div style="margin-top:12px;display:flex;flex-direction:row;gap:8px">
+        <button class="b-grad" onclick="resetResult()" style="flex:1">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+          重新生成
+        </button>
+      </div>
+      <div style="margin-top:8px;font-size:11px;color:#6b7280;text-align:center">
+        生成耗时：<span id="gen-time">-</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== API 帮助弹窗 ======== -->
+  <div id="api-help-overlay" onclick="closeApiHelp(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center" class="flex ac jc">
+    <div onclick="event.stopPropagation()" style="background:#1a1a2e;border:1px solid #2d2d4a;border-radius:12px;padding:24px;max-width:640px;width:92%;max-height:85vh;overflow-y:auto">
+      <div class="flex ac" style="justify-content:space-between;margin-bottom:16px">
+        <span style="font-size:16px;font-weight:600">各平台获取 API Key 与端点</span>
+        <button onclick="closeApiHelp()" style="background:none;border:none;color:#9ca3af;cursor:pointer;padding:4px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div style="font-size:13px;line-height:1.7" id="api-help-content"></div>
+    </div>
+  </div>
 
   <!-- ======== 赞助弹窗 ======== -->
   <div id="sponsor-overlay" onclick="closeSponsor(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:1000;justify-content:center;align-items:center" class="flex ac jc">
@@ -417,7 +281,7 @@
         如果您觉得本工具对您有帮助，欢迎赞助支持 ❤️
       </p>
       <div style="display:inline-block;padding:12px;background:#16162a;border:1px solid #2d2d4a;border-radius:10px;margin-bottom:16px">
-        <img src="image/sponsor-qr.png" alt="赞助二维码" style="width:180px;height:180px;display:block">
+        <img src="sponsor-qr.png" alt="赞助二维码" style="width:180px;height:180px;display:block">
       </div>
       <p style="font-size:11px;color:#6b7280;margin-bottom:20px">扫码赞助，您的支持是本工具持续运行的最大动力</p>
       <div style="display:flex;gap:10px">
@@ -427,30 +291,206 @@
     </div>
   </div>
 
+  <!-- ======== 设置弹窗 ======== -->
+  <div id="settings-overlay" onclick="closeSettings(event)" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:1000;justify-content:center;align-items:center" class="flex ac jc">
+    <div onclick="event.stopPropagation()" style="background:#1a1a2e;border:1px solid #2d2d4a;border-radius:12px;padding:24px;max-width:640px;width:92%;max-height:85vh;overflow-y:auto">
+      <div class="flex ac" style="justify-content:space-between;margin-bottom:16px">
+        <span style="font-size:16px;font-weight:600">设置</span>
+        <button onclick="closeSettings()" style="background:none;border:none;color:#9ca3af;cursor:pointer;padding:4px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
 
+      <!-- 手风琴0：导入/导出设置 -->
+      <div class="set-acc">
+        <div class="set-acc-h" onclick="toggleSetAcc(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          <span style="font-size:13px;font-weight:500;flex:1">导入 / 导出设置</span>
+          <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="set-acc-bd">
+          <p style="font-size:11px;color:#6b7280;margin-bottom:10px">导出 API Key、API 端点为 JSON 文件，导入时选择该文件自动恢复全部配置</p>
+          <div style="display:flex;gap:8px">
+            <button class="b-grad" onclick="exportSettings()" style="padding:8px 16px;min-height:36px;font-size:12px;flex:1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              导出设置
+            </button>
+            <button class="b-sec" onclick="document.getElementById('import-settings-file').click()" style="padding:8px 16px;min-height:36px;font-size:12px;flex:1">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              导入设置
+            </button>
+            <input type="file" id="import-settings-file" accept=".json" style="display:none" onchange="importSettings(event)">
+          </div>
+        </div>
+      </div>
 
-<script src="script.js">
-</script>
+      <!-- 手风琴1：API Key & 端点管理 -->
+      <div class="set-acc">
+        <div class="set-acc-h" onclick="toggleSetAcc(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          <span style="font-size:13px;font-weight:500;flex:1">API Key & 端点管理</span>
+          <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="set-acc-bd">
+          <p style="font-size:11px;color:#6b7280;margin-bottom:10px">保存多个平台的 API Key 和端点，切换平台时自动填充</p>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">阿里云百炼 API Key</label>
+            <div style="position:relative">
+              <input type="password" id="preset-bailian-key" class="inp" style="width:100%;font-size:12px;padding-right:30px" placeholder="sk-..."></input>
+              <button type="button" onclick="togglePresetKey('preset-bailian-key', this)" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:#6b7280;cursor:pointer;padding:2px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </button>
+            </div>
+          </div>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">阿里云百炼 API 端点</label>
+            <input type="text" id="preset-bailian-ep" class="inp" style="width:100%;font-size:12px" value="https://dashscope.aliyuncs.com/compatible-mode/v1" readonly></input>
+          </div>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">自定义平台 API Key</label>
+            <div style="position:relative">
+              <input type="password" id="preset-custom-key" class="inp" style="width:100%;font-size:12px;padding-right:30px" placeholder="sk-..."></input>
+              <button type="button" onclick="togglePresetKey('preset-custom-key', this)" style="position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:#6b7280;cursor:pointer;padding:2px">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </button>
+            </div>
+          </div>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">自定义平台 API 端点</label>
+            <input type="text" id="preset-custom-ep" class="inp" style="width:100%;font-size:12px" placeholder="如 https://api.openai.com/v1"></input>
+          </div>
+          <div class="set-preset-row">
+            <label class="f-label" style="font-size:11px">自定义平台 模型 ID</label>
+            <input type="text" id="preset-custom-model" class="inp" style="width:100%;font-size:12px" placeholder="如 gpt-image-1"></input>
+          </div>
+          <button class="b-grad" onclick="savePresets()" style="padding:8px 16px;min-height:36px;font-size:12px;margin-top:4px;width:100%">保存预设</button>
+        </div>
+      </div>
 
+      <!-- 手风琴2：本地手动备份 -->
+      <div class="set-acc">
+        <div class="set-acc-h" onclick="toggleSetAcc(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span style="font-size:13px;font-weight:500;flex:1">本地手动备份</span>
+          <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="set-acc-bd">
+          <div style="margin-bottom:12px">
+            <p style="font-size:10px;color:#6b7280;margin-bottom:4px">将所有历史记录中的生成图片和提示词导出为 Markdown 文件，图片以 Base64 内嵌，本地下载</p>
+            <button class="b-grad" onclick="backupMarkdown()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              一键备份所有图片和提示词（Markdown）
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 手风琴3：清空设置 -->
+      <div class="set-acc">
+        <div class="set-acc-h" onclick="toggleSetAcc(this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+          <span style="font-size:13px;font-weight:500;flex:1">清空设置</span>
+          <svg class="arr" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+        <div class="set-acc-bd">
+          <p style="font-size:11px;color:#f87171;margin-bottom:10px">⚠️ 以下操作不可恢复，请谨慎执行</p>
+          <button class="b-sec" onclick="clearAllApiConfig()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%;margin-bottom:8px;border-color:rgba(239,68,68,.4);color:#f87171">
+            一键清除 API Key & 端点
+          </button>
+          <button class="b-sec" onclick="clearAllHistory()" style="padding:8px 16px;min-height:36px;font-size:12px;width:100%;border-color:rgba(239,68,68,.4);color:#f87171">
+            一键清除本地生成图片和提示词
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======== Step 04: 图片生成历史 ======== -->
+  <section class="card fade-in d4 collapsed">
+    <div class="card-hdr" style="cursor:pointer" onclick="toggleHistory()">
+      <span class="card-step">04</span>
+      <h2 class="card-title" style="flex:1">图片生成历史</h2>
+      <svg class="arr" id="h-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s;color:#6b7280">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+    <p class="card-sub">图片与提示词存储于浏览器本地，清除浏览器数据将丢失，最多保留 100 次生成结果</p>
+    <div id="history-content" style="display:none">
+      <div id="history-empty" style="text-align:center;padding:40px 20px;color:#6b7280">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:12px">
+          <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <p>暂无生成历史，生成图片后将自动保存到这里</p>
+      </div>
+      <div id="history-list" style="display:none"></div>
+      <div id="history-load-more" style="display:none;text-align:center;padding:12px">
+        <span style="font-size:12px;color:#6b7280">向下滚动加载更多</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== Step 05: 图片本地拼接 ======== -->
+  <section class="card fade-in d5 collapsed">
+    <div class="card-hdr" style="cursor:pointer" onclick="toggleFoot()">
+      <span class="card-step">05</span>
+      <h2 class="card-title" style="flex:1">图片本地拼接</h2>
+      <svg class="arr" id="f-arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transition:transform 0.25s;color:#6b7280">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+    <p class="card-sub">将多张图片本地拼接为一张完整布局图，支持横向 / 竖向</p>
+    <div id="fcont">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:36px">
+        <div style="text-align:center">
+          <label class="f-label" style="margin-bottom:6px;justify-content:center">图1</label>
+          <div class="upload" id="stitch-upload1" style="min-height:140px" onclick="document.getElementById('stitch-inp1').click()">
+            <input type="file" id="stitch-inp1" accept=".jpg,.jpeg,.png,.webp" style="display:none" onchange="stitchLoadImg(1,this)">
+            <div id="stitch-empty1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg><p>点击选择图片</p></div>
+            <div class="u-prev" id="stitch-prev1" style="display:none"><img id="stitch-img1" alt=""></div>
+          </div>
+        </div>
+        <div style="text-align:center">
+          <label class="f-label" style="margin-bottom:6px;justify-content:center">图2</label>
+          <div class="upload" id="stitch-upload2" style="min-height:140px" onclick="document.getElementById('stitch-inp2').click()">
+            <input type="file" id="stitch-inp2" accept=".jpg,.jpeg,.png,.webp" style="display:none" onchange="stitchLoadImg(2,this)">
+            <div id="stitch-empty2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg><p>点击选择图片</p></div>
+            <div class="u-prev" id="stitch-prev2" style="display:none"><img id="stitch-img2" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:0">
+        <button class="b-tab on" id="stitch-dir-h" onclick="stitchSetDir('h')" style="flex:1;text-align:center;white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="3" y1="12" x2="21" y2="12"></line><polyline points="18 15 21 12 18 9"></polyline></svg> 横向</button>
+        <button class="b-tab" id="stitch-dir-v" onclick="stitchSetDir('v')" style="flex:1;text-align:center;white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-right:4px"><line x1="12" y1="3" x2="12" y2="21"></line><polyline points="9 18 12 21 15 18"></polyline></svg> 竖向</button>
+        <button class="b-grad" id="stitch-btn" onclick="doStitch()" disabled style="flex:1;text-align:center;padding:6px 6px;min-height:unset;font-size:12px;white-space:nowrap"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> 开始拼接</button>
+      </div>
+      <div id="stitch-result" style="display:none">
+        <div style="border:1px solid #2d2d4a;border-radius:8px;padding:12px;background:#16162a;margin-bottom:8px;text-align:center"><img id="stitch-output" alt="拼接结果" style="max-width:100%;max-height:400px;border-radius:4px"></div>
+        <div style="display:flex;gap:8px">
+          <button class="b-grad" onclick="stitchDownload('jpg')" style="padding:10px 20px;min-height:40px;flex:1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> 下载 JPG</button>
+          <button class="b-grad" onclick="stitchDownload('png')" style="padding:10px 20px;min-height:40px;flex:1"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> 下载 PNG</button>
+        </div>
+      </div>
+      <div id="stitch-err" style="font-size:12px;color:#f87171;display:none;margin-top:4px"></div>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
 <footer class="site-footer">
   <div class="footer-links">
-    <a href="https://design.zhuye.xyz/" target="_blank" rel="noopener" class="footer-design-link" title="Design Editing CG Software Download">Design</a><span class="footer-sep">-</span>
-    <a href="https://photo.zhuye.xyz/" target="_blank" rel="noopener" title="二次元美图壁纸">Photo</a><span class="footer-sep">-</span>
-    <a href="https://yun.zhuye.xyz/" target="_blank" rel="noopener" title="曾经的GhostXP系统和现在的win11">System</a><span class="footer-sep">-</span>
-    <a href="https://music.zhuye.xyz/" target="_blank" rel="noopener" title="简洁好看的网易云在线音乐">Music</a><span class="footer-sep">-</span>
-    <a href="https://tici.zhuye.xyz/" target="_blank" rel="noopener" title="直播录像用的免费web提词软件">Tici</a><span class="footer-sep">-</span>
-    <a href="https://game.zhuye.xyz/" target="_blank" rel="noopener" title="简单的H5小游戏">Game</a><span class="footer-sep">-</span>
-    <a href="/chrome/" target="_blank" rel="noopener" title="获取最新 Google Chrome 离线安装版本">Chrome</a><span class="footer-sep">-</span>
-    <a href="core.html" target="_blank" rel="noopener" class="footer-design-link" title="浏览器内核检测">Core</a><span class="footer-sep">-</span>
-    <a href="/mess/" target="_blank" rel="noopener" title="更多更多更多......(*￣▽￣)">Mess</a>
+    <a href="https://design.zhuye.xyz/" target="_blank" rel="noopener" class="footer-design-link">Design</a><span class="footer-sep">-</span>
+    <a href="https://photo.zhuye.xyz/" target="_blank" rel="noopener">Photo</a><span class="footer-sep">-</span>
+    <a href="https://yun.zhuye.xyz/" target="_blank" rel="noopener">System</a><span class="footer-sep">-</span>
+    <a href="https://music.zhuye.xyz/" target="_blank" rel="noopener">Music</a><span class="footer-sep">-</span>
+    <a href="https://tici.zhuye.xyz/" target="_blank" rel="noopener">Tici</a><span class="footer-sep">-</span>
+    <a href="https://game.zhuye.xyz/" target="_blank" rel="noopener">Game</a><span class="footer-sep">-</span>
+    <a href="https://zhuye.xyz/chrome/" target="_blank" rel="noopener">Chrome</a><span class="footer-sep">-</span>
+    <a href="https://zhuye.xyz/core.html" target="_blank" rel="noopener">Core</a><span class="footer-sep">-</span>
+    <a href="https://zhuye.xyz/mess/" target="_blank" rel="noopener">Mess</a>
   </div>
-  <div class="footer-copy">Copyright &copy; 2019-<span id="timeyear"></span> <a href="https://www.zhuye.xyz/" target="_blank" rel="noopener noreferrer">ZHUYE.XYZ</a> All Rights Reserved.</div>
+  <div class="footer-copy">Copyright © 2019-<span id="timeyear">2026</span> <a href="https://www.zhuye.xyz/" target="_blank" rel="noopener">ZHUYE.XYZ</a> All Rights Reserved.</div>
 </footer>
-
-<!--TIME-->
-<script type="text/javascript" src="https://cdn.zhuye.xyz/js/timeyear.js"></script>
-<!--百度统计-->
-<script type="text/javascript" src="https://cdn.zhuye.xyz/js/bdtj-zhuye.js"></script>
 
 </body>
 </html>
